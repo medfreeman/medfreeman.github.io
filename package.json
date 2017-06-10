@@ -1,0 +1,44 @@
+{
+  "private": true,
+  "name": "medfreeman.io",
+  "description": "practical IT solutions",
+  "author": "Mehdi Lahlou <mehdi.lahlou@free.fr>",
+  "homepage": "https://medfreeman.github.io/",
+  "twitter": "",
+  "repository": "https://github.com/medfreeman/medfreeman.github.io.git",
+  "devDependencies": {
+    "@phenomic/babel-preset": "^1.0.0-alpha.1",
+    "@phenomic/cli": "^1.0.0-alpha.2",
+    "@phenomic/core": "^1.0.0-alpha.2",
+    "@phenomic/preset-react-app": "^1.0.0-alpha.2",
+    "babel": "^6.23.0",
+    "babel-register": "^6.24.1",
+    "cross-env": "^5.0.1",
+    "deepmerge": "^1.3.2",
+    "gray-matter": "^2.1.1",
+    "hast-util-sanitize": "^1.1.0",
+    "lodash.deburr": "^4.1.0",
+    "lodash.kebabcase": "^4.1.1",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-helmet": "^5.1.3",
+    "react-router": "^3.0.5",
+    "remark": "^7.0.1",
+    "remark-autolink-headings": "^5.0.0",
+    "remark-html": "^6.0.0",
+    "remark-react": "^4.0.0",
+    "remark-slug": "^4.2.2",
+    "remark-toc": "^4.0.0",
+    "webpack": "^2.6.1",
+    "webpack-dev-server": "^2.4.5"
+  },
+  "scripts": {
+    "start": "cross-env NODE_ENV=development phenomic start",
+    "build": "phenomic build"
+  },
+  "babel": {
+    "presets": [
+      "@phenomic/babel-preset"
+    ]
+  }
+}
