@@ -1,4 +1,5 @@
 import React from "react"
+import "typeface-roboto"
 import { Router, Route, browserHistory } from "react-router"
 import { createApp, renderApp } from "@phenomic/preset-react-app/lib/client"
 
