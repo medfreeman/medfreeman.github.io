@@ -24,12 +24,22 @@ module.exports = (config: PhenomicConfig) => ({
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: require.resolve("babel-loader"),
-        options: {
-          babelrc: false,
-          presets: [require.resolve("@phenomic/babel-preset")],
-          plugins: [require.resolve("react-hot-loader/babel")]
-        }
+        use: [
+          {
+            loader: require.resolve("babel-loader"),
+            options: {
+              babelrc: false,
+              presets: [require.resolve("@phenomic/babel-preset")],
+              plugins: [require.resolve("react-hot-loader/babel")]
+            }
+          },
+          {
+            loader: require.resolve("eslint-loader"),
+            options: {
+              emitWarning: (process.env.NODE_ENV === "production" ? false : true)
+            }
+          }
+        ]
       },
       {
         test: /\.css$/,

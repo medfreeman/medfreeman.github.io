@@ -12,14 +12,20 @@
     "@phenomic/core": "^1.0.0-alpha.3",
     "@phenomic/preset-react-app": "^1.0.0-alpha.3",
     "babel": "^6.23.0",
+    "babel-eslint": "^7.2.3",
     "babel-register": "^6.24.1",
     "cross-env": "^5.0.1",
     "deepmerge": "^1.3.2",
+    "eslint": "^3.19.0",
+    "eslint-config-i-am-meticulous": "^6.0.1",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-react": "^7.0.1",
     "extract-text-webpack-plugin": "^2.1.2",
     "gray-matter": "^2.1.1",
     "hast-util-sanitize": "^1.1.0",
     "lodash.deburr": "^4.1.0",
     "lodash.kebabcase": "^4.1.1",
+    "npm-run-all": "^4.0.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-helmet": "^5.1.3",
@@ -33,6 +39,9 @@
     "webpack": "^2.6.1"
   },
   "scripts": {
+    "lint:js": "eslint --ignore-path .gitignore --fix .",
+    "lint": "npm-run-all --parallel lint:*",
+    "test": "yarn run lint",
     "start": "cross-env NODE_ENV=development phenomic start",
     "build": "phenomic build"
   },
@@ -40,5 +49,34 @@
     "presets": [
       "@phenomic/babel-preset"
     ]
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": "eslint-config-i-am-meticulous/react",
+    "rules": {
+      "indent": [
+        "error",
+        2
+      ],
+      "quotes": [
+        "error",
+        "double",
+        {
+          "allowTemplateLiterals": true
+        }
+      ],
+      "semi": [
+        "error",
+        "never"
+      ],
+      "react/jsx-curly-spacing": [
+        "error",
+        "always"
+      ],
+      "react/jsx-equals-spacing": [
+        "error",
+        "never"
+      ]
+    }
   }
 }
