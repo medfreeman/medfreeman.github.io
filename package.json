@@ -15,6 +15,7 @@
     "babel-register": "^6.24.1",
     "cross-env": "^5.0.1",
     "deepmerge": "^1.3.2",
+    "extract-text-webpack-plugin": "^2.1.2",
     "gray-matter": "^2.1.1",
     "hast-util-sanitize": "^1.1.0",
     "lodash.deburr": "^4.1.0",
@@ -28,7 +29,8 @@
     "remark-html": "^6.0.0",
     "remark-react": "^4.0.0",
     "remark-slug": "^4.2.2",
-    "remark-toc": "^4.0.0"
+    "remark-toc": "^4.0.0",
+    "webpack": "^2.6.1"
   },
   "scripts": {
     "start": "cross-env NODE_ENV=development phenomic start",
