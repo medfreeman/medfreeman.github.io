@@ -1,5 +1,6 @@
 import React from "react"
 import Head from "react-helmet"
+import PropTypes from "prop-types"
 
 const Layout = ({children}) => (
   <div>
@@ -17,5 +18,9 @@ const Layout = ({children}) => (
     </footer>
   </div>
 )
+
+Layout.propTypes = {
+  children: PropTypes.element
+}
 
 export default Layout

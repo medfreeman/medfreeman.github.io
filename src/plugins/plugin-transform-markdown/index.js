@@ -1,3 +1,4 @@
+/* global PhenomicConfig, PhenomicContentFile, PhenomicPlugin */
 import deburr from "lodash.deburr"
 import kebabCase from "lodash.kebabcase"
 import frontMatterParser from "gray-matter"
@@ -23,8 +24,8 @@ function transformMarkdownFile({
     // @todo should be here or user land ?
     ...(Array.isArray(front.data.tags)
       ? {
-          tags: front.data.tags.map(tag => kebabCase(deburr(tag)))
-        }
+        tags: front.data.tags.map(tag => kebabCase(deburr(tag)))
+      }
       : {})
   }
   return {

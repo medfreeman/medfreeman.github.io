@@ -1,5 +1,6 @@
 import React from "react"
 import Head from "react-helmet"
+import PropTypes from "prop-types"
 
 const PageError = ({ error }) => {
   const status = error && error.status || 404
@@ -13,6 +14,10 @@ const PageError = ({ error }) => {
       <h1>{message}</h1>
     </div>
   )
+}
+
+PageError .propTypes = {
+  error: PropTypes.object
 }
 
 export default PageError

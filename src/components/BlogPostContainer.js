@@ -1,15 +1,16 @@
-import React from 'react'
+import React from "react"
 import Head from "react-helmet"
+import PropTypes from "prop-types"
 import { createContainer, query, BodyRenderer } from "@phenomic/preset-react-app/lib/client"
 
 // multi layouts @see https://github.com/phenomic/phenomic/blob/master/packages/preset-react-app/docs/getting-started/7.md @todo !
 
-import PageError from './PageError'
-import Layout from './Layout'
+import PageError from "./PageError"
+import Layout from "./Layout"
 
 const BlogPost = ({ hasError, page }) => {
   if (hasError) {
-    return <PageError error={page.error} />
+    return <PageError error={ page.error } />
   }
 
   return (
@@ -28,6 +29,11 @@ const BlogPost = ({ hasError, page }) => {
       </div>
     </Layout>
   )
+}
+
+BlogPost.propTypes = {
+  hasError: PropTypes.bool,
+  page: PropTypes.object
 }
 
 const BlogPostContainer = createContainer(BlogPost, (props) => ({

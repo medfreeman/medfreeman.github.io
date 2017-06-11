@@ -1,5 +1,6 @@
 import React from "react"
 import Head from "react-helmet"
+import PropTypes from "prop-types"
 
 const Html = (props) => {
   const helmet = Head.renderStatic()
@@ -25,6 +26,12 @@ const Html = (props) => {
       </body>
     </html>
   )
+}
+
+Html.propTypes = {
+  body: PropTypes.string,
+  state: PropTypes.object,
+  script: PropTypes.string
 }
 
 export default Html

@@ -1,3 +1,4 @@
+/* global PhenomicConfig */
 // https://github.com/wooorm/remark
 import remark from "remark"
 // https://github.com/wooorm/remark-toc
@@ -32,7 +33,7 @@ export default (config?: PhenomicConfig, body: string) => {
     config.plugins.find(p => p.name === "@phenomic/plugin-renderer-react")
 
   if (!useReact) {
-    remarkInstance.use(html);
+    remarkInstance.use(html)
   } else {
     remarkInstance.use(reactRenderer, {
       sanitize: deepmerge(sanitizeGhSchema, {
