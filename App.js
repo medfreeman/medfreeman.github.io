@@ -2,11 +2,11 @@ import React from 'react'
 import { Router, Route, browserHistory } from 'react-router'
 import { createApp, renderApp } from '@phenomic/preset-react-app/lib/client'
 
-import Html from './components/Html'
-import PageError from './components/PageError'
+import Html from './src/components/Html'
+import PageError from './src/components/PageError'
 
-import BlogPostContainer from './components/BlogPostContainer'
-import HomeContainer from './components/HomeContainer'
+import BlogPostContainer from './src/components/BlogPostContainer'
+import HomeContainer from './src/components/HomeContainer'
 
 const routes = () => (
   <Router history={ browserHistory }>
