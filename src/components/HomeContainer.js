@@ -1,8 +1,9 @@
 import React from "react"
 import Head from "react-helmet"
 import PropTypes from "prop-types"
-import { createContainer, query, BodyRenderer } from "@phenomic/preset-react-app/lib/client"
+import { createContainer, query } from "@phenomic/preset-react-app/lib/client"
 
+import BodyRenderer from "./BodyRenderer"
 import PageError from "./PageError"
 import Layout from "./Layout"
 

@@ -3,6 +3,8 @@
 import remark from "remark"
 // https://github.com/wooorm/remark-toc
 import toc from "remark-toc"
+// https://github.com/medfreeman/remark-generic-extensions
+import genericExtensions from "remark-generic-extensions"
 // https://github.com/wooorm/remark-slug
 import slug from "remark-slug"
 // https://github.com/ben-eb/remark-autolink-headings
@@ -35,12 +37,35 @@ export default (config?: PhenomicConfig, body: string) => {
   if (!useReact) {
     remarkInstance.use(html)
   } else {
-    remarkInstance.use(reactRenderer, {
+    remarkInstance.use(genericExtensions, {
+      elements: {
+        Icon: {
+          attributeDefaultValues: {
+            floating: true,
+          },
+          hast: {
+            icon: "::argument::",
+            tooltip: "::content::"
+          }
+        }
+      }
+    })
+    .use(reactRenderer, {
       sanitize: deepmerge(sanitizeGhSchema, {
         // remove user-content from github.json to remark-slug work as expected
         clobberPrefix: "",
+        tagNames: [
+          "Icon",
+        ],
         // allow code to have className
-        attributes: { "*": ["className"] }
+        attributes: {
+          "*": ["className"],
+          Icon: [
+            "tooltip",
+            "icon",
+            "floating",
+          ]
+        }
       }),
       // we cannot rely on components from here as we are serializing this as
       // json

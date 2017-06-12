@@ -10,3 +10,5 @@ If you are new to Markdown, you might want to check those links:
 - [Mastering Markdown, a GitHub guide](https://guides.github.com/features/mastering-markdown/)
 - [wikipedia.org/wiki/Markdown](https://en.wikipedia.org/wiki/Markdown#Example)
 - [masteringmarkdown.com](http://masteringmarkdown.com/)
+
+!Icon[Hello](mf-done_all){ floating }
