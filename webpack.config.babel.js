@@ -55,6 +55,9 @@ module.exports = (config: PhenomicConfig) => {
         },
         {
           test: /\.css$/,
+          include: [
+            /typeface-roboto/
+          ],
           loader: ExtractTextPlugin.extract({
             fallback: require.resolve("style-loader"),
             use: [
@@ -65,6 +68,7 @@ module.exports = (config: PhenomicConfig) => {
         {
           test: /\.css$/,
           include: [
+            path.resolve(__dirname, "src"),
             /react-toolbox/
           ],
           loader: ExtractTextPlugin.extract({
