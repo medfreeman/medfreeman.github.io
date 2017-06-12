@@ -35,6 +35,8 @@
     "hast-util-sanitize": "^1.1.0",
     "lodash.deburr": "^4.1.0",
     "lodash.kebabcase": "^4.1.1",
+    "material-design-icons": "^3.0.1",
+    "napa": "^3.0.0",
     "npm-run-all": "^4.0.2",
     "postcss-browser-reporter": "^0.5.0",
     "postcss-cssnext": "^2.11.0",
@@ -56,9 +58,12 @@
     "stylelint-config-standard": "^16.0.0",
     "typeface-roboto": "^0.0.22",
     "url-loader": "^0.5.8",
+    "webfonts-generator": "sunflowerdeath/webfonts-generator#3f52b4e",
+    "webfonts-loader": "^1.2.0",
     "webpack": "^2.6.1"
   },
   "scripts": {
+    "install": "napa Templarian/MaterialDesign:mdi",
     "lint:js": "eslint --ignore-path .gitignore --fix .",
     "lint:css": "stylelint \"src/**/*.css\"",
     "lint": "npm-run-all --parallel lint:*",

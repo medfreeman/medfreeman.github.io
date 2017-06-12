@@ -35,7 +35,10 @@ module.exports = (config: PhenomicConfig) => {
       rules: [
         {
           test: /\.js$/,
-          exclude: /node_modules/,
+          exclude: [
+            /node_modules/,
+            /\.font\.js$/
+          ],
           use: [
             {
               loader: require.resolve("babel-loader"),
@@ -52,6 +55,23 @@ module.exports = (config: PhenomicConfig) => {
               }
             }
           ]
+        },
+        {
+          test: /\.font\.js$/,
+          loader: ExtractTextPlugin.extract({
+            fallback: require.resolve("style-loader"),
+            use: [
+              {
+                loader: require.resolve("css-loader")
+              },
+              {
+                loader: require.resolve("webfonts-loader"),
+                query: {
+                  fileName: "fonts/[fontname].[hash].[ext]"
+                }
+              }
+            ]
+          })
         },
         {
           test: /\.css$/,
@@ -99,6 +119,7 @@ module.exports = (config: PhenomicConfig) => {
           test: /\.woff(2)?$/,
           loader: require.resolve("url-loader"),
           include: [
+            /Medcons/,
             /typeface-roboto/
           ],
           query: {
@@ -111,6 +132,7 @@ module.exports = (config: PhenomicConfig) => {
           test: /\.ttf$/,
           loader: require.resolve("url-loader"),
           include: [
+            /Medcons/,
             /typeface-roboto/
           ],
           query: {
@@ -123,6 +145,7 @@ module.exports = (config: PhenomicConfig) => {
           test: /\.svg$/,
           loader: require.resolve("url-loader"),
           include: [
+            /Medcons/,
             /typeface-roboto/
           ],
           query: {
@@ -135,6 +158,7 @@ module.exports = (config: PhenomicConfig) => {
           test: /\.eot$/,
           loader: require.resolve("file-loader"),
           include: [
+            /Medcons/,
             /typeface-roboto/
           ],
           query: {

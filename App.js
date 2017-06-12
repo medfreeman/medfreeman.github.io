@@ -3,6 +3,7 @@ import "typeface-roboto"
 import { Router, Route, browserHistory } from "react-router"
 import { createApp, renderApp } from "@phenomic/preset-react-app/lib/client"
 
+import "./fonts/medfreeman.font"
 import Html from "./src/components/Html"
 import PageError from "./src/components/PageError"
 import BlogArchiveContainer from "./src/components/BlogArchiveContainer"
