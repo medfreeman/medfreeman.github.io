@@ -2,11 +2,14 @@ import React from "react"
 import Head from "react-helmet"
 import PropTypes from "prop-types"
 
+import FaviconMeta from "./FaviconMeta"
+
 const Layout = ({children}) => (
   <div>
     <Head>
       <html lang="en" /> { /* this is valid react-helmet usage! */ }
     </Head>
+    <FaviconMeta />
     <header>
       { /* ... */ }
     </header>

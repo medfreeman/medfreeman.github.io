@@ -3,6 +3,7 @@ import path from "path"
 
 import webpack from "webpack"
 import ExtractTextPlugin from "extract-text-webpack-plugin"
+import FaviconsWebpackPlugin from "favicons-webpack-plugin"
 
 const nodeModules = path.join(process.cwd(), "node_modules")
 module.exports = (config: PhenomicConfig) => {
@@ -190,7 +191,53 @@ module.exports = (config: PhenomicConfig) => {
       process.env.PHENOMIC_ENV !== "static" &&
         new webpack.HotModuleReplacementPlugin(),
       process.env.NODE_ENV === "production" &&
-        new webpack.optimize.UglifyJsPlugin()
+        new webpack.optimize.UglifyJsPlugin(),
+
+      process.env.NODE_ENV === "production"
+        ? new FaviconsWebpackPlugin({
+            logo: path.join(__dirname, "favicon.png"),
+            appName: pkg.name,
+            appDescription: pkg.description,
+            developerName: pkg.author,
+            developerURL: pkg.homepage,
+            prefix: "assets/",
+            persistentCache: false,
+            inject: false,
+            background: "#000",
+            display: "browser",
+            orientation: "portrait",
+            start_url: "",
+            icons: {
+              android: true,
+              appleIcon: true,
+              appleStartup: false,
+              coast: false,
+              favicons: true,
+              firefox: true,
+              opengraph: false,
+              twitter: false,
+              yandex: true,
+              windows: true,
+            },
+          })
+        : new FaviconsWebpackPlugin({
+            logo: path.join(__dirname, "favicon.png"),
+            prefix: "assets/",
+            persistentCache: false,
+            inject: false,
+            icons: {
+              android: false,
+              appleIcon: false,
+              appleStartup: false,
+              coast: false,
+              favicons: true,
+              firefox: false,
+              opengraph: false,
+              twitter: false,
+              yandex: false,
+              windows: false,
+            },
+          })
     ].filter(item => item),
 
     resolve: {

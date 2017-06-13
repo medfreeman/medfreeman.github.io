@@ -30,6 +30,7 @@
     "eslint-plugin-flowtype": "^2.34.0",
     "eslint-plugin-react": "^7.0.1",
     "extract-text-webpack-plugin": "^2.1.2",
+    "favicons-webpack-plugin": "^0.0.7",
     "file-loader": "^0.11.2",
     "gray-matter": "^2.1.1",
     "hast-util-sanitize": "^1.1.0",
