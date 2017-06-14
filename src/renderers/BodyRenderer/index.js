@@ -7,7 +7,7 @@ import React from "react"
 
 // @todo add Phenomic Link
 // import Link from "./Link.js"
-import TooltipIcon from "../TooltipIcon"
+import TooltipIcon from "../../components/Elements/TooltipIcon"
 
 type ComponentType = string | Class<React.Component<*, *, *>> | Function
 

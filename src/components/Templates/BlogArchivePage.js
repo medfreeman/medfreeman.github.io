@@ -1,10 +1,10 @@
 import React from "react"
 import Head from "react-helmet"
 import PropTypes from "prop-types"
-import { createContainer, query } from "@phenomic/preset-react-app/lib/client"
 import { Link } from "react-router"
 
-import Layout from "./Layout"
+import { createContainer, query } from "../../presets/preset-react-app/client"
+import Layout from "../Layout/Page"
 
 const BlogArchive =  ({ posts }) => (
   <Layout>
@@ -37,8 +37,8 @@ BlogArchive.propTypes = {
   posts: PropTypes.object
 }
 
-const HomeContainer = createContainer(BlogArchive, (props) => ({
+const BlogArchivePage = createContainer(BlogArchive, (props) => ({
   posts: query({ collection: "posts", limit: 5, after: props.params.after }),
 }))
 
-export default HomeContainer
+export default BlogArchivePage

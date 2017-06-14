@@ -1,12 +1,12 @@
 import React from "react"
 import Head from "react-helmet"
 
-import pkg from "../../../package.json"
+import pkg from "../../../../package.json"
 
 const faviconVersionString = "?v=1"
 const favicon = (file) => "assets/" + file + faviconVersionString
 
-const FaviconMeta = () => {
+const Favicon = () => {
   return (
     <Head>
       <link rel="icon" type="image/png" sizes="32x32" href={ favicon("favicon-32x32.png") } />
@@ -41,4 +41,4 @@ const FaviconMeta = () => {
   )
 }
 
-export default FaviconMeta
+export default Favicon

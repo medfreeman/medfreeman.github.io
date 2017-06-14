@@ -2,7 +2,7 @@ import React from "react"
 import Head from "react-helmet"
 import PropTypes from "prop-types"
 
-const PageError = ({ error }) => {
+const ErrorPage = ({ error }) => {
   const status = error && error.status || 404
   const message = error && status !== 404 ? error.statusText : "Page not found"
 
@@ -16,8 +16,8 @@ const PageError = ({ error }) => {
   )
 }
 
-PageError .propTypes = {
+ErrorPage.propTypes = {
   error: PropTypes.object
 }
 
-export default PageError
+export default ErrorPage

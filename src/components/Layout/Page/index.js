@@ -2,7 +2,7 @@ import React from "react"
 import Head from "react-helmet"
 import PropTypes from "prop-types"
 
-import FaviconMeta from "./FaviconMeta"
+import FaviconMeta from "../../Meta/Favicon"
 
 const Layout = ({children}) => (
   <div>
