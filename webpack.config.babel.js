@@ -78,14 +78,22 @@ module.exports = (config: PhenomicConfig) => {
           })
         },
         {
-          test: /\.css$/,
-          include: [
-            /typeface-roboto/
+          test: /\.global\.css$/,
+          include:  [
+            path.join(__dirname, "src")
           ],
           loader: ExtractTextPlugin.extract({
             fallback: require.resolve("style-loader"),
             use: [
-              require.resolve("css-loader")
+              {
+                loader: require.resolve("css-loader")
+              },
+              {
+                loader: require.resolve("postcss-loader"),
+                options: {
+                  plugins: postcssPlugins
+                }
+              }
             ]
           })
         },
@@ -94,6 +102,9 @@ module.exports = (config: PhenomicConfig) => {
           include: [
             path.join(__dirname, "src"),
             /react-toolbox/
+          ],
+          exclude: [
+            /\.global\.css$/,
           ],
           loader: ExtractTextPlugin.extract({
             fallback: require.resolve("style-loader"),
@@ -118,6 +129,18 @@ module.exports = (config: PhenomicConfig) => {
               }
             ]
           }),
+        },
+        {
+          test: /\.css$/,
+          include: [
+            /typeface-roboto/
+          ],
+          loader: ExtractTextPlugin.extract({
+            fallback: require.resolve("style-loader"),
+            use: [
+              require.resolve("css-loader")
+            ]
+          })
         },
         {
           test: /\.woff(2)?$/,

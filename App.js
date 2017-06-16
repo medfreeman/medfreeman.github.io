@@ -1,16 +1,17 @@
 /* eslint import/max-dependencies: 0 */
 import React from "react"
-import "typeface-roboto"
 import { Router, Route, Redirect, browserHistory } from "react-router"
 import { createApp, renderApp } from "@phenomic/preset-react-app/lib/client"
+import "typeface-roboto"
 
-import "./fonts/medfreeman.font"
 import Html from "./src/components/Layout/Html"
 import ErrorPage from "./src/components/Templates/ErrorPage"
 import BlogArchive from "./src/components/Templates/BlogArchive"
 import BlogPost from "./src/components/Templates/BlogPost"
 import Page from "./src/components/Templates/Page"
 import Portfolio from "./src/components/Templates/Portfolio"
+import "./fonts/medfreeman.font"
+import "./src/index.global.css"
 
 const routes = () => (
   <Router history={ browserHistory }>

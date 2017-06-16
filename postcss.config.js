@@ -5,6 +5,8 @@ module.exports = (config) => [
     features: {
       customProperties: {
         variables: {
+          colorPrimary: "#007acc",
+          colorText: "#555",
           galleryElementPadding: "5px",
           galleryElementOverlayBackgroundColor: "rgba(0,0,0,0.8)",
           galleryElementOverlayTextColor: "#FFF"
