@@ -232,6 +232,9 @@ module.exports = (config: PhenomicConfig) => {
       // react-native(-web) | react-primitives
       extensions: [".web.js", ".js", ".json"],
       alias: {
+        "masonry": "masonry-layout",
+        "isotope": "isotope-layout",
+
         "react-native": "react-native-web",
 
         // to ensure a single module is used
