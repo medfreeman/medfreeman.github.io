@@ -18,6 +18,7 @@
     "@phenomic/plugin-transform-json": "^1.0.0-alpha.3",
     "@phenomic/preset-react-app": "^1.0.0-alpha.3",
     "babel-eslint": "^7.2.3",
+    "babel-plugin-transform-function-bind": "^6.22.0",
     "babel-register": "^6.24.1",
     "cross-env": "^5.0.1",
     "css-loader": "^0.28.4",
