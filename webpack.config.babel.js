@@ -108,10 +108,9 @@ module.exports = (config: PhenomicConfig) => {
               },
               {
                 loader: require.resolve("postcss-loader"),
-                // query for postcss can't be used right now
-                // https://github.com/postcss/postcss-loader/issues/99
-                // meanwhile, see webpack.LoaderOptionsPlugin in plugins list
-                // query: { plugins: postcssPlugins },
+                options: {
+                  plugins: postcssPlugins
+                }
               },
             ],
           }),
@@ -169,21 +168,6 @@ module.exports = (config: PhenomicConfig) => {
       ]
     },
     plugins: [
-      // You should be able to remove the block below when the following
-      // issue has been correctly handled (and postcss-loader supports
-      // "plugins" option directly in query, see postcss-loader usage above)
-      // https://github.com/postcss/postcss-loader/issues/99
-      new webpack.LoaderOptionsPlugin({
-        test: /\.css$/,
-        options: {
-          postcss: postcssPlugins,
-          // required to avoid issue css-loader?modules
-          // this is normally the default value, but when we use
-          // LoaderOptionsPlugin, we must specify it again, otherwise,
-          // context is missing (and css modules names can be broken)!
-          context: __dirname,
-        },
-      }),
       new ExtractTextPlugin({
         filename: "styles.css",
         disable: process.env.PHENOMIC_ENV !== "static"
