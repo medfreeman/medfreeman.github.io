@@ -7,7 +7,7 @@ import Layout from "../Layout/Page"
 
 import ErrorPage from "./ErrorPage"
 
-const Home = ({ hasError, page }) => {
+const PageComponent = ({ hasError, page }) => {
   if (hasError) {
     return <ErrorPage error={ page.error } />
   }
@@ -30,13 +30,13 @@ const Home = ({ hasError, page }) => {
   )
 }
 
-Home.propTypes = {
+PageComponent.propTypes = {
   hasError: PropTypes.bool,
   page: PropTypes.object
 }
 
-const HomePage = createContainer(Home, (props) => ({
-  page: query({ collection: "pages", id: "home", ...props }),
+const Page = createContainer(PageComponent, (props) => ({
+  page: query({ collection: "pages", id: props.params.splat || "home", ...props }),
 }))
 
-export default HomePage
+export default Page
