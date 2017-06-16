@@ -46,7 +46,9 @@ module.exports = (config: PhenomicConfig) => {
               options: {
                 babelrc: false,
                 presets: [require.resolve("@phenomic/babel-preset")],
-                plugins: [require.resolve("react-hot-loader/babel")]
+                plugins: [
+                  require.resolve("react-hot-loader/babel")
+                ]
               }
             },
             {
@@ -89,7 +91,7 @@ module.exports = (config: PhenomicConfig) => {
         {
           test: /\.css$/,
           include: [
-            path.resolve(__dirname, "src"),
+            path.join(__dirname, "src"),
             /react-toolbox/
           ],
           loader: ExtractTextPlugin.extract({
@@ -97,8 +99,9 @@ module.exports = (config: PhenomicConfig) => {
             use: [
               {
                 loader: require.resolve("css-loader"),
-                query: {
+                options: {
                   modules: true,
+                  importLoaders: 1,
                   localIdentName: (
                     process.env.NODE_ENV === "production"
                     ? "[hash:base64:5]"
@@ -111,8 +114,8 @@ module.exports = (config: PhenomicConfig) => {
                 options: {
                   plugins: postcssPlugins
                 }
-              },
-            ],
+              }
+            ]
           }),
         },
         {
