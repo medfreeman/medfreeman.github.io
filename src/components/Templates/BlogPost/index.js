@@ -2,12 +2,13 @@ import React from "react"
 import Head from "react-helmet"
 import PropTypes from "prop-types"
 
-import { createContainer, query, BodyRenderer } from "../../presets/preset-react-app/client"
-import Layout from "../Layout/Page"
+// multi layouts @see https://github.com/phenomic/phenomic/blob/master/packages/preset-react-app/docs/getting-started/7.md @todo !
 
-import ErrorPage from "./ErrorPage"
+import { createContainer, query, BodyRenderer } from "../../../presets/preset-react-app/client"
+import Layout from "../../Layout/Page"
+import ErrorPage from "../ErrorPage"
 
-const PageComponent = ({ hasError, page }) => {
+const BlogPostComponent = ({ hasError, page }) => {
   if (hasError) {
     return <ErrorPage error={ page.error } />
   }
@@ -30,13 +31,13 @@ const PageComponent = ({ hasError, page }) => {
   )
 }
 
-PageComponent.propTypes = {
+BlogPostComponent.propTypes = {
   hasError: PropTypes.bool,
   page: PropTypes.object
 }
 
-const Page = createContainer(PageComponent, (props) => ({
-  page: query({ collection: "pages", id: props.params.splat || "home", ...props }),
+const BlogPost = createContainer(BlogPostComponent, (props) => ({
+  page: query({ collection: "posts", id: props.params.splat }),
 }))
 
-export default Page
+export default BlogPost

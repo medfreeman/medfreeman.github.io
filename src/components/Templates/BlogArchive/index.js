@@ -3,10 +3,10 @@ import Head from "react-helmet"
 import PropTypes from "prop-types"
 import { Link } from "react-router"
 
-import { createContainer, query } from "../../presets/preset-react-app/client"
-import Layout from "../Layout/Page"
+import { createContainer, query } from "../../../presets/preset-react-app/client"
+import Layout from "../../Layout/Page"
 
-const BlogArchive =  ({ posts }) => (
+const BlogArchiveComponent =  ({ posts }) => (
   <Layout>
     <div>
       <Head>
@@ -33,12 +33,12 @@ const BlogArchive =  ({ posts }) => (
   </Layout>
 )
 
-BlogArchive.propTypes = {
+BlogArchiveComponent.propTypes = {
   posts: PropTypes.object
 }
 
-const BlogArchivePage = createContainer(BlogArchive, (props) => ({
+const BlogArchive = createContainer(BlogArchiveComponent, (props) => ({
   posts: query({ collection: "posts", limit: 5, after: props.params.after }),
 }))
 
-export default BlogArchivePage
+export default BlogArchive
