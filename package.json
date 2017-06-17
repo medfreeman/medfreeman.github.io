@@ -80,7 +80,7 @@
     "lint": "npm-run-all --parallel lint:*",
     "test": "yarn run lint",
     "start": "cross-env NODE_ENV=development phenomic start",
-    "build": "phenomic build"
+    "build": "cross-env NODE_ENV=production phenomic build"
   },
   "babel": {
     "presets": [
