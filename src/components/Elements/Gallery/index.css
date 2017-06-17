@@ -7,20 +7,15 @@
   height: 266px;
   padding: var(--galleryElementPadding);
 
-  z-index: 1;
-  transition: transform 0.5s, z-index 0.5s;
-
   & .gallery-item {
     width: 222px;
   }
 
+  z-index: 1;
+  transition: z-index 0.5s;
+
   &:hover {
     z-index: 1000;
-    transform: scale3d(1.25, 1.25, 1);
-  }
-
-  &:hover .gallery-item-overlay {
-    opacity: 1;
   }
 }
 
@@ -38,6 +33,18 @@
   height: 522px;
 }
 
+.gallery-item-container-inner {
+  transition: transform 0.5s;
+
+  &:hover {
+    transform: scale3d(1.25, 1.25, 1);
+  }
+
+  &:hover .gallery-item-overlay {
+    opacity: 1;
+  }
+}
+
 .gallery-item {
   padding: 0;
 
@@ -53,10 +60,10 @@
 
 .gallery-item-overlay {
   position: absolute;
-  left: var(--galleryElementPadding);
-  right: var(--galleryElementPadding);
-  top: var(--galleryElementPadding);
-  bottom: var(--galleryElementPadding);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 
   border-radius: 10px;
 

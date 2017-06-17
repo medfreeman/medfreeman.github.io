@@ -40,21 +40,26 @@ class Gallery extends React.Component {
             )
           }
         >
-          <div className={ styles["gallery-item"] }>
-            <a
-              href={ element.url }
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              <img src={ elementImage } />
-              <div className={ styles["gallery-item-overlay"] }>
-                <h2>{ element.title }</h2>
-                {element.subtitle &&
-                  <h4 className={ styles["gallery-item-subtitle"] }>{ element.subtitle }</h4>
-                }
-                <span>{ element.year }</span>
-              </div>
-            </a>
+          <div
+            key={ index }
+            className={ styles["gallery-item-container-inner"] }
+          >
+            <div className={ styles["gallery-item"] }>
+              <a
+                href={ element.url }
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <img src={ elementImage } />
+                <div className={ styles["gallery-item-overlay"] }>
+                  <h2>{ element.title }</h2>
+                  {element.subtitle &&
+                    <h4 className={ styles["gallery-item-subtitle"] }>{ element.subtitle }</h4>
+                  }
+                  <span>{ element.year }</span>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       )
