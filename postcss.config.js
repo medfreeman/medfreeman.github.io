@@ -4,7 +4,7 @@ module.exports = () => [
     "browserslist": "last 3 versions"
   }),
   require("postcss-cssnext")({
-    browsers: "last 2 versions",
+    browsers: "last 3 versions",
     features: {
       customProperties: {
         variables: {
