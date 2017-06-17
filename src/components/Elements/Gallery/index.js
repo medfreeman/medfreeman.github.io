@@ -22,12 +22,12 @@ class Gallery extends React.Component {
     ]
 
     this.elements = shuffle(this.props.elements).map((element, index) => {
-      let containerClass = "gallery-item-container--small"
+      let containerClass = "gallery__container--small"
       let elementImage = element.image
       if ( ! /\.(png|jpe?g|svg)$/.test(element.image) ) {
         const imageKey = path.basename(element.image)
         const imageSize = rwc(this.sizeArray)
-        containerClass = `gallery-item-container--${imageSize}`
+        containerClass = `gallery__container--${imageSize}`
         elementImage = path.join(element.image, `${imageKey}-${imageSize}.png` )
       }
       return (
@@ -35,26 +35,26 @@ class Gallery extends React.Component {
           key={ index }
           className={
             cx(
-              styles["gallery-item-container"],
+              styles["gallery__container"],
               styles[containerClass],
             )
           }
         >
           <div
             key={ index }
-            className={ styles["gallery-item-container-inner"] }
+            className={ styles["gallery__container-inner"] }
           >
-            <div className={ styles["gallery-item"] }>
+            <div className={ styles["gallery__item"] }>
               <a
                 href={ element.url }
                 target="_blank"
                 rel="noreferrer noopener"
               >
                 <img src={ elementImage } />
-                <div className={ styles["gallery-item-overlay"] }>
+                <div className={ styles["gallery__item-overlay"] }>
                   <h2>{ element.title }</h2>
                   {element.subtitle &&
-                    <h4 className={ styles["gallery-item-subtitle"] }>{ element.subtitle }</h4>
+                    <h4 className={ styles["gallery__item-subtitle"] }>{ element.subtitle }</h4>
                   }
                   <span>{ element.year }</span>
                 </div>
@@ -72,7 +72,7 @@ class Gallery extends React.Component {
         className={ styles.gallery }
         isoOptions={
         {
-          itemSelector: `.${styles["gallery-item-container"]}`,
+          itemSelector: `.${styles["gallery__container"]}`,
           layoutMode: "packery",
           packery: {
             gutter: 10
