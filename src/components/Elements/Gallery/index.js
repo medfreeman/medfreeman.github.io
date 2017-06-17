@@ -71,7 +71,7 @@ class Gallery extends React.Component {
           layoutMode: "packery",
           packery: {
             gutter: 10
-          },
+          }
         }
         }
       >
