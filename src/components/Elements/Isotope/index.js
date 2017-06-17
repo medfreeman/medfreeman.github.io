@@ -17,7 +17,7 @@ class Isotope extends React.PureComponent {
   }
 
   componentDidMount() {
-    if ( ! isBrowser ) {
+    if ( !isBrowser ) {
       return
     }
 
@@ -31,7 +31,7 @@ class Isotope extends React.PureComponent {
     }
 
     // Only arrange if there are elements to arrange
-    if (this::get("props.children.length", 0) > 0) {
+    if (this.props::get("children.length", 0)) {
       this.scheduleArrange()
     }
   }
@@ -49,7 +49,7 @@ class Isotope extends React.PureComponent {
     // Find which keys have been removed between the current set of keys and any new children passed to this component
     const removeKeys = difference(currentKeys, newKeys)
 
-    if (removeKeys.length > 0) {
+    if (removeKeys.length) {
       removeKeys.forEach(
         (key) => {
           this.iso.remove(document.getElementById(key))
@@ -57,7 +57,7 @@ class Isotope extends React.PureComponent {
       )
       this.scheduleArrange()
     }
-    if (addKeys.length > 0) {
+    if (addKeys.length) {
       this.iso.addItems(addKeys::map((addKey) => document.getElementById(addKey)))
       this.scheduleArrange()
     }
@@ -70,7 +70,7 @@ class Isotope extends React.PureComponent {
   }
 
   scheduleArrange() {
-    if ( ! this.props.disableImagesLoaded ) {
+    if ( !this.props.disableImagesLoaded ) {
       this.imagesLoaded()
     } else {
       this.iso.arrange()
