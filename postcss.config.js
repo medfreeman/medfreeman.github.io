@@ -1,7 +1,9 @@
 module.exports = () => [
   require("stylelint")(),
-  require("postcss-normalize")({
-    "browserslist": "last 3 versions"
+  require("postcss-plugin-context")({
+    global: require("postcss-normalize")({
+      "browserslist": "last 3 versions"
+    })
   }),
   require("postcss-cssnext")({
     browsers: "last 3 versions",

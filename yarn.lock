@@ -5909,6 +5909,12 @@ postcss-ordered-values@^2.1.0:
     postcss "^5.0.4"
     postcss-value-parser "^3.0.1"
 
+postcss-plugin-context@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/postcss-plugin-context/-/postcss-plugin-context-2.0.0.tgz#ba1a467969d5dfbf812b596974538a55535f5ef7"
+  dependencies:
+    postcss "^5.0.2"
+
 postcss-pseudo-class-any-link@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/postcss-pseudo-class-any-link/-/postcss-pseudo-class-any-link-1.0.0.tgz#903239196401d335fe73ac756186fa62e693af26"

@@ -1,4 +1,6 @@
-@import-normalize;
+@context global {
+  @import-normalize;
+}
 
 /*
  * box model like it should be
