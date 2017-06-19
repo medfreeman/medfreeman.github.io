@@ -1,7 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Button from "react-toolbox/lib/button"
+import { Button } from "react-toolbox/lib/button"
 import Tooltip from "react-toolbox/lib/tooltip"
+
+import Icon from "../Icon"
 
 import theme from "./index.css"
 
@@ -10,13 +12,6 @@ const TooltipButton = Tooltip(Button)
 const TooltipIcon = props => {
 
   const { floating, ...otherProps } = props
-  if ( props.icon && props.icon.startsWith("mf-") ) {
-    otherProps.icon = (
-      <i className={ "mf-icons" }>
-        { props.icon.substr(3) }
-      </i>
-    )
-  }
   if (floating === "true") {
     otherProps.floating = true
   }
@@ -25,6 +20,7 @@ const TooltipIcon = props => {
     <TooltipButton
       { ...otherProps }
       theme={ theme }
+      icon={ <Icon icon={ props.icon } /> }
     />
   )
 }

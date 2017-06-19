@@ -11,4 +11,4 @@ If you are new to Markdown, you might want to check those links:
 - [wikipedia.org/wiki/Markdown](https://en.wikipedia.org/wiki/Markdown#Example)
 - [masteringmarkdown.com](http://masteringmarkdown.com/)
 
-!Icon[Hello](mf-done_all){ floating }
+!Icon[Hello](done_all){ floating }
