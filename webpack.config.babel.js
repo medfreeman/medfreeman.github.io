@@ -206,6 +206,11 @@ module.exports = (config: PhenomicConfig) => {
       process.env.NODE_ENV === "production" &&
         new webpack.optimize.UglifyJsPlugin(),
 
+      new webpack.DefinePlugin({
+        PHENOMIC_ENV: JSON.stringify(process.env.NODE_ENV),
+        PHENOMIC_URL: process.env.URL ? JSON.stringify(process.env.URL) : JSON.stringify("http://localhost:" + config.port)
+      }),
+
       process.env.NODE_ENV === "production"
         ? new FaviconsWebpackPlugin({
           logo: path.join(__dirname, "favicon.png"),
