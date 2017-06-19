@@ -18,7 +18,7 @@ module.exports = () => [
     },
   }),
   require("postcss-reporter")(),
-  ...(!process.env.NODE_ENV === "production") ? [
+  ...(process.env.NODE_ENV !== "production") ? [
     require("postcss-browser-reporter")(),
   ] : [],
 ]
