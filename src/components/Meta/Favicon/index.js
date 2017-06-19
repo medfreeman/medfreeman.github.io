@@ -1,19 +1,23 @@
+import url from "url"
+
 import React from "react"
 import Head from "react-helmet"
 
 import pkg from "../../../../package.json"
 
 const faviconVersionString = "?v=1"
-const favicon = (file) => "assets/" + file + faviconVersionString
+const favicon = (file) => url.resolve(PHENOMIC_URL, "/assets/") + file + faviconVersionString
 
 const Favicon = () => {
   return (
-    <Head>
-      <link rel="icon" type="image/png" sizes="32x32" href={ favicon("favicon-32x32.png") } />
-      <link rel="icon" type="image/png" sizes="16x16" href={ favicon("favicon-16x16.png") } />
-      <link rel="shortcut icon" href={ favicon("favicon.ico") } />
-    { process.env.NODE_ENV === "production" &&
-      <div>
+    <div hidden>
+      <Head>
+        <link rel="icon" type="image/png" sizes="32x32" href={ favicon("favicon-32x32.png") } />
+        <link rel="icon" type="image/png" sizes="16x16" href={ favicon("favicon-16x16.png") } />
+        <link rel="shortcut icon" href={ favicon("favicon.ico") } />
+      </Head>
+    { PHENOMIC_ENV === "production" &&
+      <Head>
         <link rel="manifest" href={ favicon("manifest.json") } />
         <link rel="yandex-tableau-widget" href={ favicon("yandex-browser-manifest.json") } />
         <link rel="apple-touch-icon" sizes="57x57" href={ favicon("apple-touch-icon-57x57.png") } />
@@ -35,9 +39,9 @@ const Favicon = () => {
         <meta name="msapplication-TileColor" content="#000" />
         <meta name="msapplication-TileImage" content={ favicon("mstile-144x144.png") } />
         <meta name="msapplication-config" content={ favicon("browserconfig.xml") } />
-      </div>
+      </Head>
     }
-    </Head>
+    </div>
   )
 }
 
