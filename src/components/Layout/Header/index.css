@@ -1,0 +1,10 @@
+.appBar {
+  background-color: #000;
+}
+
+.svg--logo {
+  margin: auto;
+  vertical-align: middle;
+  display: inline-block;
+  height: 36px;
+}

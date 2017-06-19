@@ -3,6 +3,7 @@ import React from "react"
 import Head from "react-helmet"
 import PropTypes from "prop-types"
 
+import Header from "../Header"
 import FaviconMeta from "../../Meta/Favicon"
 
 const Layout = ({children}) => (
@@ -17,7 +18,7 @@ const Layout = ({children}) => (
     }
     <FaviconMeta />
     <header>
-      { /* ... */ }
+      <Header />
     </header>
     <div>{ children }</div>
     <footer>

@@ -11,6 +11,7 @@ const mdi = function(icon) {
 module.exports = {
   "files": [
     mdi("react"),
+    mdi("github"),
     material("action", "ic_done_all_24px")
   ],
   "fontName": "Medcons",
