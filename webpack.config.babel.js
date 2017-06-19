@@ -193,6 +193,28 @@ module.exports = (config: PhenomicConfig) => {
           query: {
             name: "fonts/[name].[hash].[ext]"
           }
+        },
+        // svg as raw string to be inlined
+        {
+          test: /\.svg$/,
+          include: [
+            path.join(__dirname, "src/icons"),
+          ],
+          use: [
+            {
+              loader: "raw-loader",
+            },
+            {
+              loader: "svgo-loader",
+              options: {
+                plugins: [
+                  { removeTitle: true, removeDesc: true },
+                  { convertColors: { shorthex: false } },
+                  { convertPathData: false },
+                ],
+              },
+            },
+          ],
         }
       ]
     },

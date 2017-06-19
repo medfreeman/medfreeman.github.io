@@ -1559,7 +1559,7 @@ clap@^1.0.9:
   dependencies:
     chalk "^1.1.3"
 
-classnames@^2.2.5:
+classnames@^2.2.1, classnames@^2.2.5:
   version "2.2.5"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
 
@@ -4414,7 +4414,7 @@ loader-utils@^0.2.11, loader-utils@^0.2.14, loader-utils@^0.2.16:
     json5 "^0.5.0"
     object-assign "^4.0.1"
 
-loader-utils@^1.0.2, loader-utils@^1.1.0:
+loader-utils@^1.0.2, loader-utils@^1.0.3, loader-utils@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-1.1.0.tgz#c98aef488bcceda2ffb5e2de646d6a754429f5cd"
   dependencies:
@@ -6276,6 +6276,10 @@ range-parser@^1.0.3, range-parser@~1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/range-parser/-/range-parser-1.2.0.tgz#f49be6b487894ddc40dcc94a322f611092e00d5e"
 
+raw-loader@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/raw-loader/-/raw-loader-0.5.1.tgz#0c3d0beaed8a01c966d9787bf778281252a979aa"
+
 rc@^1.1.2, rc@^1.1.6, rc@^1.1.7:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/rc/-/rc-1.2.1.tgz#2e03e8e42ee450b8cb3dce65be1bf8974e1dfd95"
@@ -6355,6 +6359,13 @@ react-style-proptype@^3.0.0:
   resolved "https://registry.yarnpkg.com/react-style-proptype/-/react-style-proptype-3.0.0.tgz#89e0b646f266c656abb0f0dd8202dbd5036c31e6"
   dependencies:
     prop-types "^15.5.4"
+
+react-svg-inline@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-svg-inline/-/react-svg-inline-2.0.0.tgz#0a4f60895588eecc7616af3a511d087801163600"
+  dependencies:
+    classnames "^2.2.1"
+    prop-types "^15.5.8"
 
 react-toolbox@^2.0.0-beta.12:
   version "2.0.0-beta.12"
@@ -7451,6 +7462,12 @@ svgicons2svgfont@^5.0.0:
     string.fromcodepoint "^0.2.1"
     string.prototype.codepointat "^0.2.0"
     svg-pathdata "^1.0.3"
+
+svgo-loader@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/svgo-loader/-/svgo-loader-1.2.1.tgz#e255cdebf56753ff83bd28d1d7a20762c0df5130"
+  dependencies:
+    loader-utils "^1.0.3"
 
 svgo@^0.7.0:
   version "0.7.2"
