@@ -1,5 +1,6 @@
 import path from "path"
 
+import joinURL from "url-join"
 import React from "react"
 import PropTypes from "prop-types"
 import cx from "classnames"
@@ -28,8 +29,9 @@ class Gallery extends React.Component {
         const imageKey = path.basename(element.image)
         const imageSize = rwc(this.sizeArray)
         containerClass = `gallery__container--${imageSize}`
-        elementImage = path.join(element.image, `${imageKey}-${imageSize}.png` )
+        elementImage = path.join(element.image, `${imageKey}-${imageSize}.png`)
       }
+      elementImage = joinURL(PHENOMIC_URL, elementImage)
       return (
         <div
           key={ index }

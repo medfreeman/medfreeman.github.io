@@ -1,12 +1,11 @@
-import url from "url"
-
+import joinURL from "url-join"
 import React from "react"
 import Head from "react-helmet"
 
 import pkg from "../../../../package.json"
 
 const faviconVersionString = "?v=1"
-const favicon = (file) => url.resolve(PHENOMIC_URL, "/assets/") + file + faviconVersionString
+const favicon = (file) => joinURL(PHENOMIC_URL, "assets", file, faviconVersionString)
 
 const Favicon = () => {
   return (
