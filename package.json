@@ -90,6 +90,7 @@
     "remark-slug": "^4.2.2",
     "remark-toc": "^4.0.0",
     "stylelint": "^7.11.1",
+    "stylelint-config-css-modules": "^1.0.0",
     "stylelint-config-standard": "^16.0.0",
     "svgo-loader": "^1.2.1",
     "typeface-roboto": "^0.0.22",
@@ -147,9 +148,21 @@
     }
   },
   "stylelint": {
-    "extends": "stylelint-config-standard",
+    "extends": [
+      "stylelint-config-standard",
+      "stylelint-config-css-modules"
+    ],
     "rules": {
-      "declaration-empty-line-before": null
+      "declaration-empty-line-before": null,
+      "at-rule-no-unknown": [
+        true,
+        {
+          "ignoreAtRules": [
+            "context",
+            "import-normalize"
+          ]
+        }
+      ]
     }
   }
 }
