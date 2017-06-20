@@ -9,15 +9,6 @@ import pkg from "./package.json"
 
 const nodeModules = path.join(process.cwd(), "node_modules")
 module.exports = (config: PhenomicConfig) => {
-  // hot loading for postcss config
-  // until this is officially supported
-  // https://github.com/postcss/postcss-loader/issues/66
-  const postcssPluginFile = require.resolve("./postcss.config.js")
-  const postcssPlugins = (webpackInstance) => {
-    webpackInstance.addDependency(postcssPluginFile)
-    delete require.cache[postcssPluginFile]
-    return require(postcssPluginFile)(config)
-  }
 
   return {
     entry: {
@@ -91,10 +82,7 @@ module.exports = (config: PhenomicConfig) => {
                 loader: require.resolve("css-loader")
               },
               {
-                loader: require.resolve("postcss-loader"),
-                options: {
-                  plugins: postcssPlugins
-                }
+                loader: require.resolve("postcss-loader")
               }
             ]
           })
@@ -124,10 +112,7 @@ module.exports = (config: PhenomicConfig) => {
                 },
               },
               {
-                loader: require.resolve("postcss-loader"),
-                options: {
-                  plugins: postcssPlugins
-                }
+                loader: require.resolve("postcss-loader")
               }
             ]
           }),
