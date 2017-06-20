@@ -6,6 +6,8 @@ import PropTypes from "prop-types"
 import Header from "../Header"
 import FaviconMeta from "../../Meta/Favicon"
 
+import styles from "./index.css"
+
 const Layout = ({children}) => (
   <div>
     <Head>
@@ -20,7 +22,7 @@ const Layout = ({children}) => (
     <header>
       <Header />
     </header>
-    <div>{ children }</div>
+    <div className={ styles["container"] }>{ children }</div>
     <footer>
       { /* ... */ }
     </footer>
