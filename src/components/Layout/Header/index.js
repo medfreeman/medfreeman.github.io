@@ -30,6 +30,7 @@ const Header = () => (
         label="Home" />
       <Link to="/portfolio/" label="Portfolio" />
       <Link to="/blog/" label="Blog" />
+      <Link to="/about-me/" label="About Me" />
     </Navigation>
   </AppBar>
 )
