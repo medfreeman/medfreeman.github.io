@@ -18,7 +18,7 @@ const Link = (props) => {
   }
 
   return (
-    <RouterLink to={ to }>
+    <RouterLink to={ to } activeClassName={ styles.active }>
       <Button neutral={ false } theme={ theme || styles } { ...otherProps } />
     </RouterLink>
   )
