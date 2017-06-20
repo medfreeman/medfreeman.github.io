@@ -9,6 +9,9 @@ module.exports = () => [
     variables: {
       colorPrimary: "#007acc",
       colorText: "#555",
+      headerBackgroundColor: "#000",
+      menuLinkColor: "#fff",
+      menuLinkActiveBackgroundColor: "rgba(255, 255, 255, 0.3)",
       containerTopMargin: "64px",
       containerHorizontalMargin: "60px",
       containerTopPadding: "10px",

@@ -1,5 +1,5 @@
 .appBar {
-  background-color: #000;
+  background-color: var(--headerBackgroundColor);
 }
 
 .svg--logo {
