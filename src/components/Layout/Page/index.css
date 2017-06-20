@@ -1,4 +1,4 @@
 .container {
-  margin: var(--containerTopMargin) var(--containerHorizontalMargin) 0;
-  padding-top: var(--containerTopPadding);
+  margin-top: var(--containerTopMargin);
+  padding: var(--containerTopPadding) var(--containerHorizontalPadding) 0;
 }
