@@ -20,7 +20,6 @@ const PageComponent = ({ hasError, page }) => {
               <title>{ page.node.title }</title>
               <meta name="description" content={ "" /* page.node.body.slice(0, 50)*/ } />
             </Head>
-            <h1>{ page.node.title }</h1>
             <BodyRenderer>{ page.node.body }</BodyRenderer>
           </article>
         )}
