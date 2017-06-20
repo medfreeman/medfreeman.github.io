@@ -9,7 +9,8 @@ module.exports = () => [
     variables: {
       colorPrimary: "#007acc",
       colorText: "#555",
-      containerMargin: "60px",
+      containerTopMargin: "64px",
+      containerHorizontalMargin: "60px",
       galleryElementPadding: "5px",
       galleryElementOverlayBackgroundColor: "rgba(0,0,0,0.8)",
       galleryElementOverlayTextColor: "#FFF"
