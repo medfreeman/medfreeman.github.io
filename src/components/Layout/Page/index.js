@@ -19,9 +19,7 @@ const Layout = ({children}) => (
       </Head>
     }
     <FaviconMeta />
-    <header>
-      <Header />
-    </header>
+    <Header />
     <div className={ styles["container"] }>{ children }</div>
     <footer>
       { /* ... */ }
