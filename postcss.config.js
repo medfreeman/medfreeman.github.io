@@ -11,6 +11,7 @@ module.exports = () => [
       colorText: "#555",
       containerTopMargin: "64px",
       containerHorizontalMargin: "60px",
+      containerTopPadding: "10px",
       galleryElementPadding: "5px",
       galleryElementOverlayBackgroundColor: "rgba(0,0,0,0.8)",
       galleryElementOverlayTextColor: "#FFF"
