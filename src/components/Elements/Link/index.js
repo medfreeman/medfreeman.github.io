@@ -10,7 +10,11 @@ import styles from "./index.css"
 const Link = (props) => {
   const { icon, theme, to, ...otherProps } = props
   if (icon) {
-    otherProps.icon = ( <Icon icon={ props.icon } /> )
+    if (typeof icon === "string") {
+      otherProps.icon = ( <Icon icon={ icon } /> )
+    } else {
+      otherProps.icon = icon
+    }
   }
 
   return (
@@ -21,7 +25,10 @@ const Link = (props) => {
 }
 
 Link.propTypes = {
-  icon: PropTypes.string,
+  icon: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object
+  ]),
   label: PropTypes.string,
   theme: PropTypes.object,
   to: PropTypes.string.isRequired
