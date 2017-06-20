@@ -29,6 +29,7 @@ const Header = () => (
         }
         label="Home" />
       <Link to="/portfolio/" label="Portfolio" />
+      <Link to="/blog/" label="Blog" />
     </Navigation>
   </AppBar>
 )
