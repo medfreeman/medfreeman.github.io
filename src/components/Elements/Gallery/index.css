@@ -38,10 +38,10 @@
 
   &:hover {
     transform: scale3d(1.25, 1.25, 1);
-  }
 
-  &:hover .gallery__item-overlay {
-    opacity: 1;
+    & .gallery__item-overlay {
+      opacity: 1;
+    }
   }
 }
 
