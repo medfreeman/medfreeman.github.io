@@ -9,7 +9,7 @@
 }
 
 .externalReference {
-  composes: f6 from 'tachyons-type-scale';
+  font-size: 0.875rem;
   composes: o-60 from 'tachyons-opacity';
   line-height: 16px;
   color: inherit;
@@ -18,7 +18,7 @@
 
 .reactSvg {
   composes: dib from 'tachyons-display';
-  composes: center from 'tachyons-utilities';
+  text-align: center;
   vertical-align: middle;
 }
 
