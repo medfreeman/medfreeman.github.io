@@ -7,7 +7,6 @@ import React from "react"
 
 // @todo add Phenomic Link
 // import Link from "./Link.js"
-import TooltipIcon from "../../components/Elements/TooltipIcon"
 
 type ComponentType = string | Class<React.Component<*, *, *>> | Function
 
@@ -39,7 +38,6 @@ type PropsType = OptionsType & {
 const defaultOptions: OptionsType = {
   components: {
     // a: Link
-    Icon: TooltipIcon
   }
 }
 
