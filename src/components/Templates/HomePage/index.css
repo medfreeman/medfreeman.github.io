@@ -32,5 +32,5 @@
 }
 
 .text {
-  composes: white-80 from 'tachyons-skins';
+  composes: white-90 from 'tachyons-skins';
 }

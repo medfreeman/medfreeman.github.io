@@ -21,9 +21,9 @@ const HomePage = () => {
               { "I'm a software and devOps engineer" }
             </span>
           </h1>
-          <p className={ styles.text }>
+          <a className={ styles.text } href="mailto:mehdi.lahlou.ml@gmail.com">
             { "Hire Me!" }
-          </p>
+          </a>
         </article>
       </div>
     </Layout>
