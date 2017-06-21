@@ -4,9 +4,11 @@
 // because it's a bit dumb
 
 import React from "react"
+import cx from "classnames"
 
 // @todo add Phenomic Link
 // import Link from "./Link.js"
+import { get } from "../../utils/object"
 
 type ComponentType = string | Class<React.Component<*, *, *>> | Function
 
@@ -32,7 +34,8 @@ type ItemType =
     }
 
 type PropsType = OptionsType & {
-  children?: string | ItemType
+  children?: string | ItemType,
+  theme?: Object
 }
 
 const defaultOptions: OptionsType = {
@@ -48,14 +51,24 @@ const render = (item: ItemType, options: OptionsType, key: ?any) => {
   if (typeof item === "string") {
     return item
   }
-  const { p: props = {}, c: children } = item
+  const { p: properties = {}, c: children } = item
+  const { className, ...otherProps } = properties
   const Tag =
     (options.components && item.t && options.components[item.t]) ||
     item.t ||
     options.DefaultComponent ||
     "div"
   return (
-    <Tag { ...props } key={ key }>
+    <Tag
+      className={
+        cx(
+          options::get(`theme.${Tag}`, null),
+          className
+        )
+      }
+      { ...otherProps }
+      key={ key }
+    >
       {Array.isArray(children)
         ? children.map((child: ItemType, key) => render(child, options, key))
         : render(children, options)}
