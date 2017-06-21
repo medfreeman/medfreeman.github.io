@@ -6,6 +6,7 @@ import "typeface-roboto"
 
 import Html from "./src/components/Layout/Html"
 import ErrorPage from "./src/components/Templates/ErrorPage"
+import HomePage from "./src/components/Templates/HomePage"
 import BlogArchive from "./src/components/Templates/BlogArchive"
 import BlogPost from "./src/components/Templates/BlogPost"
 import Page from "./src/components/Templates/Page"
@@ -15,7 +16,7 @@ import "./src/index.global.css"
 
 const routes = () => (
   <Router history={ browserHistory }>
-    <Route path="/" component={ Page } />
+    <Route path="/" component={ HomePage } />
     <Route path="/portfolio" component={ Portfolio } />
     <Route path="/blog/" component={ BlogArchive } />
     <Route path="/blog/after/:after" component={ BlogArchive } />

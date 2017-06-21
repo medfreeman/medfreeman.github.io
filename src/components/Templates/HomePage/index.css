@@ -1,0 +1,36 @@
+.background {
+  background-color: var(--colorSecondary);
+}
+
+.container {
+  width: 100%;
+}
+
+.article {
+  composes: mw9 from 'tachyons-max-widths';
+  composes: center from 'tachyons-utilities';
+  composes: pa4 from 'tachyons-spacing';
+  composes: pt5-ns from 'tachyons-spacing';
+  composes: ph7-l from 'tachyons-spacing';
+}
+
+.title {
+  composes: f2 from 'tachyons-type-scale';
+  composes: f1-m from 'tachyons-type-scale';
+  composes: f-headline-l from 'tachyons-type-scale';
+  composes: measure-narrow from 'tachyons-typography';
+  composes: lh-title from 'tachyons-line-height';
+  composes: mv0 from 'tachyons-spacing';
+}
+
+.title__text {
+  composes: bg-black-90 from 'tachyons-skins';
+  composes: lh-copy from 'tachyons-line-height';
+  composes: white from 'tachyons-skins';
+  composes: pa1 from 'tachyons-spacing';
+  composes: tracked-tight from 'tachyons-letter-spacing';
+}
+
+.text {
+  composes: white-80 from 'tachyons-skins';
+}

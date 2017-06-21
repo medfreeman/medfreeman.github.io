@@ -35,7 +35,7 @@ PageComponent.propTypes = {
 }
 
 const Page = createContainer(PageComponent, (props) => ({
-  page: query({ collection: "pages", id: props.params.splat || "home", ...props }),
+  page: query({ collection: "pages", id: props.params.splat, ...props }),
 }))
 
 export default Page
