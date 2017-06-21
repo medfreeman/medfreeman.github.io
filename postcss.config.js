@@ -1,4 +1,4 @@
-module.exports = ({ file, options, env }) => ({
+module.exports = ({ env }) => ({
   plugins: {
     "stylelint": {},
     "postcss-plugin-context": {
