@@ -3,8 +3,9 @@ import React from "react"
 import Head from "react-helmet"
 import PropTypes from "prop-types"
 
-import Header from "../Header"
 import FaviconMeta from "../../Meta/Favicon"
+import Header from "../Header"
+import Footer from "../Footer"
 
 import styles from "./index.css"
 
@@ -21,9 +22,7 @@ const Layout = ({children}) => (
     <FaviconMeta />
     <Header />
     <div className={ styles["container"] }>{ children }</div>
-    <footer>
-      { /* ... */ }
-    </footer>
+    <Footer />
   </div>
 )
 

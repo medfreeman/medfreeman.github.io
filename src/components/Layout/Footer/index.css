@@ -1,0 +1,27 @@
+.footer {
+  text-align: center;
+}
+
+.container {
+  composes: bg-white-90 from 'tachyons-skins';
+  composes: ph4 from 'tachyons-spacing';
+  composes: pv2 from 'tachyons-spacing';
+}
+
+.externalReference {
+  composes: f6 from 'tachyons-type-scale';
+  composes: o-60 from 'tachyons-opacity';
+  line-height: 16px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.reactSvg {
+  composes: dib from 'tachyons-display';
+  composes: center from 'tachyons-utilities';
+  vertical-align: middle;
+}
+
+.externalReferenceName {
+  composes: fw1 from 'tachyons-font-weight';
+}

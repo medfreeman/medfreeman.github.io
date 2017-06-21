@@ -7445,6 +7445,14 @@ table@^4.0.1:
     slice-ansi "0.0.4"
     string-width "^2.0.0"
 
+tachyons-display@^5.0.4:
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/tachyons-display/-/tachyons-display-5.0.4.tgz#9ec6918b0695753b7c296c0a1275c8b214b25b9a"
+
+tachyons-font-weight@^5.0.4:
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/tachyons-font-weight/-/tachyons-font-weight-5.0.4.tgz#c95b4feb7f4c18558859bbc9af13197981d18d60"
+
 tachyons-letter-spacing@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/tachyons-letter-spacing/-/tachyons-letter-spacing-3.0.4.tgz#6cd3af529b24e55e577626e6b1e84a4b844ebcfd"
@@ -7456,6 +7464,10 @@ tachyons-line-height@^3.0.6:
 tachyons-max-widths@^4.0.4:
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/tachyons-max-widths/-/tachyons-max-widths-4.0.4.tgz#a69383f9d8543f7d11b33ac792392930e6693260"
+
+tachyons-opacity@^1.1.8:
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/tachyons-opacity/-/tachyons-opacity-1.1.8.tgz#d4b270c12b71921b6c5ba6ad329ccea0e7f81995"
 
 tachyons-skins@^4.0.3:
   version "4.0.3"
