@@ -7,6 +7,8 @@ import Layout from "../../Layout/Page"
 import ErrorPage from "../ErrorPage"
 import Gallery from "../../Elements/Gallery"
 
+import styles from "./index.css"
+
 const PortfolioComponent = ({ hasError, page }) => {
   if (hasError) {
     return <ErrorPage error={ page.error } />
@@ -16,7 +18,7 @@ const PortfolioComponent = ({ hasError, page }) => {
     <Layout>
       <div>
         {page.node &&(
-          <article>
+          <article className={ styles.container }>
             <Head>
               <title>{ page.node.title }</title>
               <meta name="description" content={ "" /* page.node.body.slice(0, 50)*/ } />
