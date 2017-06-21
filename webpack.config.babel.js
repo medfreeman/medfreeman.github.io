@@ -91,7 +91,8 @@ module.exports = (config: PhenomicConfig) => {
           test: /\.css$/,
           include: [
             path.join(__dirname, "src"),
-            /react-toolbox/
+            /react-toolbox/,
+            /tachyons/
           ],
           exclude: [
             /\.global\.css$/,
