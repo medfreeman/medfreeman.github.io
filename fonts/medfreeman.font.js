@@ -1,7 +1,7 @@
 const path = require("path")
 
 const material = function(category, icon) {
-  return path.resolve(__dirname, `../node_modules/material-design-icons/${category}/svg/production/${icon}.svg`)
+  return path.resolve(__dirname, `../node_modules/material-design-icons/${category}/svg/production/ic_${icon}_24px.svg`)
 }
 
 const mdi = function(icon) {
@@ -12,7 +12,7 @@ module.exports = {
   "files": [
     mdi("react"),
     mdi("github"),
-    material("action", "ic_done_all_24px")
+    material("action", "done_all")
   ],
   "fontName": "Medcons",
   "cssTemplate": path.resolve(__dirname, "medfreeman.css.hbs"),
