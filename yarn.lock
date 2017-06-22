@@ -6267,6 +6267,16 @@ rc@^1.1.2, rc@^1.1.6, rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-burger-menu@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/react-burger-menu/-/react-burger-menu-2.1.1.tgz#76c6d4fc6e075af10af41a5cc8acb6dd32b1775d"
+  dependencies:
+    browserify-optional "^1.0.0"
+    classnames "^2.1.1"
+    eve "~0.4.2"
+    prop-types "^15.5.8"
+    snapsvg-cjs "0.0.4"
+
 react-css-themr@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/react-css-themr/-/react-css-themr-2.1.2.tgz#e017514e471c232f43a754a55b49d81faf5dafb8"

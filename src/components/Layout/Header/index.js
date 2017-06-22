@@ -1,37 +1,38 @@
 import React from "react"
-import { AppBar } from "react-toolbox/lib/app_bar"
-import { Navigation } from "react-toolbox/lib/navigation"
+import { stack as Menu } from "react-burger-menu"
 import Svg from "react-svg-inline"
 
 import Link from "../../Elements/Link"
-import Icon from "../../Elements/Icon"
 import logoSvg from "../../../icons/medfreeman_3d_dark.svg"
 
 import styles from "./index.css"
 
 const Header = () => (
-  <AppBar
-    fixed
-    theme={ styles }
-    rightIcon={ <Icon icon="github" /> }
-    onRightIconClick={ function() { window.location="https://github.com/medfreeman/" } }
+  <Menu
+    burgerButtonClassName={ styles["bm-burger-button"] }
+    burgerBarClassName={ styles["bm-burger-bars"] }
+    crossButtonClassName={ styles["bm-cross-button"] }
+    crossClassName={ styles["bm-cross"] }
+    menuClassName={ styles["bm-menu"] }
+    itemListClassName={ styles["bm-item-list"] }
+    overlayClassName={ styles["bm-overlay"] }
+    right
   >
-    <Navigation type="horizontal">
-      <Link
-        to="/"
-        icon={
-          <Svg
-            className={ styles["svg--logo"] }
-            svg={ logoSvg }
-            width="36px"
-            height="36px"
-          />
-        }
-        label="Home" />
-      <Link to="/portfolio/" label="Portfolio" />
-      <Link to="/about-me/" label="About Me" />
-    </Navigation>
-  </AppBar>
+    <Link
+      to="/"
+      icon={
+        <Svg
+          className={ styles["svg--logo"] }
+          svg={ logoSvg }
+          width="36px"
+          height="36px"
+        />
+      }
+      label="Home" />
+    <Link to="/portfolio/" label="Portfolio" />
+    <Link to="/about-me/" label="About Me" />
+    <Link to="https://github.com/medfreeman/medfreeman.github.io" label="Fork me on github" icon="github" />
+  </Menu>
 )
 
 export default Header
