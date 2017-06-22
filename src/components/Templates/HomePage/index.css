@@ -32,5 +32,6 @@
 }
 
 .text {
+  composes: f4 from 'tachyons-type-scale';
   composes: white-90 from 'tachyons-skins';
 }
