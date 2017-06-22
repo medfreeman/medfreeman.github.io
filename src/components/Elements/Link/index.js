@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Button } from "react-toolbox/lib/button"
 import { Link as RouterLink } from "react-router"
+import isAbsoluteUrl from "is-absolute-url"
 
 import Icon from "../Icon"
 
@@ -17,11 +18,19 @@ const Link = (props) => {
     }
   }
 
-  return (
-    <RouterLink to={ to } activeClassName={ styles.active }>
-      <Button neutral={ false } theme={ theme || styles } { ...otherProps } />
-    </RouterLink>
-  )
+  if ( isAbsoluteUrl(to) ) {
+    return (
+      <a href={ to } className={ styles["link"] }>
+        <Button neutral={ false } theme={ theme || styles } { ...otherProps } />
+      </a>
+    )
+  } else {
+    return (
+      <RouterLink to={ to } className={ styles["link"] } activeClassName={ styles["link-active"] }>
+        <Button neutral={ false } theme={ theme || styles } { ...otherProps } />
+      </RouterLink>
+    )
+  }
 }
 
 Link.propTypes = {
