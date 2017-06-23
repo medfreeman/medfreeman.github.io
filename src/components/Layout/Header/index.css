@@ -1,11 +1,15 @@
 .header {
   position: fixed;
-  top: 18px;
-  right: 18px;
+  top: var(--menuIconPadding);
+  right: var(--menuIconPadding);
+}
+
+.button--open {
+  width: var(--menuIconSize) !important;
 }
 
 .icon--open {
-  font-size: 36px !important;
+  font-size: var(--menuIconSize) !important;
 }
 
 .drawer {
@@ -14,22 +18,23 @@
 
 .button--close {
   position: absolute;
-  top: 18px;
-  right: 18px;
+  top: var(--menuIconPadding);
+  right: var(--menuIconPadding);
+  width: var(--menuIconSize) !important;
 }
 
 .icon--close {
-  font-size: 36px !important;
+  font-size: var(--menuIconSize) !important;
   color: var(--colorLink);
 }
 
 .navigation {
-  margin-top: 54px;
+  margin-top: calc(var(--menuIconSize) + var(--menuIconPadding));
 }
 
 .svg--logo {
   margin: auto;
   vertical-align: middle;
   display: inline-block;
-  height: 36px;
+  height: var(--menuIconSize);
 }

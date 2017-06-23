@@ -13,6 +13,8 @@ module.exports = ({ env }) => ({
         colorLink: "#fff",
         colorSecondary: "#f69f1e",
         headerBackgroundColor: "#000",
+        menuIconSize: "48px",
+        menuIconPadding: "24px",
         menuLinkColor: "#fff",
         menuLinkActiveBackgroundColor: "rgba(255, 255, 255, 0.3)",
         containerHorizontalPadding: "60px",

@@ -23,6 +23,7 @@ class Header extends React.Component {
     return (
       <div className={ styles["header"] }>
         <IconButton
+          className={ styles["button--open"] }
           icon={ <Icon className={ styles["icon--open"] } icon="menu" /> }
           onClick={ this.handleToggle }
         />
