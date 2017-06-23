@@ -12,7 +12,9 @@ module.exports = {
   "files": [
     mdi("react"),
     mdi("github"),
-    material("action", "done_all")
+    material("action", "done_all"),
+    material("navigation", "menu"),
+    material("navigation", "close")
   ],
   "fontName": "Medcons",
   "cssTemplate": path.resolve(__dirname, "medfreeman.css.hbs"),

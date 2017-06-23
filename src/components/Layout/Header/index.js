@@ -3,12 +3,15 @@ import { stack as Menu } from "react-burger-menu"
 import Svg from "react-svg-inline"
 
 import Link from "../../Elements/Link"
+import Icon from "../../Elements/Icon"
 import logoSvg from "../../../icons/medfreeman_3d_dark.svg"
 
 import styles from "./index.css"
 
 const Header = () => (
   <Menu
+    customBurgerIcon={ <Icon icon="menu" /> }
+    customCrossIcon={ <Icon icon="close" /> }
     burgerButtonClassName={ styles["bm-burger-button"] }
     burgerBarClassName={ styles["bm-burger-bars"] }
     crossButtonClassName={ styles["bm-cross-button"] }

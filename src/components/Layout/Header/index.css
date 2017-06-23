@@ -7,6 +7,11 @@
   top: 36px;
 }
 
+.bm-burger-button > i {
+  color: #000;
+  font-size: 36px;
+}
+
 .bm-burger-button > button {
   cursor: pointer;
 }
@@ -18,8 +23,13 @@
 
 /* Position and sizing of clickable cross button */
 .bm-cross-button {
-  height: 24px;
-  width: 24px;
+  height: 32px !important;
+  width: 32px !important;
+}
+
+.bm-cross-button > i {
+  color: #fff;
+  font-size: 32px;
 }
 
 .bm-cross-button > button {

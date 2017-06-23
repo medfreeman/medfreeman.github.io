@@ -8,7 +8,6 @@
 
 .button {
   composes: f4 from 'tachyons-type-scale';
-  composes: f6-l from 'tachyons-type-scale';
   color: var(--menuLinkColor);
   text-decoration: none;
 }
