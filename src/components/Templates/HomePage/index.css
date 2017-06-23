@@ -32,6 +32,11 @@
 }
 
 .text {
-  composes: f4 from 'tachyons-type-scale';
+  composes: pt4 from 'tachyons-spacing';
+}
+
+.text__link {
+  composes: f3 from 'tachyons-type-scale';
+  composes: f2-m from 'tachyons-type-scale';
   composes: white-90 from 'tachyons-skins';
 }
