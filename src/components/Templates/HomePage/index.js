@@ -13,7 +13,7 @@ const HomePage = () => {
         <article className={ styles.article }>
           <Head>
             <title>{ "Home" }</title>
-            <meta name="description" content={ "" /* page.node.body.slice(0, 50)*/ } />
+            <meta name="description" content={ "" } />
             <html className={ styles.background }/>
           </Head>
           <h1 className={ styles.title }>
