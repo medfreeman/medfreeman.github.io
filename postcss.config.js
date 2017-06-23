@@ -17,8 +17,6 @@ module.exports = ({ env }) => ({
         menuIconPadding: "24px",
         menuLinkColor: "#fff",
         menuLinkActiveBackgroundColor: "rgba(255, 255, 255, 0.3)",
-        containerHorizontalPadding: "60px",
-        containerTopPadding: "10px",
         galleryElementPadding: "5px",
         galleryElementOverlayBackgroundColor: "rgba(0,0,0,0.8)",
         galleryElementOverlayTextColor: "#FFF"
