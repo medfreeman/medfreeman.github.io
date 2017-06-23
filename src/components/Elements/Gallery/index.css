@@ -11,11 +11,11 @@
     width: 222px;
   }
 
-  z-index: 1;
+  z-index: 0;
   transition: z-index 0.5s;
 
   &:hover {
-    z-index: 1000;
+    z-index: 1;
   }
 }
 
