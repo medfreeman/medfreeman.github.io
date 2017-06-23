@@ -8,8 +8,9 @@ module.exports = ({ env }) => ({
     },
     "postcss-custom-properties": {
       variables: {
-        colorPrimary: "#007acc",
+        colorPrimary: "#555",
         colorText: "#555",
+        colorLink: "#fff",
         colorSecondary: "#f69f1e",
         headerBackgroundColor: "#000",
         menuLinkColor: "#fff",
