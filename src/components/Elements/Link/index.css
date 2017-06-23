@@ -2,12 +2,6 @@
   text-decoration: none;
 }
 
-.link-active .button {
+.link-active button {
   background-color: var(--menuLinkActiveBackgroundColor);
-}
-
-.button {
-  composes: f4 from 'tachyons-type-scale';
-  color: var(--menuLinkColor);
-  text-decoration: none;
 }
