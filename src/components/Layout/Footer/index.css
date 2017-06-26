@@ -2,16 +2,12 @@
   text-align: center;
 }
 
-.container {
-  composes: bg-white-90 from 'tachyons-skins';
-  composes: ph4 from 'tachyons-spacing';
-  composes: pv2 from 'tachyons-spacing';
-}
-
 .externalReference {
-  font-size: 0.875rem;
   composes: o-60 from 'tachyons-opacity';
-  line-height: 16px;
+  composes: f3 from 'tachyons-type-scale';
+  composes: f4-m from 'tachyons-type-scale';
+  composes: f5-l from 'tachyons-type-scale';
+  line-height: 1rem;
   color: inherit;
   text-decoration: none;
 }

@@ -8,7 +8,7 @@ import styles from "./index.css"
 const Footer = () => (
   <footer className={ styles.footer }>
     { /* If you like Phenomic, this is a way to share the love ;) */ }
-    <span className={ styles.container }>
+    <span>
       <a
         href="https://phenomic.io"
         className={ styles.externalReference }
@@ -34,11 +34,11 @@ const Footer = () => (
           <Svg
             className={ styles.reactSvg }
             svg={ reactSvg }
-            width="16px"
-            height="16px"
+            width="1rem"
+            height="1rem"
             cleanupExceptions={ [ "fill" ] }
           />
-          { "React" }
+          { " React" }
         </span>
       </a>
     </span>
