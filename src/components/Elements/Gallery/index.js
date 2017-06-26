@@ -48,6 +48,7 @@ class Gallery extends React.Component {
           >
             <div className={ styles["gallery__item"] }>
               <a
+                className={ styles.link }
                 href={ element.url }
                 target="_blank"
                 rel="noreferrer noopener"
