@@ -36,7 +36,6 @@
 }
 
 .text__link {
-  composes: f3 from 'tachyons-type-scale';
-  composes: f2-m from 'tachyons-type-scale';
+  composes: f2 from 'tachyons-type-scale';
   composes: white-90 from 'tachyons-skins';
 }
