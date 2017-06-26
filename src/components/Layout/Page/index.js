@@ -23,8 +23,8 @@ const Layout = ({children}) => (
     <div className={ styles.container }>
       <Header />
       { children }
+      <Footer />
     </div>
-    <Footer />
   </div>
 )
 
