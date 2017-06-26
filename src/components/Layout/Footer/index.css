@@ -1,11 +1,8 @@
-@import 'tachyons-modular-media-queries';
-
 .footer {
   text-align: center;
 }
 
 .externalReference {
-  composes: o-60 from 'tachyons-opacity';
   font-size: 1.5rem;
   line-height: 1rem;
   color: inherit;
@@ -20,16 +17,4 @@
 
 .externalReferenceName {
   composes: fw1 from 'tachyons-font-weight';
-}
-
-@media (--breakpoint-medium) {
-  .externalReference {
-    font-size: 1.25rem;
-  }
-}
-
-@media (--breakpoint-large) {
-  .externalReference {
-    font-size: 1rem;
-  }
 }
