@@ -8,6 +8,7 @@
   position: fixed;
   top: var(--menuIconPadding);
   right: var(--menuIconPadding);
+  z-index: 1;
 }
 
 .button--open {
