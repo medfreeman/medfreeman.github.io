@@ -12,7 +12,7 @@ const HomePage = () => {
       <div className={ styles.container }>
         <article className={ styles.article }>
           <Head>
-            <title>{ "Home" }</title>
+            <title>{ "medfreeman" }</title>
             <meta name="description" content={ "" } />
             <html className={ styles.background }/>
           </Head>

@@ -20,7 +20,7 @@ const PageComponent = ({ hasError, page }) => {
         {page.node && (
           <article>
             <Head>
-              <title>{ page.node.title }</title>
+              <title>{ page.node.title + " | medfreeman" }</title>
               <meta name="description" content={ "" /* page.node.body.slice(0, 50)*/ } />
             </Head>
             <BodyRenderer components={ { Icon: TooltipIcon } }>{ page.node.body }</BodyRenderer>
