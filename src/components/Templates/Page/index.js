@@ -7,6 +7,8 @@ import Layout from "../../Layout/Page"
 import ErrorPage from "../ErrorPage"
 import TooltipIcon from "../../Elements/TooltipIcon"
 
+import styles from "./index.css"
+
 const PageComponent = ({ hasError, page }) => {
   if (hasError) {
     return <ErrorPage error={ page.error } />
@@ -14,7 +16,7 @@ const PageComponent = ({ hasError, page }) => {
 
   return (
     <Layout>
-      <div>
+      <div className={ styles.container }>
         {page.node && (
           <article>
             <Head>

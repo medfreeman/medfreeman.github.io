@@ -21,43 +21,45 @@ class Header extends React.Component {
 
   render () {
     return (
-      <div className={ styles["header"] }>
-        <IconButton
-          className={ styles["button--open"] }
-          icon={ <Icon className={ styles["icon--open"] } icon="menu" /> }
-          onClick={ this.handleToggle }
-        />
-        <Drawer
-          type="right"
-          active={ this.state.active }
-          onOverlayClick={ this.handleToggle }
-          className={ styles["drawer"] }
-        >
+      <div className={ styles.header }>
+        <div className={ styles.container }>
           <IconButton
-            className={ styles["button--close"] }
-            icon={ <Icon className={ styles["icon--close"] } icon="close" /> }
+            className={ styles["button--open"] }
+            icon={ <Icon className={ styles["icon--open"] } icon="menu" /> }
             onClick={ this.handleToggle }
           />
-          <Navigation
-            type="vertical"
-            className={ styles["navigation"] }
+          <Drawer
+            type="right"
+            active={ this.state.active }
+            onOverlayClick={ this.handleToggle }
+            className={ styles["drawer"] }
           >
-            <Link
-              to="/"
-              icon={
-                <Svg
-                  className={ styles["svg--logo"] }
-                  svg={ logoSvg }
-                  width="36px"
-                  height="36px"
-                />
-              }
-              label="Home" />
-            <Link to="/portfolio/" label="Portfolio" />
-            <Link to="/about-me/" label="About Me" />
-            <Link to="https://github.com/medfreeman/medfreeman.github.io" label="Fork me on github" icon="github" />
-          </Navigation>
-        </Drawer>
+            <IconButton
+              className={ styles["button--close"] }
+              icon={ <Icon className={ styles["icon--close"] } icon="close" /> }
+              onClick={ this.handleToggle }
+            />
+            <Navigation
+              type="vertical"
+              className={ styles["navigation"] }
+            >
+              <Link
+                to="/"
+                icon={
+                  <Svg
+                    className={ styles["svg--logo"] }
+                    svg={ logoSvg }
+                    width="24px"
+                    height="24px"
+                  />
+                }
+                label="Home" />
+              <Link to="/portfolio/" label="Portfolio" />
+              <Link to="/about-me/" label="About Me" />
+              <Link to="https://github.com/medfreeman/medfreeman.github.io" label="Fork me on github" icon="github" />
+            </Navigation>
+          </Drawer>
+        </div>
       </div>
     )
   }

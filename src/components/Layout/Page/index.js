@@ -7,6 +7,8 @@ import FaviconMeta from "../../Meta/Favicon"
 import Header from "../Header"
 import Footer from "../Footer"
 
+import styles from "./index.css"
+
 const Layout = ({children}) => (
   <div>
     <Head>
@@ -18,8 +20,10 @@ const Layout = ({children}) => (
       </Head>
     }
     <FaviconMeta />
-    <Header />
-    <div>{ children }</div>
+    <div className={ styles.container }>
+      <Header />
+      { children }
+    </div>
     <Footer />
   </div>
 )

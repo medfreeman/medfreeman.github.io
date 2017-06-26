@@ -3,7 +3,8 @@
 }
 
 .container {
-  width: 100%;
+  flex: 1;
+  composes: order-0 from 'tachyons-flexbox';
 }
 
 .article {

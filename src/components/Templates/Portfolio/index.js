@@ -16,9 +16,9 @@ const PortfolioComponent = ({ hasError, page }) => {
 
   return (
     <Layout>
-      <div>
+      <div className={ styles.container }>
         {page.node &&(
-          <article className={ styles.container }>
+          <article>
             <Head>
               <title>{ page.node.title }</title>
               <meta name="description" content={ "" /* page.node.body.slice(0, 50)*/ } />

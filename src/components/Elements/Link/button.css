@@ -1,7 +1,9 @@
 .button {
   composes: db from 'tachyons-display';
   composes: f4 from 'tachyons-type-scale';
-  composes: mb4 from 'tachyons-spacing';
+  composes: mb3 from 'tachyons-spacing';
+  composes: f6-l from 'tachyons-type-scale';
+  composes: mb2-l from 'tachyons-spacing';
   color: var(--menuLinkColor);
   text-decoration: none;
 }
