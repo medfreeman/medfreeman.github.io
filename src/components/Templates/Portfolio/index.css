@@ -1,12 +1,4 @@
-@import 'tachyons-modular-media-queries';
-
 .container {
   flex: 1;
   padding-right: calc(var(--menuIconSize) + var(--menuIconPadding) + var(--menuPadding));
-}
-
-@media (--breakpoint-not-small) {
-  .container {
-    padding-left: 3rem;
-  }
 }
