@@ -55,7 +55,6 @@ class Header extends React.Component {
                 }
                 label="Home" />
               <Link to="/portfolio/" label="Portfolio" />
-              <Link to="/about-me/" label="About Me" />
               <Link to="https://github.com/medfreeman/medfreeman.github.io" label="Fork me on github" icon="github" />
             </Navigation>
           </Drawer>
