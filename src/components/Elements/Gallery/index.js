@@ -35,6 +35,7 @@ class Gallery extends React.Component {
       elementImage = joinURL(PHENOMIC_URL, elementImage)
       return (
         <GalleryItem
+          key={ index }
           containerClass={
             cx(
               styles["gallery__container"],
