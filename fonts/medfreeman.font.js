@@ -8,13 +8,18 @@ const mdi = function(icon) {
   return path.resolve(__dirname, `../node_modules/mdi/icons/svg/${icon}.svg`)
 }
 
+const local = function(icon) {
+  return path.resolve(__dirname, `../src/icons/${icon}.svg`)
+}
+
 module.exports = {
   "files": [
     mdi("react"),
     mdi("github"),
     material("action", "done_all"),
     material("navigation", "menu"),
-    material("navigation", "close")
+    material("navigation", "close"),
+    local("resume")
   ],
   "fontName": "Medcons",
   "cssTemplate": path.resolve(__dirname, "medfreeman.css.hbs"),
