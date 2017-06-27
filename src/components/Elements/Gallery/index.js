@@ -8,6 +8,7 @@ import shuffle from "lodash.shuffle"
 import rwc from "random-weighted-choice"
 
 import Isotope from "../Isotope"
+import GalleryItem from "../GalleryItem"
 
 import styles from "./index.css"
 
@@ -33,38 +34,19 @@ class Gallery extends React.Component {
       }
       elementImage = joinURL(PHENOMIC_URL, elementImage)
       return (
-        <div
-          key={ index }
-          className={
+        <GalleryItem
+          containerClass={
             cx(
               styles["gallery__container"],
-              styles[containerClass],
+              styles[containerClass]
             )
           }
-        >
-          <div
-            key={ index }
-            className={ styles["gallery__container-inner"] }
-          >
-            <div className={ styles["gallery__item"] }>
-              <a
-                className={ styles.link }
-                href={ element.url }
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                <img src={ elementImage } />
-                <div className={ styles["gallery__item-overlay"] }>
-                  <h2>{ element.title }</h2>
-                  {element.subtitle &&
-                    <h4 className={ styles["gallery__item-subtitle"] }>{ element.subtitle }</h4>
-                  }
-                  <span>{ element.year }</span>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
+          url={ element.url }
+          image={ elementImage }
+          title={ element.title }
+          subtitle={ element.subtitle || null }
+          year={ element.year }
+        />
       )
     })
   }
