@@ -21,7 +21,12 @@ const Link = (props) => {
 
   if ( isAbsoluteUrl(to) ) {
     return (
-      <a href={ to } className={ styles["link"] }>
+      <a
+        href={ to }
+        className={ styles["link"] }
+        target="_blank"
+        rel="noreferrer noopener"
+      >
         <Button neutral={ false } theme={ buttonTheme || buttonStyle } { ...otherProps } />
       </a>
     )
