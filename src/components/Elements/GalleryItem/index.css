@@ -40,7 +40,8 @@
   .gallery__container-inner {
     transition: transform 0.5s;
 
-    &:hover {
+    &:hover,
+    &.hover {
       transform: scale3d(1.25, 1.25, 1);
 
       & .gallery__item-overlay {
