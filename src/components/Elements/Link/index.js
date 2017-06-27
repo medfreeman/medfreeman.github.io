@@ -7,10 +7,10 @@ import isAbsoluteUrl from "is-absolute-url"
 import Icon from "../Icon"
 
 import styles from "./index.css"
-import buttonTheme from "./button.css"
+import buttonStyle from "./button.css"
 
 const Link = (props) => {
-  const { icon, to, ...otherProps } = props
+  const { icon, to, buttonTheme, ...otherProps } = props
   if (icon) {
     if (typeof icon === "string") {
       otherProps.icon = ( <Icon icon={ icon } /> )
@@ -22,19 +22,24 @@ const Link = (props) => {
   if ( isAbsoluteUrl(to) ) {
     return (
       <a href={ to } className={ styles["link"] }>
-        <Button neutral={ false } theme={ buttonTheme } { ...otherProps } />
+        <Button neutral={ false } theme={ buttonTheme || buttonStyle } { ...otherProps } />
       </a>
     )
   } else {
     return (
       <RouterLink to={ to } className={ styles["link"] } activeClassName={ styles["link-active"] }>
-        <Button neutral={ false } theme={ buttonTheme } { ...otherProps } />
+        <Button
+          neutral={ false }
+          theme={ buttonTheme || buttonStyle }
+          { ...otherProps }
+        />
       </RouterLink>
     )
   }
 }
 
 Link.propTypes = {
+  buttonTheme: PropTypes.object,
   icon: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.object
