@@ -1,4 +1,5 @@
 .button {
+  composes: mb4 from 'tachyons-spacing';
   height: 6rem;
 }
 
