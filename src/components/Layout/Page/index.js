@@ -13,6 +13,7 @@ const Layout = ({children}) => (
   <div>
     <Head>
       <html lang="en" /> { /* this is valid react-helmet usage! */ }
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     </Head>
     { PHENOMIC_ENV === "production" &&
       <Head>
