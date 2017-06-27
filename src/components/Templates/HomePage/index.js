@@ -1,9 +1,12 @@
 import React from "react"
 import Head from "react-helmet"
+import joinURL from "url-join"
 
 import Layout from "../../Layout/Page"
+import Link from "../../Elements/Link"
 
 import styles from "./index.css"
+import buttonTheme from "./button.css"
 
 const HomePage = () => {
 
@@ -21,6 +24,10 @@ const HomePage = () => {
               { "I'm a software and devOps engineer" }
             </span>
           </h1>
+          <p className={ styles.text }>
+            <Link to={ joinURL( PHENOMIC_URL, "documents/cv_mlahlou_web.pdf") } icon="resume" buttonTheme={ buttonTheme } />
+            <Link to="https://github.com/medfreeman/" icon="github" buttonTheme={ buttonTheme } />
+          </p>
           <p className={ styles.text }>
             <a className={ styles.text__link } href="mailto:mehdi.lahlou.ml@gmail.com">
               { "Hire Me!" }

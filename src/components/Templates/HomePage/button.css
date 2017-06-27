@@ -1,0 +1,13 @@
+.button {
+  height: 6rem;
+}
+
+.icon {
+  composes: black from 'tachyons-skins';
+  margin-right: 0 !important;
+}
+
+.icon > i {
+  font-size: 6rem;
+  line-height: 6rem;
+}

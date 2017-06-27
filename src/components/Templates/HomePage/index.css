@@ -20,7 +20,8 @@
   composes: f-headline-l from 'tachyons-type-scale';
   composes: measure-narrow from 'tachyons-typography';
   composes: lh-title from 'tachyons-line-height';
-  composes: mv0 from 'tachyons-spacing';
+  composes: mt0 from 'tachyons-spacing';
+  composes: mb5 from 'tachyons-spacing';
 }
 
 .title__text {
@@ -32,7 +33,8 @@
 }
 
 .text {
-  composes: pt4 from 'tachyons-spacing';
+  composes: mt0 from 'tachyons-spacing';
+  composes: mb5 from 'tachyons-spacing';
 }
 
 .text__link {
