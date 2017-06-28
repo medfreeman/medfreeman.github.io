@@ -48,10 +48,10 @@ module.exports = ({ env }) => ({
     "postcss-reporter": {},
     "postcss-browser-reporter": env !== "production" ? {} : false,
     "cssnano": env === "production" ? {
-      preset: ['default',
+      preset: ["default",
         {
           discardComments: {
-              removeAll: true,
+            removeAll: true,
           },
         }
       ]
