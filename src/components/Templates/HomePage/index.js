@@ -29,7 +29,7 @@ const HomePage = () => {
             <Link to="https://github.com/medfreeman/" icon="github" buttonTheme={ buttonTheme } />
           </p>
           <p className={ styles.text }>
-            <a className={ styles.text__link } href="mailto:mehdi.lahlou.ml@gmail.com">
+            <a className={ styles.text__link } href="mailto:mlahlou@protonmail.ch">
               { "Hire Me!" }
             </a>
           </p>
