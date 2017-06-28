@@ -1,3 +1,5 @@
+@import 'tachyons-modular-media-queries';
+
 .gallery {
   margin-bottom: 60px;
 }
@@ -25,5 +27,16 @@
 
   & .gallery-item {
     width: 454px;
+  }
+}
+
+@media (--breakpoint-not-small) {
+  .gallery__container {
+    height: 266px;
+  }
+
+  .gallery__container--high,
+  .gallery__container--double {
+    height: 522px;
   }
 }
