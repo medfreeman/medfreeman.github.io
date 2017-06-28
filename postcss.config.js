@@ -46,6 +46,15 @@ module.exports = ({ env }) => ({
     "postcss-pseudo-class-any-link": {},
     "postcss-replace-overflow-wrap": {},
     "postcss-reporter": {},
-    "postcss-browser-reporter": env !== "production" ? {} : false
+    "postcss-browser-reporter": env !== "production" ? {} : false,
+    "cssnano": env === "production" ? {
+      preset: ['default',
+        {
+          discardComments: {
+              removeAll: true,
+          },
+        }
+      ]
+    } : false
   }
 })
