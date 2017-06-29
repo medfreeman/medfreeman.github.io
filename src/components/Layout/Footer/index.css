@@ -1,11 +1,10 @@
 .footer {
-  composes: mh4 from 'tachyons-spacing';
-  composes: mb4 from 'tachyons-spacing';
+  margin: 0 2rem 2rem;
   text-align: center;
 }
 
 .externalReference {
-  composes: f3 from 'tachyons-type-scale';
+  font-size: 1.5rem;
   line-height: 2rem;
   color: inherit;
   text-decoration: none;
@@ -18,5 +17,5 @@
 }
 
 .externalReferenceName {
-  composes: fw1 from 'tachyons-font-weight';
+  font-weight: 100;
 }
