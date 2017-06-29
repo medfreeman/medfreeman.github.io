@@ -1,5 +1,6 @@
 .footer {
-  margin-bottom: 2rem;
+  composes: mh4 from 'tachyons-spacing';
+  composes: mb4 from 'tachyons-spacing';
   text-align: center;
 }
 
