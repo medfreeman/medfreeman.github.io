@@ -47,11 +47,11 @@ class GalleryItem extends React.Component {
             >
               <img src={ this.props.image } />
               <div className={ styles["gallery__item-overlay"] }>
-                <h2>{ this.props.title }</h2>
+                <h2 className={ styles["gallery__item-title"] }>{ this.props.title }</h2>
                 { this.props.subtitle &&
                   <h4 className={ styles["gallery__item-subtitle"] }>{ this.props.subtitle }</h4>
                 }
-                <span>{ this.props.year }</span>
+                <span className={ styles["gallery__item-year"] }>{ this.props.year }</span>
               </div>
             </a>
           </div>

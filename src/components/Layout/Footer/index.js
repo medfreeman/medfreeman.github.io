@@ -34,8 +34,8 @@ const Footer = () => (
           <Svg
             className={ styles.reactSvg }
             svg={ reactSvg }
-            width="1rem"
-            height="1rem"
+            width="2.5rem"
+            height="2.5rem"
             cleanupExceptions={ [ "fill" ] }
           />
           { " React" }

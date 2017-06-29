@@ -16,8 +16,7 @@
 }
 
 .title {
-  composes: f2 from 'tachyons-type-scale';
-  composes: f1-m from 'tachyons-type-scale';
+  composes: f-subheadline from 'tachyons-type-scale';
   composes: f-headline-l from 'tachyons-type-scale';
   composes: measure-narrow from 'tachyons-typography';
   composes: lh-title from 'tachyons-line-height';

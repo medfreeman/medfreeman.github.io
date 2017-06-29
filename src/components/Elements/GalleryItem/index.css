@@ -27,8 +27,19 @@
   color: var(--galleryElementOverlayTextColor);
 }
 
+.gallery__item-title {
+  composes: f2 from 'tachyons-type-scale';
+  composes: mb4 from 'tachyons-spacing';
+}
+
 .gallery__item-subtitle {
-  font-weight: 300;
+  composes: f3 from 'tachyons-type-scale';
+  composes: mb3 from 'tachyons-spacing';
+  composes: fw3 from 'tachyons-font-weight';
+}
+
+.gallery__item-year {
+  composes: f4 from 'tachyons-type-scale';
 }
 
 @media (--breakpoint-not-small) {
