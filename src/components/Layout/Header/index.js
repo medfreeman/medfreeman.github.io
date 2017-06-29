@@ -2,11 +2,9 @@ import React from "react"
 import { IconButton } from "react-toolbox/lib/button"
 import { Drawer } from "react-toolbox/lib/drawer"
 import { Navigation } from "react-toolbox/lib/navigation"
-import Svg from "react-svg-inline"
 
 import Link from "../../Elements/Link"
 import Icon from "../../Elements/Icon"
-import logoSvg from "../../../icons/medfreeman_3d_dark.svg"
 
 import styles from "./index.css"
 
@@ -45,14 +43,7 @@ class Header extends React.Component {
             >
               <Link
                 to="/"
-                icon={
-                  <Svg
-                    className={ styles["svg--logo"] }
-                    svg={ logoSvg }
-                    width="24px"
-                    height="24px"
-                  />
-                }
+                icon="logo_black_white"
                 label="Home" />
               <Link to="/portfolio/" label="Portfolio" />
               <Link to="https://github.com/medfreeman/medfreeman.github.io" label="Fork me on github" icon="github" />

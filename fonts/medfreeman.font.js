@@ -19,7 +19,8 @@ module.exports = {
     material("action", "done_all"),
     material("navigation", "menu"),
     material("navigation", "close"),
-    local("resume")
+    local("resume"),
+    local("logo_black_white")
   ],
   "fontName": "Medcons",
   "cssTemplate": path.resolve(__dirname, "medfreeman.css.hbs"),
