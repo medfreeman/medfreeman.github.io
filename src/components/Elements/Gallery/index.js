@@ -4,7 +4,6 @@ import joinURL from "url-join"
 import React from "react"
 import PropTypes from "prop-types"
 import cx from "classnames"
-import shuffle from "lodash.shuffle"
 import rwc from "random-weighted-choice"
 
 import Isotope from "../Isotope"
@@ -23,7 +22,7 @@ class Gallery extends React.Component {
       { weight: 2, id: "double"}
     ]
 
-    this.elements = shuffle(this.props.elements).map((element, index) => {
+    this.elements = this.props.elements.map((element, index) => {
       let containerClass = "gallery__container--small"
       let elementImage = element.image
       if ( ! /\.(png|jpe?g|svg)$/.test(element.image) ) {
