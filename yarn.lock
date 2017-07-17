@@ -4087,6 +4087,10 @@ jimp@^0.2.13, jimp@^0.2.21:
     tinycolor2 "^1.1.2"
     url-regex "^3.0.0"
 
+joi-browser@^10.6.1:
+  version "10.6.1"
+  resolved "https://registry.yarnpkg.com/joi-browser/-/joi-browser-10.6.1.tgz#1cfc1a244c9242327842c24354d8ead1c2fe3571"
+
 joi@^10.5.2:
   version "10.6.0"
   resolved "https://registry.yarnpkg.com/joi/-/joi-10.6.0.tgz#52587f02d52b8b75cdb0c74f0b164a191a0e1fc2"
@@ -6538,12 +6542,13 @@ remark-autolink-headings@^5.0.0:
   dependencies:
     unist-util-visit "^1.0.1"
 
-remark-generic-extensions@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/remark-generic-extensions/-/remark-generic-extensions-0.2.1.tgz#4948ddc7850be609808adef09fb0e0b16cecdb22"
+remark-generic-extensions@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/remark-generic-extensions/-/remark-generic-extensions-1.2.0.tgz#73919e8d70761a16b5f3dc59cd25eedbde1a0bd1"
   dependencies:
     core-js "^2.4.1"
     joi "^10.5.2"
+    joi-browser "^10.6.1"
 
 remark-html@^6.0.0:
   version "6.0.1"

@@ -40,12 +40,14 @@ export default (config?: PhenomicConfig, body: string) => {
     remarkInstance.use(genericExtensions, {
       elements: {
         Icon: {
-          attributeDefaultValues: {
+          propsDefaultValues: {
             floating: true,
           },
-          hast: {
-            icon: "::argument::",
-            tooltip: "::content::"
+          html: {
+            properties: {
+              icon: "::content::",
+              tooltip: "::argument::"
+            }
           }
         }
       }
