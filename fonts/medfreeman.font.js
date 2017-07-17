@@ -16,6 +16,7 @@ module.exports = {
   "files": [
     mdi("react"),
     mdi("github"),
+    mdi("heart"),
     material("action", "done_all"),
     material("navigation", "menu"),
     material("navigation", "close"),
