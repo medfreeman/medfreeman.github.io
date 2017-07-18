@@ -15,7 +15,7 @@ const Favicon = () => {
         <link rel="icon" type="image/png" sizes="16x16" href={ favicon("favicon-16x16.png") } />
         <link rel="shortcut icon" href={ favicon("favicon.ico") } />
       </Head>
-    { PHENOMIC_ENV === "production" &&
+    { process.env.NODE_ENV === "production" &&
       <Head>
         <link rel="manifest" href={ favicon("manifest.json") } />
         <link rel="yandex-tableau-widget" href={ favicon("yandex-browser-manifest.json") } />

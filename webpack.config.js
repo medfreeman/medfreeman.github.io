@@ -215,7 +215,6 @@ module.exports = (config: PhenomicConfig) => {
         new webpack.optimize.UglifyJsPlugin(),
 
       new webpack.DefinePlugin({
-        PHENOMIC_ENV: JSON.stringify(process.env.NODE_ENV),
         PHENOMIC_URL: process.env.URL ? JSON.stringify(process.env.URL) : JSON.stringify("http://localhost:" + config.port)
       }),
 

@@ -15,7 +15,7 @@ const Layout = ({children}) => (
       <html lang="en" /> { /* this is valid react-helmet usage! */ }
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     </Head>
-    { PHENOMIC_ENV === "production" &&
+    { process.env.NODE_ENV === "production" &&
       <Head>
         <link rel="stylesheet" type="text/css" href={ joinURL(PHENOMIC_URL, "styles.css") } />
       </Head>
