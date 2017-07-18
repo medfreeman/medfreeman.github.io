@@ -3,8 +3,8 @@ import { IconButton } from "react-toolbox/lib/button"
 import { Drawer } from "react-toolbox/lib/drawer"
 import { Navigation } from "react-toolbox/lib/navigation"
 
-import Link from "../../Elements/Link"
-import Icon from "../../Elements/Icon"
+import Link from "Elements/Link"
+import Icon from "Elements/Icon"
 
 import styles from "./index.css"
 

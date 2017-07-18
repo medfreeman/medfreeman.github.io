@@ -270,6 +270,15 @@ module.exports = (config: PhenomicConfig) => {
       // react-native(-web) | react-primitives
       extensions: [".web.js", ".js", ".json"],
       alias: {
+        "Elements": path.resolve(__dirname, "src/components/Elements"),
+        "Layout": path.resolve(__dirname, "src/components/Layout"),
+        "Meta": path.resolve(__dirname, "src/components/Meta"),
+        "Templates": path.resolve(__dirname, "src/components/Templates"),
+        "utils": path.resolve(__dirname, "src/utils"),
+        "presets": path.resolve(__dirname, "src/presets"),
+        "plugins": path.resolve(__dirname, "src/plugins"),
+        "package.json": path.join(__dirname, "package.json"),
+
         "masonry": "masonry-layout",
         "isotope": "isotope-layout",
 

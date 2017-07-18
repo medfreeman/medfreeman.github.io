@@ -4,9 +4,9 @@ import PropTypes from "prop-types"
 
 // multi layouts @see https://github.com/phenomic/phenomic/blob/master/packages/preset-react-app/docs/getting-started/7.md @todo !
 
-import { createContainer, query, BodyRenderer } from "../../../presets/preset-react-app/client"
-import Layout from "../../Layout/Page"
-import ErrorPage from "../ErrorPage"
+import { createContainer, query, BodyRenderer } from "presets/preset-react-app/client"
+import Layout from "Layout/Page"
+import ErrorPage from "Templates/ErrorPage"
 
 const BlogPostComponent = ({ hasError, page }) => {
   if (hasError) {

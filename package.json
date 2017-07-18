@@ -136,6 +136,21 @@
       "PHENOMIC_URL": true
     },
     "rules": {
+      "import/no-extraneous-dependencies": [
+        "off"
+      ],
+      "import/no-unresolved": [
+        "error",
+        {
+          "ignore": [
+            "(Elements|Layout|Meta|Templates|utils|presets|plugins)\/.*$",
+            "package.json"
+          ]
+        }
+      ],
+      "import/order": [
+        "off"
+      ],
       "indent": [
         "error",
         2

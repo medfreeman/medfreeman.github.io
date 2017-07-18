@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { Button } from "react-toolbox/lib/button"
 import Tooltip from "react-toolbox/lib/tooltip"
 
-import Icon from "../Icon"
+import Icon from "Elements/Icon"
 
 import theme from "./index.css"
 

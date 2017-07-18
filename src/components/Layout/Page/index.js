@@ -3,9 +3,9 @@ import React from "react"
 import Head from "react-helmet"
 import PropTypes from "prop-types"
 
-import FaviconMeta from "../../Meta/Favicon"
-import Header from "../Header"
-import Footer from "../Footer"
+import FaviconMeta from "Meta/Favicon"
+import Header from "Layout/Header"
+import Footer from "Layout/Footer"
 
 import styles from "./index.css"
 

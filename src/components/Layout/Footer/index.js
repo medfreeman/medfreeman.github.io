@@ -1,6 +1,6 @@
 import React from "react"
 
-import Icon from "../../Elements/Icon"
+import Icon from "Elements/Icon"
 
 import styles from "./index.css"
 

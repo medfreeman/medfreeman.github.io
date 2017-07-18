@@ -8,7 +8,7 @@ import cx from "classnames"
 
 // @todo add Phenomic Link
 // import Link from "./Link.js"
-import { get } from "../../utils/object"
+import { get } from "utils/object"
 
 type ComponentType = string | Class<React.Component<*, *, *>> | Function
 

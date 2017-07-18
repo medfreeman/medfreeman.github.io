@@ -4,7 +4,7 @@ import { Button } from "react-toolbox/lib/button"
 import { Link as RouterLink } from "react-router"
 import isAbsoluteUrl from "is-absolute-url"
 
-import Icon from "../Icon"
+import Icon from "Elements/Icon"
 
 import styles from "./index.css"
 import buttonStyle from "./button.css"

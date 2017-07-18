@@ -2,10 +2,10 @@ import React from "react"
 import Head from "react-helmet"
 import PropTypes from "prop-types"
 
-import { createContainer, query, BodyRenderer } from "../../../presets/preset-react-app/client"
-import Layout from "../../Layout/Page"
-import ErrorPage from "../ErrorPage"
-import Gallery from "../../Elements/Gallery"
+import { createContainer, query, BodyRenderer } from "presets/preset-react-app/client"
+import Layout from "Layout/Page"
+import ErrorPage from "Templates/ErrorPage"
+import Gallery from "Elements/Gallery"
 
 import styles from "./index.css"
 

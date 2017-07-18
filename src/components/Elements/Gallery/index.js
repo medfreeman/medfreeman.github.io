@@ -6,8 +6,8 @@ import PropTypes from "prop-types"
 import cx from "classnames"
 import rwc from "random-weighted-choice"
 
-import Isotope from "../Isotope"
-import GalleryItem from "../GalleryItem"
+import Isotope from "Elements/Isotope"
+import GalleryItem from "Elements/GalleryItem"
 
 import styles from "./index.css"
 

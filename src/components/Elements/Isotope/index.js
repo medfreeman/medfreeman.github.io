@@ -5,7 +5,7 @@ import PropTypes from "prop-types"
 import map from "core-js/library/fn/array/virtual/map"
 import difference from "lodash.difference"
 
-import { get } from "../../../utils/object"
+import { get } from "utils/object"
 
 const isBrowser = (typeof window !== "undefined")
 const IsotopeLayout = isBrowser ? require("isotope-layout") : null

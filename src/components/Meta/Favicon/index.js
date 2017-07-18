@@ -2,7 +2,7 @@ import joinURL from "url-join"
 import React from "react"
 import Head from "react-helmet"
 
-import pkg from "../../../../package.json"
+import pkg from "package.json"
 
 const faviconVersionString = "?v=1"
 const favicon = (file) => joinURL(PHENOMIC_URL, "assets", file, faviconVersionString)

@@ -2,8 +2,8 @@ import React from "react"
 import Head from "react-helmet"
 import joinURL from "url-join"
 
-import Layout from "../../Layout/Page"
-import Link from "../../Elements/Link"
+import Layout from "Layout/Page"
+import Link from "Elements/Link"
 
 import styles from "./index.css"
 import buttonTheme from "./button.css"
