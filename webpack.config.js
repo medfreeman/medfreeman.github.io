@@ -274,8 +274,6 @@ module.exports = (config: PhenomicConfig) => {
         "Meta": path.resolve(__dirname, "src/components/Meta"),
         "Templates": path.resolve(__dirname, "src/components/Templates"),
         "utils": path.resolve(__dirname, "src/utils"),
-        "presets": path.resolve(__dirname, "src/presets"),
-        "plugins": path.resolve(__dirname, "src/plugins"),
         "package.json": path.join(__dirname, "package.json"),
 
         "masonry": "masonry-layout",

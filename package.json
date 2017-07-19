@@ -142,7 +142,7 @@
         "error",
         {
           "ignore": [
-            "(Elements|Layout|Meta|Templates|utils|presets|plugins)/.*$",
+            "(Elements|Layout|Meta|Templates|utils)/.*$",
             "package.json"
           ]
         }
