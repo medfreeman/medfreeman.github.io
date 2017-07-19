@@ -132,7 +132,6 @@
     "root": true,
     "extends": "eslint-config-i-am-meticulous/react-flow",
     "globals": {
-      "PHENOMIC_ENV": true,
       "PHENOMIC_URL": true
     },
     "rules": {
