@@ -4,12 +4,12 @@ import { Router, Route, browserHistory } from "react-router"
 import { createApp, renderApp } from "@phenomic/preset-react-app/lib/client"
 import "typeface-roboto"
 
-import Html from "plugins/plugin-renderer-react/HTML"
 import ErrorPage from "Templates/ErrorPage"
 import HomePage from "Templates/HomePage"
 import Page from "Templates/Page"
 import Portfolio from "Templates/Portfolio"
 
+import Html from "./src/HTML"
 import "./src/index.global.css"
 import "./fonts/medfreeman.font"
 
