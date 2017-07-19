@@ -1,4 +1,3 @@
-import joinURL from "url-join"
 import React from "react"
 import Head from "react-helmet"
 import PropTypes from "prop-types"
@@ -13,11 +12,12 @@ const Layout = ({children}) => (
   <div>
     <Head>
       <html lang="en" /> { /* this is valid react-helmet usage! */ }
+      <meta charSet="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     </Head>
     { process.env.NODE_ENV === "production" &&
       <Head>
-        <link rel="stylesheet" type="text/css" href={ joinURL(PHENOMIC_URL, "styles.css") } />
+        <link rel="stylesheet" type="text/css" href="/styles.css" />
       </Head>
     }
     <FaviconMeta />
