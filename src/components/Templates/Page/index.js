@@ -1,3 +1,4 @@
+/* eslint-disable react/no-multi-comp */
 import React from "react"
 import Head from "react-helmet"
 import PropTypes from "prop-types"
@@ -36,8 +37,20 @@ PageComponent.propTypes = {
   page: PropTypes.object
 }
 
-const Page = createContainer(PageComponent, (props) => ({
-  page: query({ collection: "pages", id: props.params.splat, ...props }),
-}))
+const Page = (properties) => {
+  const id = properties.params.splat
+  /* Nasty hack until
+     https://github.com/phenomic/phenomic/issues/1093
+     is closed
+  */
+  if (id === "home") {
+    return ( <PageComponent hasError page={ { error: {} } } /> )
+  } else {
+    return createContainer(
+      PageComponent,
+      query({ collection: "pages", id, ...properties })
+    )
+  }
+}
 
 export default Page
