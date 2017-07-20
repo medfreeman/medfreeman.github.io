@@ -17,7 +17,6 @@ module.exports = {
     mdi("react"),
     mdi("github"),
     mdi("heart"),
-    material("action", "done_all"),
     material("AV", "art_track"),
     local("resume"),
     local("logo_black_white")
