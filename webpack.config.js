@@ -222,6 +222,7 @@ module.exports = (config: PhenomicConfig) => {
     plugins: [
       new ExtractTextPlugin({
         filename: "styles.css",
+        ignoreOrder: true,
         disable: process.env.PHENOMIC_ENV !== "static"
       }),
       process.env.PHENOMIC_ENV !== "static" &&
