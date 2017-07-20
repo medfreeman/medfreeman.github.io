@@ -7501,6 +7501,10 @@ tachyons-spacing@^6.0.4:
   version "6.0.4"
   resolved "https://registry.yarnpkg.com/tachyons-spacing/-/tachyons-spacing-6.0.4.tgz#54cbd6d902b2a36ab864110754ec9924e09935aa"
 
+tachyons-text-align@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/tachyons-text-align/-/tachyons-text-align-3.1.0.tgz#e3592637afb68498ba846a619e374423e83f0727"
+
 tachyons-type-scale@^6.1.0:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/tachyons-type-scale/-/tachyons-type-scale-6.1.0.tgz#4566519793457afbb5d5d47568d456c172f0bd7c"
