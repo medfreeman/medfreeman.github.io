@@ -1,5 +1,5 @@
 import React from "react"
-import { IconButton } from "react-toolbox/lib/button"
+import { Button, IconButton } from "react-toolbox/lib/button"
 import { Drawer } from "react-toolbox/lib/drawer"
 import { Navigation } from "react-toolbox/lib/navigation"
 
@@ -7,6 +7,7 @@ import Link from "Elements/Link"
 import Icon from "Elements/Icon"
 
 import styles from "./index.css"
+import buttonTheme from "./button.css"
 
 class Header extends React.Component {
   state = {
@@ -41,12 +42,15 @@ class Header extends React.Component {
               type="vertical"
               className={ styles["navigation"] }
             >
-              <Link
-                to="/"
-                icon="logo_black_white"
-                label="Home" />
-              <Link to="/portfolio/" label="Portfolio" />
-              <Link to="https://github.com/medfreeman/medfreeman.github.io" label="Fork me on github" icon="github" />
+              <Link to="/">
+                <Button neutral={ false } theme={ buttonTheme } icon={ <Icon icon="logo_black_white" /> } label="Home" />
+              </Link>
+              <Link to="/portfolio/">
+                <Button neutral={ false } theme={ buttonTheme } label="Portfolio" />
+              </Link>
+              <Link to="https://github.com/medfreeman/medfreeman.github.io">
+                <Button neutral={ false } theme={ buttonTheme } icon={ <Icon icon="github" /> } label="Fork me on github" />
+              </Link>
             </Navigation>
           </Drawer>
         </div>

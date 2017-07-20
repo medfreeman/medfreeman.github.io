@@ -1,56 +1,39 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { Button } from "react-toolbox/lib/button"
 import { Link as RouterLink } from "react-router"
+import joinURL from "url-join"
 import isAbsoluteUrl from "is-absolute-url"
 
-import Icon from "Elements/Icon"
-
 import styles from "./index.css"
-import buttonStyle from "./button.css"
 
 const Link = (props) => {
-  const { icon, to, buttonTheme, ...otherProps } = props
-  if (icon) {
-    if (typeof icon === "string") {
-      otherProps.icon = ( <Icon icon={ icon } /> )
-    } else {
-      otherProps.icon = icon
-    }
+  let url = props.to
+  if ( !isAbsoluteUrl(url) && url.match(/\.pdf$/) ) {
+    url = joinURL( PHENOMIC_URL, url )
   }
 
-  if ( isAbsoluteUrl(to) ) {
+  if ( isAbsoluteUrl(url) ) {
     return (
       <a
-        href={ to }
+        href={ url }
         className={ styles["link"] }
         target="_blank"
         rel="noreferrer noopener"
       >
-        <Button neutral={ false } theme={ buttonTheme || buttonStyle } { ...otherProps } />
+        { props.children }
       </a>
     )
   } else {
     return (
-      <RouterLink to={ to } className={ styles["link"] } activeClassName={ styles["link-active"] }>
-        <Button
-          neutral={ false }
-          theme={ buttonTheme || buttonStyle }
-          { ...otherProps }
-        />
+      <RouterLink to={ url } className={ styles["link"] } activeClassName={ styles["link-active"] }>
+        { props.children }
       </RouterLink>
     )
   }
 }
 
 Link.propTypes = {
-  buttonTheme: PropTypes.object,
-  icon: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.object
-  ]),
-  label: PropTypes.string,
-  theme: PropTypes.object,
+  children: PropTypes.node,
   to: PropTypes.string.isRequired
 }
 

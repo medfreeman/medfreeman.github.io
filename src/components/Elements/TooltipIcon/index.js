@@ -4,6 +4,7 @@ import { Button } from "react-toolbox/lib/button"
 import Tooltip from "react-toolbox/lib/tooltip"
 
 import Icon from "Elements/Icon"
+import Link from "Elements/Link"
 
 import theme from "./index.css"
 
@@ -11,18 +12,29 @@ const TooltipButton = Tooltip(Button)
 
 const TooltipIcon = props => {
 
-  const { floating, ...otherProps } = props
+  const { floating, to, ...otherProps } = props
   if (floating === "true") {
     otherProps.floating = true
   }
 
-  return (
+  const element = (
     <TooltipButton
       { ...otherProps }
-      theme={ theme }
+      tooltipPosition="top"
+      theme={ props.theme || theme }
       icon={ <Icon icon={ props.icon } /> }
     />
   )
+
+  if (to) {
+    return (
+      <Link to={ to }>
+        { element }
+      </Link>
+    )
+  } else {
+    return element
+  }
 }
 
 TooltipIcon.propTypes = {
@@ -34,6 +46,7 @@ TooltipIcon.propTypes = {
     PropTypes.bool,
     PropTypes.string,
   ]),
+  to: PropTypes.string,
   tooltip: PropTypes.any.isRequired,
   theme: PropTypes.object,
 }

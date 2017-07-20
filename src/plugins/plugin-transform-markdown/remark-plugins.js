@@ -63,9 +63,10 @@ export default (config?: PhenomicConfig, body: string) => {
         attributes: {
           "*": ["className"],
           Icon: [
-            "tooltip",
-            "icon",
             "floating",
+            "icon",
+            "to",
+            "tooltip"
           ]
         }
       }),
