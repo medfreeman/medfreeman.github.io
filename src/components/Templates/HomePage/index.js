@@ -1,4 +1,5 @@
 /* eslint-disable import/max-dependencies */
+/* eslint-disable react/no-multi-comp */
 import React from "react"
 import Head from "react-helmet"
 import PropTypes from "prop-types"
@@ -36,7 +37,8 @@ const HomePageComponent = ({ hasError, page }) => {
                     spanClass: styles.title__text,
                     ...props
                   }
-                )
+                ),
+                a: (props) => <a className={ styles.text__link } { ...props } />
               } }
             >
               { page.node.body }
@@ -46,11 +48,6 @@ const HomePageComponent = ({ hasError, page }) => {
               <meta name="description" content={ "" } />
               <html className={ styles.background }/>
             </Head>
-            <p className={ styles.text }>
-              <a className={ styles.text__link } href="mailto:mlahlou@protonmail.ch">
-                { "Hire Me!" }
-              </a>
-            </p>
           </article>
         )}
       </div>

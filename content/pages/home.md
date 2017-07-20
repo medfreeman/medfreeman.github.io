@@ -6,3 +6,5 @@ title: "Home"
 
 !Icon[resume](Download my resume){ to="documents/cv_mlahlou_web.pdf" }
 !Icon[github](Check my github profile){ to="https://github.com/medfreeman/" }
+
+[Hire Me!](mailto:mlahlou@protonmail.ch)
