@@ -4,4 +4,5 @@ title: "Home"
 
 # I'm a software and devOps engineer
 
-!Icon[resume](Download my resume){ to="documents/cv_mlahlou_web.pdf" }!Icon[github](Check my github profile)
+!Icon[resume](Download my resume){ to="documents/cv_mlahlou_web.pdf" }
+!Icon[github](Check my github profile){ to="https://github.com/medfreeman/" }
