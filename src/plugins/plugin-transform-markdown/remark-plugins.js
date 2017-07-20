@@ -52,47 +52,47 @@ export default (config?: PhenomicConfig, body: string) => {
         }
       }
     })
-    .use(reactRenderer, {
-      sanitize: deepmerge(sanitizeGhSchema, {
+      .use(reactRenderer, {
+        sanitize: deepmerge(sanitizeGhSchema, {
         // remove user-content from github.json to remark-slug work as expected
-        clobberPrefix: "",
-        tagNames: [
-          "Icon",
-        ],
-        // allow code to have className
-        attributes: {
-          "*": ["className"],
-          Icon: [
-            "floating",
-            "icon",
-            "to",
-            "tooltip"
-          ]
-        }
-      }),
-      // we cannot rely on components from here as we are serializing this as
-      // json
-      // remarkReactComponents: {
-      //   code: RemarkLowlight(languages),
-      // },
-      createElement: (component, props, children) => {
+          clobberPrefix: "",
+          tagNames: [
+            "Icon",
+          ],
+          // allow code to have className
+          attributes: {
+            "*": ["className"],
+            Icon: [
+              "floating",
+              "icon",
+              "to",
+              "tooltip"
+            ]
+          }
+        }),
+        // we cannot rely on components from here as we are serializing this as
+        // json
+        // remarkReactComponents: {
+        //   code: RemarkLowlight(languages),
+        // },
+        createElement: (component, props, children) => {
         // here we optimize structure just a little to have to smallest json
         // possible
-        return {
-          ...(!children
-            ? {}
-            : Array.isArray(children) && children.length === 0
+          return {
+            ...(!children
+              ? {}
+              : Array.isArray(children) && children.length === 0
                 ? {}
                 : Array.isArray(children) && children.length === 1
-                    ? { c: children[0] }
-                    : { c: children }),
-          ...(!props
-            ? {}
-            : Object.keys(props).length === 0 ? {} : { p: props }),
-          t: component
+                  ? { c: children[0] }
+                  : { c: children }),
+            ...(!props
+              ? {}
+              : Object.keys(props).length === 0 ? {} : { p: props }),
+            t: component
+          }
         }
-      }
-    })
+      })
   }
 
   return remarkInstance.processSync(body, { commonmark: true })

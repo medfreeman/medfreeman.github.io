@@ -4,8 +4,8 @@ import PropTypes from "prop-types"
 const Title = (props) => {
   const children = React.Children.map(props.children, (child) =>
     typeof child === "string"
-    ? ( <span className={ props.spanClass }>{ child }</span> )
-    : null
+      ? ( <span className={ props.spanClass }>{ child }</span> )
+      : null
   )
 
   return (

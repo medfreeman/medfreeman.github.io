@@ -1,6 +1,5 @@
 module.exports = ({ env }) => ({
   plugins: {
-    "stylelint": {},
     "postcss-import": {},
     "postcss-plugin-context": {
       global: require("postcss-normalize")({
@@ -14,8 +13,6 @@ module.exports = ({ env }) => ({
         colorLink: "#fff",
         colorSecondary: "#f69f1e",
         headerBackgroundColor: "#000",
-        menuIconSize: "4rem",
-        menuIconPadding: "1.5rem",
         menuPadding: "1rem",
         menuLinkColor: "#fff",
         menuLinkActiveBackgroundColor: "rgba(255, 255, 255, 0.3)",

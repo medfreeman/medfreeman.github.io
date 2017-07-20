@@ -14,7 +14,7 @@ const Favicon = () => {
         <link rel="icon" type="image/png" sizes="16x16" href={ favicon("favicon-16x16.png") } />
         <link rel="shortcut icon" href={ favicon("favicon.ico") } />
       </Head>
-    { process.env.NODE_ENV === "production" &&
+      { process.env.NODE_ENV === "production" &&
       <Head>
         <link rel="manifest" href={ favicon("manifest.json") } />
         <link rel="yandex-tableau-widget" href={ favicon("yandex-browser-manifest.json") } />
@@ -38,7 +38,7 @@ const Favicon = () => {
         <meta name="msapplication-TileImage" content={ favicon("mstile-144x144.png") } />
         <meta name="msapplication-config" content={ favicon("browserconfig.xml") } />
       </Head>
-    }
+      }
     </div>
   )
 }

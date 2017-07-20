@@ -11,7 +11,7 @@ function transformMarkdownFile({
   config,
   file,
   contents
-}: {
+  }: {
   config?: PhenomicConfig,
   file: PhenomicContentFile,
   contents: Buffer

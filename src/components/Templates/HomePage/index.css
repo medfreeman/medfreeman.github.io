@@ -4,7 +4,7 @@
 
 .container {
   flex: 1;
-  padding-right: calc(var(--menuIconSize) + var(--menuIconPadding) + var(--menuPadding));
+  composes: pt4 from 'tachyons-spacing';
 }
 
 .article {

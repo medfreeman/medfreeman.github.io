@@ -18,8 +18,7 @@ module.exports = {
     mdi("github"),
     mdi("heart"),
     material("action", "done_all"),
-    material("navigation", "menu"),
-    material("navigation", "close"),
+    material("AV", "art_track"),
     local("resume"),
     local("logo_black_white")
   ],

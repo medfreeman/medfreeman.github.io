@@ -54,6 +54,21 @@ module.exports = (config: PhenomicConfig) => {
           ]
         },
         {
+          test: /\.js$/,
+          include: [
+            /svg-inline-react/
+          ],
+          use: [
+            {
+              loader: require.resolve("babel-loader"),
+              options: {
+                babelrc: false,
+                presets: [require.resolve("@phenomic/babel-preset")]
+              }
+            }
+          ]
+        },
+        {
           test: /\.font\.js$/,
           loader: ExtractTextPlugin.extract({
             fallback: require.resolve("style-loader"),
@@ -107,8 +122,8 @@ module.exports = (config: PhenomicConfig) => {
                   importLoaders: 1,
                   localIdentName: (
                     process.env.NODE_ENV === "production"
-                    ? "[hash:base64:5]"
-                    : "[path][name]--[local]--[hash:base64:5]"
+                      ? "[hash:base64:5]"
+                      : "[path][name]--[local]--[hash:base64:5]"
                   ),
                 },
               },
@@ -273,6 +288,7 @@ module.exports = (config: PhenomicConfig) => {
         "Layout": path.resolve(__dirname, "src/components/Layout"),
         "Meta": path.resolve(__dirname, "src/components/Meta"),
         "Templates": path.resolve(__dirname, "src/components/Templates"),
+        "icons": path.resolve(__dirname, "src/icons"),
         "utils": path.resolve(__dirname, "src/utils"),
         "package.json": path.join(__dirname, "package.json"),
 

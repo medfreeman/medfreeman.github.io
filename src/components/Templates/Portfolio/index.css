@@ -1,5 +1,6 @@
 .container {
   flex: 1;
+  composes: pt4 from 'tachyons-spacing';
   padding-left: 60px;
-  padding-right: calc(var(--menuIconSize) + var(--menuIconPadding) + var(--menuPadding));
+  padding-right: 60px;
 }

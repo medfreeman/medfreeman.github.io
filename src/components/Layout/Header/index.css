@@ -1,49 +1,17 @@
 .header {
-  flex: 0 0 calc(var(--menuIconSize) + var(--menuIconPadding) + var(--menuPadding));
+  background-color: var(--headerBackgroundColor);
 }
 
 .container {
-  position: fixed;
-  top: var(--menuIconPadding);
-  right: var(--menuIconPadding);
+  padding: var(--menuPadding);
   z-index: 1;
 }
 
-.button--open {
-  width: var(--menuIconSize) !important;
-  height: var(--menuIconSize) !important;
-}
-
-.icon--open {
-  font-size: var(--menuIconSize) !important;
-  line-height: var(--menuIconSize) !important;
-}
-
-.drawer {
-  background-color: var(--colorPrimary);
-}
-
-.button--close {
+.github-corner__container {
   position: absolute;
-  top: var(--menuIconPadding);
-  right: var(--menuIconPadding);
-  width: var(--menuIconSize) !important;
-  height: var(--menuIconSize) !important;
+  right: 0;
 }
 
-.icon--close {
-  font-size: var(--menuIconSize) !important;
-  line-height: var(--menuIconSize) !important;
-  color: var(--colorLink);
-}
-
-.navigation {
-  margin-top: calc(var(--menuIconSize) + var(--menuIconPadding));
-}
-
-.svg--logo {
-  margin: auto;
-  vertical-align: middle;
-  display: inline-block;
-  height: 24px;
+.github-corner__container > svg {
+  height: 66px;
 }
