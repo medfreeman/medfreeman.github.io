@@ -26,6 +26,10 @@ class Header extends React.Component {
     window.addEventListener("resize", this.setHeaderHeight)
   }
 
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.setHeaderHeight)
+  }
+
   setHeaderHeight = () => {
     const headerHeight = this.header.clientHeight
     this.setState({
