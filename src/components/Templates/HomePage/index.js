@@ -23,6 +23,11 @@ const HomePageComponent = ({ hasError, page }) => {
       <div className={ styles.container }>
         {page.node && (
           <article className={ styles.article }>
+            <Head>
+              <title>{ "medfreeman" }</title>
+              <meta name="description" content={ "" } />
+              <html className={ styles.background }/>
+            </Head>
             <BodyRenderer
               components={ {
                 Icon: (props) => TooltipIcon(
@@ -43,11 +48,6 @@ const HomePageComponent = ({ hasError, page }) => {
             >
               { page.node.body }
             </BodyRenderer>
-            <Head>
-              <title>{ "medfreeman" }</title>
-              <meta name="description" content={ "" } />
-              <html className={ styles.background }/>
-            </Head>
           </article>
         )}
       </div>
