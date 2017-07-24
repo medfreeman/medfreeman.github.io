@@ -7,11 +7,10 @@ import { createStore, combineReducers } from "redux"
 import { reducer as reduxFormReducer } from "redux-form"
 import "typeface-roboto"
 
-import ErrorPage from "Templates/ErrorPage"
 import HomePage from "Templates/HomePage"
 import ContactPage from "Templates/ContactPage"
-import Page from "Templates/Page"
 import Portfolio from "Templates/Portfolio"
+import Page from "Templates/Page"
 
 import Html from "./src/HTML"
 import "./src/index.global.css"
@@ -27,8 +26,7 @@ const routes = () => (
       <Route path="/" component={ HomePage } />
       <Route path="/portfolio" component={ Portfolio } />
       <Route path="/contact" component={ ContactPage } />
-      <Route path="/*" component={ Page } />
-      <Route path="*" component={ ErrorPage } />
+      <Route path="*" component={ Page } />
     </Router>
   </Provider>
 )
