@@ -6,12 +6,13 @@ import PropTypes from "prop-types"
 import { createContainer, query, BodyRenderer } from "@phenomic/preset-react-app/lib/client"
 import Layout from "Layout/Page"
 import ErrorPage from "Templates/ErrorPage"
+import ContactForm from "Elements/ContactForm"
 
 import styles from "./index.css"
 
-const PageComponent = ({ hasError, page }) => {
+const ContactPageComponent = ({ hasError, page }) => {
   if (hasError) {
-    return <ErrorPage error={ {} } />
+    return <ErrorPage error={ page.error } />
   }
 
   return (
@@ -21,11 +22,14 @@ const PageComponent = ({ hasError, page }) => {
           <article className={ styles.article }>
             <Head>
               <title>{ page.node.title + " | medfreeman" }</title>
-              <meta name="description" content={ "" /* page.node.body.slice(0, 50)*/ } />
+              <meta name="description" content={ "" } />
             </Head>
             <BodyRenderer>
               { page.node.body }
             </BodyRenderer>
+            <ContactForm
+              email="mlahlou@protonmail.ch"
+              destroyOnUnmount={ false } />
           </article>
         )}
       </div>
@@ -33,20 +37,13 @@ const PageComponent = ({ hasError, page }) => {
   )
 }
 
-PageComponent.propTypes = {
+ContactPageComponent.propTypes = {
   hasError: PropTypes.bool,
   page: PropTypes.object
 }
 
-const Page = createContainer(PageComponent, (props) => ({
-  /*
-    Nasty hack until
-    https://github.com/phenomic/phenomic/issues/1093
-    is closed
-  */
-  page: props.params.splat === "home"
-    ? {}
-    : query({ collection: "pages", id: props.params.splat, ...props })
+const ContactPage = createContainer(ContactPageComponent, (props) => ({
+  page: query({ collection: "pages", id: "contact", ...props })
 }))
 
-export default Page
+export default ContactPage

@@ -14,9 +14,15 @@ const local = function(icon) {
 
 module.exports = {
   "files": [
+    mdi("at"),
     mdi("react"),
     mdi("github"),
     mdi("heart"),
+    mdi("loading"),
+    material("communication", "email"),
+    material("social", "person"),
+    material("content", "send"),
+    material("action", "done"),
     material("av", "art_track"),
     local("resume"),
     local("logo_black_white")

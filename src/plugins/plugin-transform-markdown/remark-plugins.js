@@ -57,7 +57,7 @@ export default (config?: PhenomicConfig, body: string) => {
         // remove user-content from github.json to remark-slug work as expected
           clobberPrefix: "",
           tagNames: [
-            "Icon",
+            "Icon"
           ],
           // allow code to have className
           attributes: {

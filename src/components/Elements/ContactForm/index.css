@@ -1,0 +1,39 @@
+@import 'react-toolbox/lib/colors';
+@import 'react-toolbox/lib/variables';
+@import 'react-toolbox/src/components/input/config';
+
+.actionContainer {
+  composes: cf from 'tachyons-clears';
+  composes: mt5 from 'tachyons-spacing';
+  composes: flex from 'tachyons-flexbox';
+  composes: flex-row from 'tachyons-flexbox';
+  composes: items-center from 'tachyons-flexbox';
+  composes: justify-between from 'tachyons-flexbox';
+}
+
+.captcha {
+  composes: mt5 from 'tachyons-spacing';
+  margin-left: calc(var(--input-icon-size) + var(--input-icon-right-space));
+}
+
+.captcha__error {
+  color: var(--input-text-error-color);
+  font-size: var(--input-label-font-size);
+  line-height: var(--input-underline-height);
+  margin-bottom: calc(-1 * var(--input-underline-height));
+}
+
+.message {
+  flex-grow: 1;
+  margin-left: calc(var(--input-icon-size) + var(--input-icon-right-space));
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-size: var(--input-field-font-size);
+}
+
+.error {
+  color: var(--input-text-error-color);
+}
+
+.success {
+  color: var(--input-text-success-color);
+}

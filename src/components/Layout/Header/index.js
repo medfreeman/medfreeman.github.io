@@ -64,6 +64,9 @@ class Header extends React.Component {
               <Link to="/portfolio/">
                 <Button neutral={ false } theme={ buttonTheme } icon={ <Icon icon="art_track" /> } label="Portfolio" />
               </Link>
+              <Link to="/contact/">
+                <Button neutral={ false } theme={ buttonTheme } icon={ <Icon icon="email" /> } label="Contact me" />
+              </Link>
             </Navigation>
           </div>
         </header>
