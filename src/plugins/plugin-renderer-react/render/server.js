@@ -14,6 +14,7 @@ import { encode, decode } from "../shared/QueryString";
 import renderHTML from "../server/renderHTML";
 import type { StoreType } from "../shared/store";
 import type { AppType } from "../createApp";
+import ReduxProvider from "../../../ReduxProvider";
 
 const debug = require("debug")("phenomic:plugin:react");
 
@@ -36,9 +37,11 @@ function renderToString(
   Html
 ) {
   const body = ReactDOMServer.renderToString(
-    <Provider fetch={fetch} store={store}>
-      <RouterContext {...renderProps} />
-    </Provider>
+    <ReduxProvider>
+      <Provider fetch={fetch} store={store}>
+        <RouterContext {...renderProps} />
+      </Provider>
+    </ReduxProvider>
   );
   return renderHTML(
     config,
