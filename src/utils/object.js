@@ -1,9 +1,11 @@
 function get(path, def) {
-  let object = this
+  let object = this;
   return path
     .split(".")
     .filter(Boolean)
-    .every(step => ((object = object[step]) !== undefined)) ? object : def
+    .every(step => (object = object[step]) !== undefined)
+    ? object
+    : def;
 }
 
-export { get }
+export { get };

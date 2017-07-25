@@ -1,36 +1,37 @@
-import React from "react"
-import Head from "react-helmet"
-import PropTypes from "prop-types"
+import React from "react";
+import Head from "react-helmet";
+import PropTypes from "prop-types";
 
-import FaviconMeta from "Meta/Favicon"
-import Header from "Layout/Header"
-import Footer from "Layout/Footer"
+import FaviconMeta from "Meta/Favicon";
+import Header from "Layout/Header";
+import Footer from "Layout/Footer";
 
-import styles from "./index.css"
+import styles from "./index.css";
 
-const Layout = ({children}) => (
+const Layout = ({ children }) =>
   <div>
     <Head>
-      <html lang="en" /> { /* this is valid react-helmet usage! */ }
+      <html lang="en" /> {/* this is valid react-helmet usage! */}
       <meta charSet="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
     </Head>
-    { process.env.NODE_ENV === "production" &&
+    {process.env.NODE_ENV === "production" &&
       <Head>
         <link rel="stylesheet" type="text/css" href="/styles.css" />
-      </Head>
-    }
+      </Head>}
     <FaviconMeta />
-    <div className={ styles.container }>
+    <div className={styles.container}>
       <Header />
-      { children }
+      {children}
       <Footer />
     </div>
-  </div>
-)
+  </div>;
 
 Layout.propTypes = {
   children: PropTypes.element
-}
+};
 
-export default Layout
+export default Layout;

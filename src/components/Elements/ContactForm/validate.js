@@ -1,22 +1,22 @@
-import emailValidator from "email-validator"
+import emailValidator from "email-validator";
 
-const validate = (values) => {
-  const errors = {}
+const validate = values => {
+  const errors = {};
   if (!values.name) {
-    errors.name = "Required"
+    errors.name = "Required";
   }
   if (!values.email) {
-    errors.email = "Required"
+    errors.email = "Required";
   } else if (!emailValidator.validate(values.email)) {
-    errors.email = "Invalid email address"
+    errors.email = "Invalid email address";
   }
   if (!values.message) {
-    errors.message = "Required"
+    errors.message = "Required";
   }
-  if(!values.captcharesponse) {
-    errors.captcharesponse = "Please confirm you are not a robot"
+  if (!values.captcharesponse) {
+    errors.captcharesponse = "Please confirm you are not a robot";
   }
-  return errors
-}
+  return errors;
+};
 
-export default validate
+export default validate;

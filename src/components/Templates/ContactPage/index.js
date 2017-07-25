@@ -1,49 +1,55 @@
 /* eslint-disable react/no-multi-comp */
-import React from "react"
-import Head from "react-helmet"
-import PropTypes from "prop-types"
+import React from "react";
+import Head from "react-helmet";
+import PropTypes from "prop-types";
 
-import { createContainer, query, BodyRenderer } from "@phenomic/preset-react-app/lib/client"
-import Layout from "Layout/Page"
-import ErrorPage from "Templates/ErrorPage"
-import ContactForm from "Elements/ContactForm"
+import {
+  createContainer,
+  query,
+  BodyRenderer
+} from "@phenomic/preset-react-app/lib/client";
+import Layout from "Layout/Page";
+import ErrorPage from "Templates/ErrorPage";
+import ContactForm from "Elements/ContactForm";
 
-import styles from "./index.css"
+import styles from "./index.css";
 
 const ContactPageComponent = ({ hasError, page }) => {
   if (hasError) {
-    return <ErrorPage error={ page.error } />
+    return <ErrorPage error={page.error} />;
   }
 
   return (
     <Layout>
-      <div className={ styles.container }>
-        {page.node && (
-          <article className={ styles.article }>
+      <div className={styles.container}>
+        {page.node &&
+          <article className={styles.article}>
             <Head>
-              <title>{ page.node.title + " | medfreeman" }</title>
-              <meta name="description" content={ "" } />
+              <title>
+                {page.node.title + " | medfreeman"}
+              </title>
+              <meta name="description" content={""} />
             </Head>
             <BodyRenderer>
-              { page.node.body }
+              {page.node.body}
             </BodyRenderer>
             <ContactForm
               email="mlahlou@protonmail.ch"
-              destroyOnUnmount={ false } />
-          </article>
-        )}
+              destroyOnUnmount={false}
+            />
+          </article>}
       </div>
     </Layout>
-  )
-}
+  );
+};
 
 ContactPageComponent.propTypes = {
   hasError: PropTypes.bool,
   page: PropTypes.object
-}
+};
 
-const ContactPage = createContainer(ContactPageComponent, (props) => ({
+const ContactPage = createContainer(ContactPageComponent, props => ({
   page: query({ collection: "pages", id: "contact", ...props })
-}))
+}));
 
-export default ContactPage
+export default ContactPage;

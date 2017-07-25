@@ -1,21 +1,20 @@
 /* eslint-disable react/jsx-no-bind */
-import React from "react"
-import PropTypes from "prop-types"
-import ReCAPTCHA from "react-google-recaptcha"
+import React from "react";
+import PropTypes from "prop-types";
+import ReCAPTCHA from "react-google-recaptcha";
 
-import styles from "./index.css"
+import styles from "./index.css";
 
-const Captcha = (props) => (
-  <div className={ styles.captcha }>
+const Captcha = props =>
+  <div className={styles.captcha}>
     <ReCAPTCHA
-      sitekey={ RECAPTCHA_SITE_KEY }
-      onChange={ response => props.input.onChange(response) }
+      sitekey={RECAPTCHA_SITE_KEY}
+      onChange={response => props.input.onChange(response)}
     />
-    <span className={ styles.captcha__error }>
-      { props.meta.touched && props.meta.error }
+    <span className={styles.captcha__error}>
+      {props.meta.touched && props.meta.error}
     </span>
-  </div>
-)
+  </div>;
 
 Captcha.propTypes = {
   input: PropTypes.object.isRequired,
@@ -23,6 +22,6 @@ Captcha.propTypes = {
     error: PropTypes.string,
     touched: PropTypes.bool
   })
-}
+};
 
-export default Captcha
+export default Captcha;

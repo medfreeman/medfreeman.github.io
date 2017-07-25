@@ -1,40 +1,44 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { Link as RouterLink } from "react-router"
-import joinURL from "url-join"
-import isAbsoluteUrl from "is-absolute-url"
+import React from "react";
+import PropTypes from "prop-types";
+import { Link as RouterLink } from "react-router";
+import joinURL from "url-join";
+import isAbsoluteUrl from "is-absolute-url";
 
-import styles from "./index.css"
+import styles from "./index.css";
 
-const Link = (props) => {
-  let url = props.to
-  if ( !isAbsoluteUrl(url) && url.match(/\.pdf$/) ) {
-    url = joinURL( PHENOMIC_URL, url )
+const Link = props => {
+  let url = props.to;
+  if (!isAbsoluteUrl(url) && url.match(/\.pdf$/)) {
+    url = joinURL(PHENOMIC_URL, url);
   }
 
-  if ( isAbsoluteUrl(url) ) {
+  if (isAbsoluteUrl(url)) {
     return (
       <a
-        href={ url }
-        className={ styles["link"] }
+        href={url}
+        className={styles["link"]}
         target="_blank"
         rel="noreferrer noopener"
       >
-        { props.children }
+        {props.children}
       </a>
-    )
+    );
   } else {
     return (
-      <RouterLink to={ url } className={ styles["link"] } activeClassName={ styles["link-active"] }>
-        { props.children }
+      <RouterLink
+        to={url}
+        className={styles["link"]}
+        activeClassName={styles["link-active"]}
+      >
+        {props.children}
       </RouterLink>
-    )
+    );
   }
-}
+};
 
 Link.propTypes = {
   children: PropTypes.node,
   to: PropTypes.string.isRequired
-}
+};
 
-export default Link
+export default Link;
