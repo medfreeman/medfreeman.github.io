@@ -139,8 +139,11 @@ class ContactForm extends React.Component {
           icon={<Icon icon="email" />}
           component={this.renderInputField}
         />
-        <Field name="captcharesponse" component={Captcha} />
-        <div className={styles.actionContainer}>
+        <div className={styles.action__container}>
+          <span className={styles.captcha__spacer} />
+          <Field name="captcharesponse" component={Captcha} />
+        </div>
+        <div className={styles.action__container}>
           <span
             className={cx(
               styles.message,
