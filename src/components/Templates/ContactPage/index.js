@@ -36,7 +36,9 @@ const ContactPageComponent = ({ hasError, page }) => {
             <ContactForm
               email="mlahlou@protonmail.ch"
               recaptchaSiteKey={RECAPTCHA_SITE_KEY}
+              subject="[medfreeman.github.io] New message!"
               successMessage="Thank you!"
+              language="en"
               destroyOnUnmount={false}
             />
           </article>}

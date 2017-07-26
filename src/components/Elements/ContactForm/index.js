@@ -1,5 +1,7 @@
+/* eslint-disable react/jsx-no-bind */
 import React from "react";
 import PropTypes from "prop-types";
+import { connect } from "react-redux";
 import {
   reduxForm,
   propTypes as reduxFormPropTypes,
@@ -48,11 +50,12 @@ class ContactForm extends React.Component {
       method: "POST",
       body: JSON.stringify(
         {
+          _subject: values._subject,
           name: values.name,
           email: values.email,
           message: values.message
         },
-        ["name", "email", "message"]
+        ["_subject", "name", "email", "message"]
       )
     })
       .then(
@@ -90,6 +93,11 @@ class ContactForm extends React.Component {
         noValidate
         onSubmit={this.props.handleSubmit(this.handleSubmit)}
       >
+        <Field
+          type="hidden"
+          name="_subject"
+          component={this.renderInputField}
+        />
         <Field
           type="text"
           name="name"
@@ -163,10 +171,21 @@ ContactForm.propTypes = {
   ...reduxFormPropTypes,
   email: PropTypes.string.isRequired,
   recaptchaSiteKey: PropTypes.string,
+  subject: PropTypes.string,
   successMessage: PropTypes.string
 };
 
-export default reduxForm({
-  form: "contact",
-  validate
-})(ContactForm);
+export default connect(
+  (state, ownProps) => ({
+    initialValues: {
+      _subject: ownProps.subject || ""
+    }
+  }),
+  null
+)(
+  reduxForm({
+    form: "contact",
+    validate,
+    enableReinitialize: true
+  })(ContactForm)
+);
