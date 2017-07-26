@@ -1,6 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { reduxForm, Field, SubmissionError } from "redux-form";
+import {
+  reduxForm,
+  propTypes as reduxFormPropTypes,
+  Field,
+  SubmissionError
+} from "redux-form";
 import cx from "classnames";
 import emailValidator from "email-validator";
 import { Input } from "react-toolbox/lib/input";
@@ -8,8 +13,8 @@ import { Button } from "react-toolbox/lib/button";
 
 import Icon from "Elements/Icon";
 
-import Captcha from "./Captcha.js";
-import validate from "./validate.js";
+import Captcha from "./Captcha";
+import validate from "./validate";
 import styles from "./index.css";
 import textTheme from "./textarea.css";
 import buttonTheme from "./button.css";
@@ -28,14 +33,14 @@ class ContactForm extends React.Component {
     this.postUrl = `https://formspree.io/${email}`;
   }
 
-  renderInputField = ({ input, meta: { touched, error }, ...props }) =>
-    <Input {...input} {...props} error={touched && error} />;
+  componentWillMount() {
+    if (!this.props.destroyOnUnmount) {
+      this.props.change("captcharesponse", null);
+    }
+  }
 
-  handleSubmit = values => {
-    this.setState(this.load);
-    console.log(JSON.stringify(values, ["name", "email", "message"]));
-
-    return fetch(this.postUrl, {
+  handleSubmit = values =>
+    fetch(this.postUrl, {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json"
@@ -47,20 +52,18 @@ class ContactForm extends React.Component {
           email: values.email,
           message: values.message
         },
-        ["_subject", "name", "email", "message"]
+        ["name", "email", "message"]
       )
     })
       .then(
         () =>
           new Promise(resolve => {
-            this.setState(this.success);
             resolve(true);
           })
       )
       .catch(
         res =>
           new Promise((resolve, reject) => {
-            this.setState(this.idle);
             const error = res.statusText
               ? `${res.status}: ${res.statusText}`
               : res.status;
@@ -71,33 +74,12 @@ class ContactForm extends React.Component {
             );
           })
       );
-  };
 
-  idle = {
-    submitButton: {
-      icon: "send",
-      iconClassName: "",
-      disabled: false
-    },
-    success: ""
-  };
-
-  load = {
-    submitButton: {
-      icon: "loading",
-      iconClassName: "mf-spin",
-      disabled: false
-    },
-    success: ""
-  };
-
-  success = {
-    submitButton: {
-      icon: "done",
-      iconClassName: "",
-      disabled: true
-    },
-    success: "Thank you!"
+  renderInputField = ({ input, meta: { touched, error }, icon, ...props }) => {
+    if (icon) {
+      props.icon = <Icon icon={icon} />;
+    }
+    return <Input {...input} {...props} error={touched && error} />;
   };
 
   render() {
@@ -113,7 +95,7 @@ class ContactForm extends React.Component {
           name="name"
           label="Name"
           required
-          icon={<Icon icon="person" />}
+          icon="person"
           component={this.renderInputField}
         />
         <Field
@@ -121,12 +103,7 @@ class ContactForm extends React.Component {
           name="email"
           label="Email address"
           required
-          error={
-            <span>
-              {"Error"}
-            </span>
-          }
-          icon={<Icon icon="at" />}
+          icon="at"
           component={this.renderInputField}
         />
         <Field
@@ -136,12 +113,19 @@ class ContactForm extends React.Component {
           required
           multiline
           theme={textTheme}
-          icon={<Icon icon="email" />}
+          icon="email"
           component={this.renderInputField}
         />
         <div className={styles.action__container}>
           <span className={styles.captcha__spacer} />
-          <Field name="captcharesponse" component={Captcha} />
+          <Field
+            name="captcharesponse"
+            required
+            component={Captcha}
+            className={styles.captcha}
+            errorClass={styles.captcha__error}
+            siteKey={this.props.recaptchaSiteKey}
+          />
         </div>
         <div className={styles.action__container}>
           <span
@@ -150,17 +134,22 @@ class ContactForm extends React.Component {
               this.props.error ? styles.error : styles.success
             )}
           >
-            {this.props.error || this.state.success}
+            {this.props.error ||
+              (this.props.submitSucceeded && this.props.successMessage)}
           </span>
           <Button
             type="submit"
             raised
             theme={buttonTheme}
-            disabled={this.state.submitButton.disabled}
+            disabled={this.props.submitSucceeded}
             icon={
               <Icon
-                icon={this.state.submitButton.icon}
-                className={this.state.submitButton.iconClassName}
+                icon={
+                  (this.props.submitting && "loading") ||
+                  (this.props.submitSucceeded && "done") ||
+                  "send"
+                }
+                className={(this.props.submitting && "mf-spin") || ""}
               />
             }
           />
@@ -171,9 +160,10 @@ class ContactForm extends React.Component {
 }
 
 ContactForm.propTypes = {
-  email: PropTypes.string,
-  error: PropTypes.string,
-  handleSubmit: PropTypes.func
+  ...reduxFormPropTypes,
+  email: PropTypes.string.isRequired,
+  recaptchaSiteKey: PropTypes.string,
+  successMessage: PropTypes.string
 };
 
 export default reduxForm({

@@ -5,7 +5,7 @@ import cx from "classnames";
 const Icon = props => {
   const { className, icon, ...otherProps } = props;
   return (
-    <i className={cx(className, "mf-icons")} {...otherProps}>
+    <i className={cx("mf-icons", className)} {...otherProps}>
       {icon}
     </i>
   );

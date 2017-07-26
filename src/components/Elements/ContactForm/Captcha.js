@@ -3,22 +3,23 @@ import React from "react";
 import PropTypes from "prop-types";
 import ReCAPTCHA from "react-google-recaptcha";
 
-import styles from "./index.css";
-
 const Captcha = props =>
-  <div className={styles.captcha}>
-    <ReCAPTCHA sitekey={RECAPTCHA_SITE_KEY} onChange={props.input.onChange} />
-    <span className={styles.captcha__error}>
+  <div className={props.className}>
+    <ReCAPTCHA sitekey={props.siteKey} onChange={props.input.onChange} />
+    <span className={props.errorClass}>
       {props.meta.touched && props.meta.error}
     </span>
   </div>;
 
 Captcha.propTypes = {
+  className: PropTypes.string,
+  errorClass: PropTypes.string,
   input: PropTypes.object.isRequired,
   meta: PropTypes.shape({
     error: PropTypes.string,
     touched: PropTypes.bool
-  })
+  }),
+  siteKey: PropTypes.string.isRequired
 };
 
 export default Captcha;
