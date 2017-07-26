@@ -95,6 +95,11 @@ class ContactForm extends React.Component {
       >
         <Field
           type="hidden"
+          name="_language"
+          component={this.renderInputField}
+        />
+        <Field
+          type="hidden"
           name="_subject"
           component={this.renderInputField}
         />
@@ -133,6 +138,7 @@ class ContactForm extends React.Component {
             className={styles.captcha}
             errorClass={styles.captcha__error}
             siteKey={this.props.recaptchaSiteKey}
+            locale={this.props.locale}
           />
         </div>
         <div className={styles.action__container}>
@@ -171,6 +177,20 @@ ContactForm.propTypes = {
   ...reduxFormPropTypes,
   email: PropTypes.string.isRequired,
   recaptchaSiteKey: PropTypes.string,
+  language: PropTypes.oneOf([
+    "en",
+    "es",
+    "nl",
+    "ja",
+    "fr",
+    "it",
+    "de",
+    "pl",
+    "sk",
+    "ru",
+    "uk",
+    "pt"
+  ]),
   subject: PropTypes.string,
   successMessage: PropTypes.string
 };
@@ -178,7 +198,8 @@ ContactForm.propTypes = {
 export default connect(
   (state, ownProps) => ({
     initialValues: {
-      _subject: ownProps.subject || ""
+      _subject: ownProps.subject || "",
+      _language: ownProps.language || ""
     }
   }),
   null
