@@ -24,7 +24,7 @@ import buttonTheme from "./button.css";
 class ContactForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.idle;
+
     const { email } = props;
     if (!email || !emailValidator.validate(email)) {
       console.error(
