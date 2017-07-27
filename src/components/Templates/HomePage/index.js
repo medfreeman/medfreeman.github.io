@@ -41,11 +41,18 @@ const HomePageComponent = ({ hasError, page }) => {
                     ...props
                   }),
                 h1: props =>
-                  Title({
-                    className: styles.title,
-                    spanClass: styles.title__text,
-                    ...props
-                  }),
+                  <Title
+                    className={styles.h1}
+                    spanClass={styles.h1__text}
+                    {...props}
+                  />,
+                h2: props =>
+                  <Title
+                    className={styles.h2}
+                    spanClass={styles.h2__text}
+                    level={2}
+                    {...props}
+                  />,
                 a: props => <a className={styles.text__link} {...props} />
               }}
             >
