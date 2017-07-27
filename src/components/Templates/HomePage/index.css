@@ -49,8 +49,11 @@
 }
 
 .text {
+  composes: f4 from 'tachyons-type-scale';
+  composes: f3-l from 'tachyons-type-scale';
+  composes: white from 'tachyons-skins';
   composes: mt0 from 'tachyons-spacing';
-  composes: mb5 from 'tachyons-spacing';
+  composes: mb2 from 'tachyons-spacing';
 }
 
 .text__link {

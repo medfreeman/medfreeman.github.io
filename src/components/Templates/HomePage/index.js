@@ -53,6 +53,7 @@ const HomePageComponent = ({ hasError, page }) => {
                     level={2}
                     {...props}
                   />,
+                p: props => <p className={styles.text} {...props} />,
                 a: props => <a className={styles.text__link} {...props} />
               }}
             >
