@@ -2,6 +2,17 @@ import React from "react";
 import PropTypes from "prop-types";
 
 class Title extends React.Component {
+  static propTypes = {
+    children: PropTypes.node,
+    className: PropTypes.string,
+    level: PropTypes.oneOf([1, 2, 3, 4, 5, 6]).isRequired,
+    spanClass: PropTypes.string
+  };
+
+  static defaultProps = {
+    level: 1
+  };
+
   constructor(props) {
     super(props);
     this.children = React.Children.map(this.props.children, child => {
@@ -29,16 +40,5 @@ class Title extends React.Component {
     );
   }
 }
-
-Title.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
-  level: PropTypes.oneOf([1, 2, 3, 4, 5, 6]).isRequired,
-  spanClass: PropTypes.string
-};
-
-Title.defaultProps = {
-  level: 1
-};
 
 export default Title;
