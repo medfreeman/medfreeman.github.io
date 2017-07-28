@@ -16,7 +16,7 @@ const Link = props => {
     return (
       <a
         href={url}
-        className={styles["link"]}
+        className={props.className || styles["link"]}
         target="_blank"
         rel="noreferrer noopener"
       >
@@ -27,7 +27,7 @@ const Link = props => {
     return (
       <RouterLink
         to={url}
-        className={styles["link"]}
+        className={props.className || styles["link"]}
         activeClassName={styles["link-active"]}
       >
         {props.children}
@@ -38,6 +38,7 @@ const Link = props => {
 
 Link.propTypes = {
   children: PropTypes.node,
+  className: PropTypes.string,
   to: PropTypes.string.isRequired
 };
 
