@@ -4,18 +4,23 @@ import PropTypes from "prop-types";
 class Title extends React.Component {
   constructor(props) {
     super(props);
-    this.children = React.Children.map(
-      this.props.children,
-      child =>
-        typeof child === "string"
-          ? <span className={this.props.spanClass}>
-              {child}
-            </span>
-          : null
-    );
+    this.children = React.Children.map(this.props.children, child => {
+      if (typeof child === "string") {
+        return (
+          <span className={this.props.spanClass}>
+            {child}
+          </span>
+        );
+      } else if (
+        React.isValidElement(child) &&
+        child.props.className === "phenomic-HeadingAnchor"
+      ) {
+        return null;
+      }
+      return child;
+    });
     this.Tag = `h${this.props.level}`;
   }
-
   render() {
     return (
       <this.Tag className={this.props.className}>
