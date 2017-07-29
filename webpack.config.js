@@ -41,7 +41,8 @@ module.exports = (config: PhenomicConfig) => {
                 presets: [require.resolve("@phenomic/babel-preset")],
                 plugins: [
                   require.resolve("react-hot-loader/babel"),
-                  require.resolve("babel-plugin-transform-function-bind")
+                  require.resolve("babel-plugin-transform-function-bind"),
+                  require.resolve("babel-plugin-transform-decorators-legacy")
                 ]
               }
             },

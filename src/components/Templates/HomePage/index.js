@@ -10,11 +10,12 @@ import {
 } from "@phenomic/preset-react-app/lib/client";
 import Layout from "Layout/Page";
 import ErrorPage from "Templates/ErrorPage";
+import Link from "Elements/Link";
 import Title from "Elements/Title";
 import TooltipIcon from "Elements/TooltipIcon";
 
 import styles from "./index.css";
-import buttonTheme from "./button.css";
+import tooltipIconTheme from "./tooltipIcon.css";
 
 const HomePageComponent = ({ hasError, page }) => {
   if (hasError) {
@@ -35,26 +36,28 @@ const HomePageComponent = ({ hasError, page }) => {
             </Head>
             <BodyRenderer
               components={{
-                Icon: props =>
-                  TooltipIcon({
-                    theme: buttonTheme,
-                    ...props
-                  }),
-                h1: props =>
+                Icon: ownProps =>
+                  <TooltipIcon theme={tooltipIconTheme} {...ownProps} />,
+                h1: ownProps =>
                   <Title
                     className={styles.h1}
                     spanClass={styles.h1__text}
-                    {...props}
+                    {...ownProps}
                   />,
-                h2: props =>
+                h2: ownProps =>
                   <Title
                     className={styles.h2}
                     spanClass={styles.h2__text}
                     level={2}
-                    {...props}
+                    {...ownProps}
                   />,
-                p: props => <p className={styles.text} {...props} />,
-                a: props => <a className={styles.text__link} {...props} />
+                p: ownProps => <p className={styles.text} {...ownProps} />,
+                a: ownProps => {
+                  const { href, ...otherProps } = ownProps;
+                  return <Link to={href} {...otherProps} />;
+                },
+                ul: ownProps => <ul className={styles.ul} {...ownProps} />,
+                li: ownProps => <li className={styles.li} {...ownProps} />
               }}
             >
               {page.node.body}

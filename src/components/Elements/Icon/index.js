@@ -1,19 +1,34 @@
 import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
+import { FontIcon } from "react-toolbox/lib/font_icon";
+import { themr } from "react-css-themr";
 
-const Icon = props => {
-  const { className, icon, ...otherProps } = props;
-  return (
-    <i className={cx("mf-icons", className)} {...otherProps}>
-      {icon}
-    </i>
-  );
-};
+@themr('Icon')
+class Icon extends React.Component {
+  static propTypes = {
+    icon: PropTypes.string.isRequired,
+    children: PropTypes.node,
+    className: PropTypes.string,
+    theme: PropTypes.object
+  };
 
-Icon.propTypes = {
-  icon: PropTypes.string.isRequired,
-  className: PropTypes.string
-};
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    const { icon, className, theme, children, ...otherProps } = this.props;
+
+    return (
+      <FontIcon className={theme.icon}>
+        <i className={cx("mf-icons", className)} {...otherProps}>
+          {icon}
+        </i>
+        {children}
+      </FontIcon>
+    );
+  }
+}
 
 export default Icon;

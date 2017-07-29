@@ -1,11 +1,9 @@
 .button {
-  composes: mb4 from 'tachyons-spacing';
   height: 6rem;
 }
 
 .icon {
   composes: black from 'tachyons-skins';
-  margin-right: 0 !important;
 }
 
 .icon > i {

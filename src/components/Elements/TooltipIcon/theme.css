@@ -1,0 +1,35 @@
+@import 'react-toolbox/lib/colors';
+@import 'react-toolbox/lib/variables';
+@import 'react-toolbox/src/components/button/config';
+
+.link {
+  display: inline-block;
+  line-height: 0;
+  vertical-align: middle;
+}
+
+.button {
+
+  & > span[data-react-toolbox='font-icon'] {
+    line-height: var(--button-height);
+    vertical-align: middle;
+  }
+
+  & > span[data-react-toolbox='image'] {
+    line-height: 0;
+    vertical-align: initial;
+  }
+}
+
+.image {
+  display: inline-block;
+  line-height: 0;
+  vertical-align: middle;
+}
+
+.icon {
+  display: inline-block;
+  line-height: 0;
+  vertical-align: middle;
+  cursor: default;
+}
