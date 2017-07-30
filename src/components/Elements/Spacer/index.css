@@ -1,0 +1,39 @@
+.h-0 {
+  composes: db from "tachyons-display";
+  height: 0;
+}
+
+.h-1 {
+  composes: db from "tachyons-display";
+  height: .25rem;
+}
+
+.h-2 {
+  composes: db from "tachyons-display";
+  height: 0.5rem;
+}
+
+.h-3 {
+  composes: db from "tachyons-display";
+  height: 1rem;
+}
+
+.h-4 {
+  composes: db from "tachyons-display";
+  height: 2rem;
+}
+
+.h-5 {
+  composes: db from "tachyons-display";
+  height: 4rem;
+}
+
+.h-6 {
+  composes: db from "tachyons-display";
+  height: 8rem;
+}
+
+.h-7{
+  composes: db from "tachyons-display";
+  height: 16rem;
+}

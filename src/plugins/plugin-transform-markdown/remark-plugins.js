@@ -50,6 +50,13 @@ export default (config?: PhenomicConfig, body: string) => {
                 tooltip: "::argument::"
               }
             }
+          },
+          Spacer: {
+            html: {
+              properties: {
+                height: "::content::"
+              }
+            }
           }
         }
       })
@@ -57,11 +64,12 @@ export default (config?: PhenomicConfig, body: string) => {
         sanitize: deepmerge(sanitizeGhSchema, {
           // remove user-content from github.json to remark-slug work as expected
           clobberPrefix: "",
-          tagNames: ["Icon"],
+          tagNames: ["Icon", "Spacer"],
           // allow code to have className
           attributes: {
             "*": ["className"],
-            Icon: ["floating", "icon", "to", "tooltip"]
+            Icon: ["floating", "icon", "to", "tooltip"],
+            Spacer: ["height"]
           }
         }),
         // we cannot rely on components from here as we are serializing this as

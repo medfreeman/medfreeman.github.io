@@ -11,6 +11,7 @@ import {
 import Layout from "Layout/Page";
 import ErrorPage from "Templates/ErrorPage";
 import Link from "Elements/Link";
+import Spacer from "Elements/Spacer";
 import Title from "Elements/Title";
 import TooltipIcon from "Elements/TooltipIcon";
 
@@ -38,6 +39,7 @@ const HomePageComponent = ({ hasError, page }) => {
               components={{
                 Icon: ownProps =>
                   <TooltipIcon theme={tooltipIconTheme} {...ownProps} />,
+                Spacer: ownProps => <Spacer {...ownProps} />,
                 h1: ownProps =>
                   <Title
                     className={styles.h1}
