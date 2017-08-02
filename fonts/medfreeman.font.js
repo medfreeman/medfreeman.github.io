@@ -19,6 +19,7 @@ module.exports = {
     mdi("github"),
     mdi("heart"),
     mdi("loading"),
+    mdi("linkedin"),
     material("communication", "email"),
     material("social", "person"),
     material("content", "send"),
