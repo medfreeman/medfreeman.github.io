@@ -15,10 +15,10 @@ class Title extends React.Component {
 
   constructor(props) {
     super(props);
-    this.children = React.Children.map(this.props.children, child => {
+    this.children = React.Children.map(props.children, child => {
       if (typeof child === "string") {
         return (
-          <span className={this.props.spanClass}>
+          <span className={props.spanClass}>
             {child}
           </span>
         );
