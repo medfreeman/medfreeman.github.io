@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 
 import FaviconMeta from "Meta/Favicon";
 import Header from "Layout/Header";
+import Content from "Layout/Content";
 import Footer from "Layout/Footer";
 
 import styles from "./index.css";
@@ -25,7 +26,9 @@ const Layout = ({ children }) =>
     <FaviconMeta />
     <div className={styles.container}>
       <Header />
-      {children}
+      <Content>
+        {children}
+      </Content>
       <Footer />
     </div>
   </div>;
