@@ -1,7 +1,0 @@
----
-title: "Post 12"
----
-
-# Post 12
-
-Post 12
