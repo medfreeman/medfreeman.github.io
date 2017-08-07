@@ -168,7 +168,7 @@
         "error",
         {
           "ignore": [
-            "(Elements|Layout|Meta|Templates|icons|utils)/.*$",
+            "(Elements|Layout|Meta|Partials|Templates|icons|utils)/.*$",
             "package.json"
           ]
         }

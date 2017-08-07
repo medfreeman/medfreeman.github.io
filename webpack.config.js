@@ -1,15 +1,14 @@
 /* global PhenomicConfig */
-import path from "path"
+import path from "path";
 
-import webpack from "webpack"
-import ExtractTextPlugin from "extract-text-webpack-plugin"
-import FaviconsWebpackPlugin from "favicons-webpack-plugin"
+import webpack from "webpack";
+import ExtractTextPlugin from "extract-text-webpack-plugin";
+import FaviconsWebpackPlugin from "favicons-webpack-plugin";
 
-import pkg from "./package.json"
+import pkg from "./package.json";
 
-const nodeModules = path.join(process.cwd(), "node_modules")
+const nodeModules = path.join(process.cwd(), "node_modules");
 module.exports = (config: PhenomicConfig) => {
-
   return {
     entry: {
       [config.bundleName]: [
@@ -29,10 +28,7 @@ module.exports = (config: PhenomicConfig) => {
       rules: [
         {
           test: /\.js$/,
-          exclude: [
-            /node_modules/,
-            /\.font\.js$/
-          ],
+          exclude: [/node_modules/, /\.font\.js$/],
           use: [
             {
               loader: require.resolve("babel-loader"),
@@ -49,16 +45,15 @@ module.exports = (config: PhenomicConfig) => {
             {
               loader: require.resolve("eslint-loader"),
               options: {
-                emitWarning: (process.env.NODE_ENV === "production" ? false : true)
+                emitWarning:
+                  process.env.NODE_ENV === "production" ? false : true
               }
             }
           ]
         },
         {
           test: /\.js$/,
-          include: [
-            /svg-inline-react/
-          ],
+          include: [/svg-inline-react/],
           use: [
             {
               loader: require.resolve("babel-loader"),
@@ -88,9 +83,7 @@ module.exports = (config: PhenomicConfig) => {
         },
         {
           test: /\.global\.css$/,
-          include:  [
-            path.join(__dirname, "src")
-          ],
+          include: [path.join(__dirname, "src")],
           loader: ExtractTextPlugin.extract({
             fallback: require.resolve("style-loader"),
             use: [
@@ -105,14 +98,8 @@ module.exports = (config: PhenomicConfig) => {
         },
         {
           test: /\.css$/,
-          include: [
-            path.join(__dirname, "src"),
-            /react-toolbox/,
-            /tachyons/
-          ],
-          exclude: [
-            /\.global\.css$/,
-          ],
+          include: [path.join(__dirname, "src"), /react-toolbox/, /tachyons/],
+          exclude: [/\.global\.css$/],
           loader: ExtractTextPlugin.extract({
             fallback: require.resolve("style-loader"),
             use: [
@@ -121,38 +108,30 @@ module.exports = (config: PhenomicConfig) => {
                 options: {
                   modules: true,
                   importLoaders: 1,
-                  localIdentName: (
+                  localIdentName:
                     process.env.NODE_ENV === "production"
                       ? "[hash:base64:5]"
                       : "[path][name]--[local]--[hash:base64:5]"
-                  ),
-                },
+                }
               },
               {
                 loader: require.resolve("postcss-loader")
               }
             ]
-          }),
+          })
         },
         {
           test: /\.css$/,
-          include: [
-            /typeface-roboto/
-          ],
+          include: [/typeface-roboto/],
           loader: ExtractTextPlugin.extract({
             fallback: require.resolve("style-loader"),
-            use: [
-              require.resolve("css-loader")
-            ]
+            use: [require.resolve("css-loader")]
           })
         },
         {
           test: /\.woff(2)?$/,
           loader: require.resolve("url-loader"),
-          include: [
-            /Medcons/,
-            /typeface-roboto/
-          ],
+          include: [/Medcons/, /typeface-roboto/],
           query: {
             limit: 10000,
             mimetype: "application/font-woff",
@@ -162,10 +141,7 @@ module.exports = (config: PhenomicConfig) => {
         {
           test: /\.ttf$/,
           loader: require.resolve("url-loader"),
-          include: [
-            /Medcons/,
-            /typeface-roboto/
-          ],
+          include: [/Medcons/, /typeface-roboto/],
           query: {
             limit: 10000,
             mimetype: "application/octet-stream",
@@ -175,10 +151,7 @@ module.exports = (config: PhenomicConfig) => {
         {
           test: /\.svg$/,
           loader: require.resolve("url-loader"),
-          include: [
-            /Medcons/,
-            /typeface-roboto/
-          ],
+          include: [/Medcons/, /typeface-roboto/],
           query: {
             limit: 10000,
             mimetype: "image/svg+xml",
@@ -188,10 +161,7 @@ module.exports = (config: PhenomicConfig) => {
         {
           test: /\.eot$/,
           loader: require.resolve("file-loader"),
-          include: [
-            /Medcons/,
-            /typeface-roboto/
-          ],
+          include: [/Medcons/, /typeface-roboto/],
           query: {
             name: "fonts/[name].[hash].[ext]"
           }
@@ -199,12 +169,10 @@ module.exports = (config: PhenomicConfig) => {
         // svg as raw string to be inlined
         {
           test: /\.svg$/,
-          include: [
-            path.join(__dirname, "src/icons"),
-          ],
+          include: [path.join(__dirname, "src/icons")],
           use: [
             {
-              loader: "raw-loader",
+              loader: "raw-loader"
             },
             {
               loader: "svgo-loader",
@@ -212,11 +180,11 @@ module.exports = (config: PhenomicConfig) => {
                 plugins: [
                   { removeTitle: true, removeDesc: true },
                   { convertColors: { shorthex: false } },
-                  { convertPathData: false },
-                ],
-              },
-            },
-          ],
+                  { convertPathData: false }
+                ]
+              }
+            }
+          ]
         }
       ]
     },
@@ -232,71 +200,74 @@ module.exports = (config: PhenomicConfig) => {
         new webpack.optimize.UglifyJsPlugin(),
 
       new webpack.DefinePlugin({
-        PHENOMIC_URL: process.env.URL ? JSON.stringify(process.env.URL) : JSON.stringify("http://localhost:" + config.port),
+        PHENOMIC_URL: process.env.URL
+          ? JSON.stringify(process.env.URL)
+          : JSON.stringify("http://localhost:" + config.port),
         RECAPTCHA_SITE_KEY: JSON.stringify(pkg.recaptcha_site_key)
       }),
 
       process.env.NODE_ENV === "production"
         ? new FaviconsWebpackPlugin({
-          logo: path.join(__dirname, "favicon.png"),
-          appName: pkg.name,
-          appDescription: pkg.description,
-          developerName: pkg.author,
-          developerURL: pkg.homepage,
-          prefix: "assets/",
-          persistentCache: false,
-          inject: false,
-          background: "#000",
-          display: "browser",
-          orientation: "portrait",
-          start_url: "",
-          icons: {
-            android: true,
-            appleIcon: true,
-            appleStartup: false,
-            coast: false,
-            favicons: true,
-            firefox: true,
-            opengraph: false,
-            twitter: false,
-            yandex: true,
-            windows: true,
-          },
-        })
+            logo: path.join(__dirname, "favicon.png"),
+            appName: pkg.name,
+            appDescription: pkg.description,
+            developerName: pkg.author,
+            developerURL: pkg.homepage,
+            prefix: "assets/",
+            persistentCache: false,
+            inject: false,
+            background: "#000",
+            display: "browser",
+            orientation: "portrait",
+            start_url: "",
+            icons: {
+              android: true,
+              appleIcon: true,
+              appleStartup: false,
+              coast: false,
+              favicons: true,
+              firefox: true,
+              opengraph: false,
+              twitter: false,
+              yandex: true,
+              windows: true
+            }
+          })
         : new FaviconsWebpackPlugin({
-          logo: path.join(__dirname, "favicon.png"),
-          prefix: "assets/",
-          persistentCache: false,
-          inject: false,
-          icons: {
-            android: false,
-            appleIcon: false,
-            appleStartup: false,
-            coast: false,
-            favicons: true,
-            firefox: false,
-            opengraph: false,
-            twitter: false,
-            yandex: false,
-            windows: false,
-          },
-        })
+            logo: path.join(__dirname, "favicon.png"),
+            prefix: "assets/",
+            persistentCache: false,
+            inject: false,
+            icons: {
+              android: false,
+              appleIcon: false,
+              appleStartup: false,
+              coast: false,
+              favicons: true,
+              firefox: false,
+              opengraph: false,
+              twitter: false,
+              yandex: false,
+              windows: false
+            }
+          })
     ].filter(item => item),
 
     resolve: {
       // react-native(-web) | react-primitives
       extensions: [".web.js", ".js", ".json"],
       alias: {
-        "Elements": path.resolve(__dirname, "src/components/Elements"),
-        "Layout": path.resolve(__dirname, "src/components/Layout"),
-        "Meta": path.resolve(__dirname, "src/components/Meta"),
-        "Templates": path.resolve(__dirname, "src/components/Templates"),
-        "icons": path.resolve(__dirname, "src/icons"),
-        "utils": path.resolve(__dirname, "src/utils"),
+        Elements: path.resolve(__dirname, "src/components/Elements"),
+        Layout: path.resolve(__dirname, "src/components/Layout"),
+        Meta: path.resolve(__dirname, "src/components/Meta"),
+        Partials: path.resolve(__dirname, "src/components/Partials"),
+        Templates: path.resolve(__dirname, "src/components/Templates"),
+        icons: path.resolve(__dirname, "src/icons"),
+        utils: path.resolve(__dirname, "src/utils"),
         "package.json": path.join(__dirname, "package.json"),
 
-        "masonry": "masonry-layout",
-        "isotope": "isotope-layout",
+        masonry: "masonry-layout",
+        isotope: "isotope-layout",
 
         "react-native": "react-native-web",
 
@@ -314,5 +285,5 @@ module.exports = (config: PhenomicConfig) => {
       net: "empty",
       tls: "empty"
     }
-  }
-}
+  };
+};

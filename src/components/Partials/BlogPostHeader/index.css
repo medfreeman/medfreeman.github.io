@@ -1,0 +1,15 @@
+.h2 {
+  composes: f2 from 'tachyons-type-scale';
+  composes: f1-l from 'tachyons-type-scale';
+  composes: measure-narrow from 'tachyons-typography';
+  composes: lh-title from 'tachyons-line-height';
+  composes: mt0 from 'tachyons-spacing';
+  composes: mb1 from 'tachyons-spacing';
+}
+
+.h2__text {
+  composes: lh-title from 'tachyons-line-height';
+  composes: white from 'tachyons-skins';
+  composes: pa1 from 'tachyons-spacing';
+  composes: tracked-tight from 'tachyons-letter-spacing';
+}

@@ -1,0 +1,3 @@
+.link {
+  composes: white from 'tachyons-skins';
+}

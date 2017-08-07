@@ -6,10 +6,11 @@ import { createContainer, query } from "@phenomic/preset-react-app/lib/client";
 import pkg from "package.json";
 import Page from "Templates/Page";
 import ErrorPage from "Templates/ErrorPage";
-import Title from "Elements/Title"
+import BlogPostHeader from "Partials/BlogPostHeader";
 import Link from "Elements/Link";
 
 import styles from "./index.css";
+import linkTheme from "./linkTheme.css";
 
 const BlogArchiveComponent = ({ hasError, posts, isLoading, page }) => {
   return hasError
@@ -24,17 +25,15 @@ const BlogArchiveComponent = ({ hasError, posts, isLoading, page }) => {
             posts.node &&
             posts.node.list &&
             posts.node.list.map(post =>
-              <Title level={2} key={post.id}>
-                <Link to={`/blog/${post.id}`}>
-                  {post.title || post.id}
-                </Link>
-              </Title>
+              <article key={post.id}>
+                <BlogPostHeader post={post} />
+              </article>
             )}
           <p>
             {posts &&
               posts.node &&
               posts.node.hasNextPage &&
-              <Link to={`/blog/after/${posts.node.next}`}>
+              <Link to={`/blog/after/${posts.node.next}`} theme={linkTheme}>
                 {"Older posts"}
               </Link>}
           </p>

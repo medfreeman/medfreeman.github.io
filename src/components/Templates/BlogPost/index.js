@@ -1,48 +1,45 @@
 import React from "react";
 import Head from "react-helmet";
 import PropTypes from "prop-types";
-
 import {
   createContainer,
   query,
   BodyRenderer
 } from "@phenomic/preset-react-app/lib/client";
-import Layout from "Layout/";
+
+import pkg from "package.json";
+import Page from "Templates/Page";
 import ErrorPage from "Templates/ErrorPage";
+import BlogPostHeader from "Partials/BlogPostHeader";
 
-const BlogPostComponent = ({ hasError, page }) => {
-  if (hasError) {
-    return <ErrorPage error={page.error} />;
-  }
+import styles from "./index.css";
 
-  return (
-    <Layout>
-      <div>
-        {page.node &&
-          <article>
-            <Head>
-              <title>
-                {page.node.title}
-              </title>
-              <meta
-                name="description"
-                content={"" /* page.node.body.slice(0, 50)*/}
-              />
-            </Head>
-            <h1>
-              {page.node.title}
-            </h1>
-            <BodyRenderer>
-              {page.node.body}
-            </BodyRenderer>
-          </article>}
-      </div>
-    </Layout>
-  );
+const BlogPostComponent = ({ hasError, isLoading, page }) => {
+  return hasError
+    ? <ErrorPage error={page.error} />
+    : !isLoading &&
+      <Page
+        title={`${page.node.title} | ${pkg.name}`}
+        description={"Blog Archive"}
+      >
+        <div>
+          <Head>
+            <html className={styles.background} />
+          </Head>
+          {!isLoading &&
+            <article>
+              <BlogPostHeader post={page.node} />
+              <BodyRenderer>
+                {page.node.body}
+              </BodyRenderer>
+            </article>}
+        </div>
+      </Page>;
 };
 
 BlogPostComponent.propTypes = {
   hasError: PropTypes.bool,
+  isLoading: PropTypes.bool,
   page: PropTypes.object
 };
 
