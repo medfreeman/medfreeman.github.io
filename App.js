@@ -5,9 +5,11 @@ import { createApp, renderApp } from "@phenomic/preset-react-app/lib/client"
 import "typeface-roboto"
 
 import HomePage from "Templates/HomePage"
-import ContactPage from "Templates/ContactPage"
+import BlogArchive from "Templates/BlogArchive"
+import BlogPost from "Templates/BlogPost"
 import Portfolio from "Templates/Portfolio"
-import Page from "Templates/Page"
+import ContactPage from "Templates/ContactPage"
+import ErrorPage from "Templates/ErrorPage"
 
 import Provider from "./src/ReduxProvider"
 import Html from "./src/HTML"
@@ -19,8 +21,11 @@ const routes = () => (
     <Router history={ browserHistory }>
       <Route path="/" component={ HomePage } />
       <Route path="/portfolio" component={ Portfolio } />
+      <Route path="/blog/" component={ BlogArchive } />
+      <Route path="/blog/after/:after" component={ BlogArchive } />
+      <Route path="/blog/*" component={ BlogPost } />
       <Route path="/contact" component={ ContactPage } />
-      <Route path="*" component={ Page } />
+      <Route path="*" component={ ErrorPage } />
     </Router>
   </Provider>
 )

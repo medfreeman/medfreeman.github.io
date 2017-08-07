@@ -1,77 +1,38 @@
-/* eslint-disable react/no-multi-comp */
 import React from "react";
-import Head from "react-helmet";
 import PropTypes from "prop-types";
-
+import Head from "react-helmet";
 import {
   createContainer,
   query,
   BodyRenderer
 } from "@phenomic/preset-react-app/lib/client";
-import Layout from "Layout/Page";
+
+import pkg from "package.json";
+import Page from "Templates/Page";
 import ErrorPage from "Templates/ErrorPage";
-import Link from "Elements/Link";
-import Spacer from "Elements/Spacer";
-import Title from "Elements/Title";
-import TooltipIcon from "Elements/TooltipIcon";
 
+import bodyComponents from "./bodyComponents";
 import styles from "./index.css";
-import tooltipIconTheme from "./tooltipIcon.css";
 
-const HomePageComponent = ({ hasError, page }) => {
-  if (hasError) {
-    return <ErrorPage error={page.error} />;
-  }
-
-  return (
-    <Layout>
-      <div className={styles.container}>
-        {page.node &&
-          <article className={styles.article}>
-            <Head>
-              <title>
-                {"medfreeman"}
-              </title>
-              <meta name="description" content={""} />
-              <html className={styles.background} />
-            </Head>
-            <BodyRenderer
-              components={{
-                Icon: ownProps =>
-                  <TooltipIcon theme={tooltipIconTheme} {...ownProps} />,
-                Spacer: ownProps => <Spacer {...ownProps} />,
-                h1: ownProps =>
-                  <Title
-                    className={styles.h1}
-                    spanClass={styles.h1__text}
-                    {...ownProps}
-                  />,
-                h2: ownProps =>
-                  <Title
-                    className={styles.h2}
-                    spanClass={styles.h2__text}
-                    level={2}
-                    {...ownProps}
-                  />,
-                p: ownProps => <p className={styles.text} {...ownProps} />,
-                a: ownProps => {
-                  const { href, ...otherProps } = ownProps;
-                  return <Link to={href} {...otherProps} />;
-                },
-                ul: ownProps => <ul className={styles.ul} {...ownProps} />,
-                li: ownProps => <li className={styles.li} {...ownProps} />
-              }}
-            >
+const HomePageComponent = ({ hasError, isLoading, page }) => {
+  return hasError
+    ? <ErrorPage error={page.error} />
+    : <Page title={pkg.name}>
+        <article>
+          <Head>
+            <html className={styles.background} />
+          </Head>
+          {!isLoading &&
+            <BodyRenderer components={bodyComponents}>
               {page.node.body}
-            </BodyRenderer>
-          </article>}
-      </div>
-    </Layout>
-  );
+            </BodyRenderer>}
+        </article>
+      </Page>;
 };
 
 HomePageComponent.propTypes = {
   hasError: PropTypes.bool,
+  isLoading: PropTypes.bool,
   page: PropTypes.object
 };
 

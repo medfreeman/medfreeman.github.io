@@ -1,54 +1,41 @@
 /* eslint-disable react/no-multi-comp */
 import React from "react";
-import Head from "react-helmet";
 import PropTypes from "prop-types";
-
 import {
   createContainer,
   query,
   BodyRenderer
 } from "@phenomic/preset-react-app/lib/client";
-import Layout from "Layout/Page";
+
+import pkg from "package.json";
+import Page from "Templates/Page";
 import ErrorPage from "Templates/ErrorPage";
 import ContactForm from "Elements/ContactForm";
 
-import styles from "./index.css";
-
-const ContactPageComponent = ({ hasError, page }) => {
-  if (hasError) {
-    return <ErrorPage error={page.error} />;
-  }
-
-  return (
-    <Layout>
-      <div className={styles.container}>
-        {page.node &&
-          <article className={styles.article}>
-            <Head>
-              <title>
-                {page.node.title + " | medfreeman"}
-              </title>
-              <meta name="description" content={""} />
-            </Head>
-            <BodyRenderer>
-              {page.node.body}
-            </BodyRenderer>
-            <ContactForm
-              email="mlahlou@protonmail.ch"
-              recaptchaSiteKey={RECAPTCHA_SITE_KEY}
-              subject="[medfreeman.github.io] New message!"
-              successMessage="Thank you!"
-              language="en"
-              destroyOnUnmount={false}
-            />
-          </article>}
-      </div>
-    </Layout>
-  );
+const ContactPageComponent = ({ hasError, isLoading, page }) => {
+  return hasError
+    ? <ErrorPage error={page.error} />
+    : !isLoading &&
+      <Page title={`${page.node.title} | ${pkg.name}`}>
+        <article>
+          <BodyRenderer>
+            {page.node.body}
+          </BodyRenderer>
+          <ContactForm
+            email="mlahlou@protonmail.ch"
+            recaptchaSiteKey={RECAPTCHA_SITE_KEY}
+            subject="[medfreeman.github.io] New message!"
+            successMessage="Thank you!"
+            language="en"
+            destroyOnUnmount={false}
+          />
+        </article>
+      </Page>;
 };
 
 ContactPageComponent.propTypes = {
   hasError: PropTypes.bool,
+  isLoading: PropTypes.bool,
   page: PropTypes.object
 };
 
