@@ -16,19 +16,18 @@ class Title extends React.Component {
   constructor(props) {
     super(props);
     this.children = React.Children.map(props.children, child => {
-      if (typeof child === "string") {
+      if (
+        React.isValidElement(child) &&
+        child.props.className === "phenomic-HeadingAnchor"
+      ) {
+        return null;
+      } else {
         return (
           <span className={props.spanClass}>
             {child}
           </span>
         );
-      } else if (
-        React.isValidElement(child) &&
-        child.props.className === "phenomic-HeadingAnchor"
-      ) {
-        return null;
       }
-      return child;
     });
     this.Tag = `h${this.props.level}`;
   }
