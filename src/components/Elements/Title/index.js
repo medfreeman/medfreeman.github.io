@@ -1,12 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { themr } from "react-css-themr";
 
+@themr("Title")
 class Title extends React.Component {
   static propTypes = {
     children: PropTypes.node,
-    className: PropTypes.string,
     level: PropTypes.oneOf([1, 2, 3, 4, 5, 6]).isRequired,
-    spanClass: PropTypes.string
+    theme: PropTypes.object
   };
 
   static defaultProps = {
@@ -15,7 +16,11 @@ class Title extends React.Component {
 
   constructor(props) {
     super(props);
-    this.children = React.Children.map(props.children, child => {
+  }
+  render() {
+    const { theme, level } = this.props;
+    const Tag = `h${level}`;
+    const children = React.Children.map(this.props.children, child => {
       if (
         React.isValidElement(child) &&
         child.props.className === "phenomic-HeadingAnchor"
@@ -23,19 +28,17 @@ class Title extends React.Component {
         return null;
       } else {
         return (
-          <span className={props.spanClass}>
+          <span className={theme[`${Tag}__span`]}>
             {child}
           </span>
         );
       }
     });
-    this.Tag = `h${this.props.level}`;
-  }
-  render() {
+
     return (
-      <this.Tag className={this.props.className}>
-        {this.children}
-      </this.Tag>
+      <Tag className={theme[Tag]}>
+        {children}
+      </Tag>
     );
   }
 }

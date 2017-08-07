@@ -1,0 +1,13 @@
+.p {
+  composes: f4 from 'tachyons-type-scale';
+  composes: f3-l from 'tachyons-type-scale';
+  composes: white from 'tachyons-skins';
+  composes: mt0 from 'tachyons-spacing';
+  composes: mb3 from 'tachyons-spacing';
+}
+
+.p a {
+  font-size: inherit;
+  color: inherit;
+  text-decoration: underline;
+}

@@ -1,16 +1,17 @@
 import React from "react";
 import Head from "react-helmet";
 import PropTypes from "prop-types";
+import { themr } from "react-css-themr";
 
 import Layout from "Layout/";
 
-import styles from "./index.css";
-
+@themr("Page", null, { composeTheme: false })
 class Page extends React.Component {
   static propTypes = {
     children: PropTypes.node,
     description: PropTypes.string,
-    title: PropTypes.string
+    title: PropTypes.string,
+    theme: PropTypes.object
   };
 
   static defaultProps = {
@@ -23,12 +24,12 @@ class Page extends React.Component {
   }
 
   render() {
-    const { description, title } = this.props;
+    const { theme, description, title } = this.props;
     const children = React.Children.map(this.props.children, child => {
-      if (React.isValidElement(child) && !child.props.className) {
+      if (React.isValidElement(child)) {
         return React.cloneElement(child, {
-          className: styles.article,
-          ...child.props
+          ...child.props,
+          className: theme.container
         });
       }
       return child;

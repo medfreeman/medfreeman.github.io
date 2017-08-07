@@ -1,4 +1,4 @@
-.article {
+.container {
   composes: mw9 from 'tachyons-max-widths';
   composes: center from 'tachyons-utilities';
   composes: pa4 from 'tachyons-spacing';

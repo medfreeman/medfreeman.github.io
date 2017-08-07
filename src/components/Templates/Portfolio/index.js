@@ -11,14 +11,14 @@ import Page from "Templates/Page";
 import ErrorPage from "Templates/ErrorPage";
 import Gallery from "Elements/Gallery";
 
-import styles from "./index.css";
+import PageTheme from "./theme.css";
 
 const PortfolioComponent = ({ hasError, isLoading, page }) => {
   return hasError
     ? <ErrorPage error={page.error} />
     : !isLoading &&
-      <Page title={`${page.node.title} | ${pkg.name}`}>
-        <article className={styles.container}>
+      <Page title={`${page.node.title} | ${pkg.name}`} theme={PageTheme}>
+        <article>
           <BodyRenderer>
             {page.node.body}
           </BodyRenderer>

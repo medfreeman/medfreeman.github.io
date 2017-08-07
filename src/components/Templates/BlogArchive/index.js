@@ -10,7 +10,6 @@ import BlogPostHeader from "Partials/BlogPostHeader";
 import Link from "Elements/Link";
 
 import styles from "./index.css";
-import linkTheme from "./linkTheme.css";
 
 const BlogArchiveComponent = ({ hasError, posts, isLoading, page }) => {
   return hasError
@@ -33,7 +32,7 @@ const BlogArchiveComponent = ({ hasError, posts, isLoading, page }) => {
             {posts &&
               posts.node &&
               posts.node.hasNextPage &&
-              <Link to={`/blog/after/${posts.node.next}`} theme={linkTheme}>
+              <Link to={`/blog/after/${posts.node.next}`}>
                 {"Older posts"}
               </Link>}
           </p>
