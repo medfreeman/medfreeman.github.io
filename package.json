@@ -144,11 +144,8 @@
     "build-for-deploy": "cross-env URL=https://medfreeman.github.io phenomic build"
   },
   "lint-staged": {
-    "*.js": [
-      "git-exec-and-restage prettier --write --parser=babylon"
-    ],
-    "*.jsx": [
-      "git-exec-and-restage prettier --write --parser=babylon"
+    "*.{js,jsx}": [
+      "git-exec-and-restage prettier --write --parser=babylon --"
     ]
   },
   "babel": {
