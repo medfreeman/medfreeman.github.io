@@ -4,7 +4,7 @@ import cx from "classnames";
 import { FontIcon } from "react-toolbox/lib/font_icon";
 import { themr } from "react-css-themr";
 
-@themr('Icon')
+@themr("Icon")
 class Icon extends React.Component {
   static propTypes = {
     icon: PropTypes.string.isRequired,

@@ -16,7 +16,7 @@ const TooltipFontIcon = Tooltip(Icon);
 
 const isImage = string => /\.(gif|jpg|jpe?g|tiff|png)$/i.test(string);
 
-@themr('TooltipIcon', defaultTheme)
+@themr("TooltipIcon", defaultTheme)
 class TooltipIcon extends React.Component {
   static defaultProps = {
     tooltipPosition: "top"

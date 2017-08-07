@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { themr } from "react-css-themr";
 
-@themr('Image')
+@themr("Image")
 class Image extends React.Component {
   static propTypes = {
     alt: PropTypes.string,

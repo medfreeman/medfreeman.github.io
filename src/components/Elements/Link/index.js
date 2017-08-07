@@ -7,7 +7,7 @@ import { themr } from "react-css-themr";
 
 import defaultTheme from "./theme.css";
 
-@themr('Link', defaultTheme)
+@themr("Link", defaultTheme)
 class Link extends React.Component {
   static propTypes = {
     children: PropTypes.node,
