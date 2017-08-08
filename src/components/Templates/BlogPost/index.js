@@ -1,5 +1,4 @@
 import React from "react";
-import Head from "react-helmet";
 import PropTypes from "prop-types";
 import {
   createContainer,
@@ -12,7 +11,7 @@ import Page from "Templates/Page";
 import ErrorPage from "Templates/ErrorPage";
 import BlogPostHeader from "Partials/BlogPostHeader";
 
-import styles from "./index.css";
+import PageTheme from "./theme.css";
 
 const BlogPostComponent = ({ hasError, isLoading, page }) => {
   return hasError
@@ -21,11 +20,9 @@ const BlogPostComponent = ({ hasError, isLoading, page }) => {
       <Page
         title={`${page.node.title} | ${pkg.name}`}
         description={"Blog Archive"}
+        theme={PageTheme}
       >
         <div>
-          <Head>
-            <html className={styles.background} />
-          </Head>
           {!isLoading &&
             <article>
               <BlogPostHeader post={page.node} />

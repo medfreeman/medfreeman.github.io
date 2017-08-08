@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Head from "react-helmet";
 import { createContainer, query } from "@phenomic/preset-react-app/lib/client";
 
 import pkg from "package.json";
@@ -9,17 +8,18 @@ import ErrorPage from "Templates/ErrorPage";
 import BlogPostHeader from "Partials/BlogPostHeader";
 import Link from "Elements/Link";
 
-import styles from "./index.css";
+import PageTheme from "./theme.css";
 
 const BlogArchiveComponent = ({ hasError, posts, isLoading, page }) => {
   return hasError
     ? <ErrorPage error={page.error} />
     : !isLoading &&
-      <Page title={`Blog | ${pkg.name}`} description={"Blog Archive"}>
+      <Page
+        title={`Blog | ${pkg.name}`}
+        description={"Blog Archive"}
+        theme={PageTheme}
+      >
         <div>
-          <Head>
-            <html className={styles.background} />
-          </Head>
           {posts &&
             posts.node &&
             posts.node.list &&

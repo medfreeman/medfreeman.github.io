@@ -5,7 +5,7 @@ import { themr } from "react-css-themr";
 
 import Layout from "Layout/";
 
-@themr("Page", null, { composeTheme: false })
+@themr("Page", null, { composeTheme: "softly" })
 class Page extends React.Component {
   static propTypes = {
     children: PropTypes.node,
@@ -43,6 +43,7 @@ class Page extends React.Component {
               {title}
             </title>
             <meta name="description" content={description} />
+            {theme.background && <html className={theme.background} />}
           </Head>
           {children}
         </div>

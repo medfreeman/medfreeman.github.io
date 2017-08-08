@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Head from "react-helmet";
 import {
   createContainer,
   query,
@@ -12,16 +11,13 @@ import Page from "Templates/Page";
 import ErrorPage from "Templates/ErrorPage";
 
 import bodyComponents from "./bodyComponents";
-import styles from "./index.css";
+import PageTheme from "./theme.css";
 
 const HomePageComponent = ({ hasError, isLoading, page }) => {
   return hasError
     ? <ErrorPage error={page.error} />
-    : <Page title={pkg.name}>
+    : <Page title={pkg.name} theme={PageTheme}>
         <article>
-          <Head>
-            <html className={styles.background} />
-          </Head>
           {!isLoading &&
             <BodyRenderer components={bodyComponents}>
               {page.node.body}
