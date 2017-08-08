@@ -5,9 +5,3 @@
   composes: mt0 from 'tachyons-spacing';
   composes: mb3 from 'tachyons-spacing';
 }
-
-.p a {
-  font-size: inherit;
-  color: inherit;
-  text-decoration: underline;
-}

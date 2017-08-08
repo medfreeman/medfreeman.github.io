@@ -1,15 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {
-  createContainer,
-  query,
-  BodyRenderer
-} from "@phenomic/preset-react-app/lib/client";
+import { createContainer, query } from "@phenomic/preset-react-app/lib/client";
 
 import pkg from "package.json";
 import Page from "Templates/Page";
 import ErrorPage from "Templates/ErrorPage";
 import Gallery from "Elements/Gallery";
+import BodyRenderer from "Elements/BodyRenderer";
 
 import PageTheme from "./theme.css";
 

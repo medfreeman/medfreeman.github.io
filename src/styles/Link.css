@@ -1,3 +1,5 @@
 .link {
-  composes: white from 'tachyons-skins';
+  font-size: inherit;
+  color: inherit;
+  text-decoration: underline;
 }

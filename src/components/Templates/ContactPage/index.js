@@ -1,16 +1,13 @@
 /* eslint-disable react/no-multi-comp */
 import React from "react";
 import PropTypes from "prop-types";
-import {
-  createContainer,
-  query,
-  BodyRenderer
-} from "@phenomic/preset-react-app/lib/client";
+import { createContainer, query } from "@phenomic/preset-react-app/lib/client";
 
 import pkg from "package.json";
 import Page from "Templates/Page";
 import ErrorPage from "Templates/ErrorPage";
 import ContactForm from "Elements/ContactForm";
+import BodyRenderer from "Elements/BodyRenderer";
 
 const ContactPageComponent = ({ hasError, isLoading, page }) => {
   return hasError

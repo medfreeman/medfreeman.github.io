@@ -1,16 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {
-  createContainer,
-  query,
-  BodyRenderer
-} from "@phenomic/preset-react-app/lib/client";
+import { createContainer, query } from "@phenomic/preset-react-app/lib/client";
 
 import pkg from "package.json";
 import Page from "Templates/Page";
 import ErrorPage from "Templates/ErrorPage";
+import BodyRenderer from "Elements/BodyRenderer";
 
-import bodyComponents from "./bodyComponents";
 import PageTheme from "./theme.css";
 
 const HomePageComponent = ({ hasError, isLoading, page }) => {
@@ -19,7 +15,7 @@ const HomePageComponent = ({ hasError, isLoading, page }) => {
     : <Page title={pkg.name} theme={PageTheme}>
         <article>
           {!isLoading &&
-            <BodyRenderer components={bodyComponents}>
+            <BodyRenderer>
               {page.node.body}
             </BodyRenderer>}
         </article>
