@@ -157,7 +157,6 @@
     "root": true,
     "extends": "eslint-config-i-am-meticulous/react-flow",
     "globals": {
-      "PHENOMIC_URL": true,
       "RECAPTCHA_SITE_KEY": true
     },
     "rules": {
