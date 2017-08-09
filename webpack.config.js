@@ -263,6 +263,7 @@ module.exports = (config: PhenomicConfig) => {
         Partials: path.resolve(__dirname, "src/components/Partials"),
         Templates: path.resolve(__dirname, "src/components/Templates"),
         icons: path.resolve(__dirname, "src/icons"),
+        providers: path.resolve(__dirname, "src/providers"),
         styles: path.resolve(__dirname, "src/styles"),
         utils: path.resolve(__dirname, "src/utils"),
         "package.json": path.join(__dirname, "package.json"),

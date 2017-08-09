@@ -14,7 +14,7 @@ import { encode, decode } from "../shared/QueryString";
 import renderHTML from "../server/renderHTML";
 import type { StoreType } from "../shared/store";
 import type { AppType } from "../createApp";
-import ReduxProvider from "../../../../ReduxProvider";
+import ReduxProvider from "../../../../providers/ReduxProvider";
 
 const debug = require("debug")("phenomic:plugin:react");
 

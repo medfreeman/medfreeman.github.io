@@ -2,13 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import { ThemeProvider as CssThemrProvider } from "react-css-themr";
 
-import PTheme from "styles/P.css";
-import UlTheme from "styles/Ul.css";
-import LiTheme from "styles/Li.css";
-import PageTheme from "styles/Page.css";
-import LinkTheme from "styles/Link.css";
-import TitleTheme from "styles/Title.css";
-import TooltipIconTheme from "styles/TooltipIcon.css";
+import PTheme from "../styles/P.css";
+import UlTheme from "../styles/Ul.css";
+import LiTheme from "../styles/Li.css";
+import PageTheme from "../styles/Page.css";
+import LinkTheme from "../styles/Link.css";
+import TitleTheme from "../styles/Title.css";
+import TooltipIconTheme from "../styles/TooltipIcon.css";
 
 const contextTheme = {
   P: PTheme,

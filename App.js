@@ -9,9 +9,9 @@ import BlogPost from "Templates/BlogPost";
 import Portfolio from "Templates/Portfolio";
 import ContactPage from "Templates/ContactPage";
 import ErrorPage from "Templates/ErrorPage";
+import ReduxProvider from "providers/ReduxProvider";
+import ThemeProvider from "providers/ThemeProvider";
 
-import ReduxProvider from "./src/ReduxProvider";
-import ThemeProvider from "./src/ThemeProvider";
 import Html from "./src/HTML";
 import "./src/index.global.css";
 import "./fonts/medfreeman.font";
