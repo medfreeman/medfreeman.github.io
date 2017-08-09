@@ -208,6 +208,7 @@ export default connect(
   reduxForm({
     form: "contact",
     validate,
-    enableReinitialize: true
+    enableReinitialize: true,
+    keepDirtyOnReinitialize: true
   })(ContactForm)
 );
