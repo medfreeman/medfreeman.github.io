@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import Header from "Elements/Header";
 import Title from "Elements/Title";
 import Link from "Elements/Link";
 
@@ -14,14 +15,14 @@ const BlogPostHeader = ({ post }) => {
     : post.title;
 
   return (
-    <header>
+    <Header>
       <Title level={2}>
         {title}
       </Title>
       <p>
         {post.date}
       </p>
-    </header>
+    </Header>
   );
 };
 
