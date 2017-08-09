@@ -5,5 +5,4 @@
   composes: f2 from 'tachyons-type-scale';
   composes: f3-l from 'tachyons-type-scale';
   color: var(--menuLinkColor);
-  text-decoration: none;
 }

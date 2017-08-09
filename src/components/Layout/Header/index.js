@@ -11,6 +11,7 @@ import githubCornerSVG from "icons/github_corner.svg";
 
 import styles from "./index.css";
 import buttonTheme from "./button.css";
+import linkTheme from "./link.css";
 
 class Header extends React.Component {
   constructor(props) {
@@ -61,7 +62,7 @@ class Header extends React.Component {
           </a>
           <div className={styles.container}>
             <Navigation type="horizontal">
-              <Link to="/">
+              <Link to="/" theme={linkTheme}>
                 <Button
                   neutral={false}
                   theme={buttonTheme}
@@ -69,7 +70,7 @@ class Header extends React.Component {
                   label="Home"
                 />
               </Link>
-              <Link to="/portfolio/">
+              <Link to="/portfolio/" theme={linkTheme}>
                 <Button
                   neutral={false}
                   theme={buttonTheme}
@@ -77,7 +78,7 @@ class Header extends React.Component {
                   label="Portfolio"
                 />
               </Link>
-              <Link to="/contact/">
+              <Link to="/contact/" theme={linkTheme}>
                 <Button
                   neutral={false}
                   theme={buttonTheme}
