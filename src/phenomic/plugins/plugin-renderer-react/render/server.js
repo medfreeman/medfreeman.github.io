@@ -6,6 +6,7 @@ import ReactDOMServer from "react-dom/server";
 import { match, RouterContext } from "react-router";
 import { createRouteFromReactElement } from "react-router/lib/RouteUtils";
 import createURL from "@phenomic/api-client/lib/url";
+import csshook from "css-modules-require-hook/preset";
 
 import Provider from "../components/Provider";
 import createStore from "../shared/store";
@@ -15,6 +16,7 @@ import renderHTML from "../server/renderHTML";
 import type { StoreType } from "../shared/store";
 import type { AppType } from "../createApp";
 import ReduxProvider from "../../../../providers/ReduxProvider";
+import ThemeProvider from "../../../../providers/ThemeProvider";
 
 const debug = require("debug")("phenomic:plugin:react");
 
@@ -38,9 +40,11 @@ function renderToString(
 ) {
   const body = ReactDOMServer.renderToString(
     <ReduxProvider>
-      <Provider fetch={fetch} store={store}>
-        <RouterContext {...renderProps} />
-      </Provider>
+      <ThemeProvider>
+        <Provider fetch={fetch} store={store}>
+          <RouterContext {...renderProps} />
+        </Provider>
+      </ThemeProvider>
     </ReduxProvider>
   );
   return renderHTML(
