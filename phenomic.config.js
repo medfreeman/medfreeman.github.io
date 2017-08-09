@@ -1,9 +1,7 @@
-require("babel-register")
+require("babel-register");
 
-const presetReactApp = require("./src/presets/preset-react-app")
+const presetReactApp = require("./src/phenomic/presets/preset-react-app");
 
 module.exports = {
-  "presets": [
-    presetReactApp
-  ]
-}
+  presets: [presetReactApp]
+};
