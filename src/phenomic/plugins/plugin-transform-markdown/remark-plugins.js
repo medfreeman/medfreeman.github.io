@@ -42,6 +42,7 @@ export default (config?: PhenomicConfig, body: string) => {
         elements: {
           Icon: {
             propsDefaultValues: {
+              absolute: true,
               floating: true
             },
             html: {
@@ -68,7 +69,7 @@ export default (config?: PhenomicConfig, body: string) => {
           // allow code to have className
           attributes: {
             "*": ["className"],
-            Icon: ["floating", "icon", "to", "tooltip"],
+            Icon: ["absolute", "floating", "icon", "to", "tooltip"],
             Spacer: ["height"]
           }
         }),

@@ -203,9 +203,6 @@ module.exports = (config: PhenomicConfig) => {
         new webpack.optimize.UglifyJsPlugin(),
 
       new webpack.DefinePlugin({
-        PHENOMIC_URL: process.env.URL
-          ? JSON.stringify(process.env.URL)
-          : JSON.stringify("http://localhost:" + config.port),
         RECAPTCHA_SITE_KEY: JSON.stringify(pkg.recaptcha_site_key)
       }),
 

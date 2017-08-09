@@ -26,6 +26,7 @@ class TooltipIcon extends React.Component {
     icon: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
     floating: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
     to: PropTypes.string,
+    absolute: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
     tooltip: PropTypes.any.isRequired,
     tooltipPosition: PropTypes.oneOf([
       "vertical",
@@ -43,11 +44,13 @@ class TooltipIcon extends React.Component {
   }
 
   render() {
-    const { theme, icon, floating, to, ...otherProps } = this.props;
+    const { theme, icon, floating, to, absolute, ...otherProps } = this.props;
 
     if (floating === "true") {
       otherProps.floating = true;
     }
+
+    const isAbsoluteLink = absolute === "true" ? true : false;
 
     const childrenHasTooltip = !to;
     const ImageTag = childrenHasTooltip ? TooltipImage : Image;
@@ -64,7 +67,7 @@ class TooltipIcon extends React.Component {
       : <IconTag theme={theme} icon={icon} {...iconProps} />;
 
     return to
-      ? <Link to={to} theme={theme}>
+      ? <Link to={to} absolute={isAbsoluteLink} theme={theme}>
           <TooltipButton theme={theme} {...otherProps}>
             {iconElement}
           </TooltipButton>

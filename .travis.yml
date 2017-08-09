@@ -20,7 +20,7 @@ matrix:
 cache: yarn
 before_install:
 - yarn config set no-progress
-script: yarn build-for-deploy
+script: yarn build
 deploy:
   provider: pages
   local_dir: dist

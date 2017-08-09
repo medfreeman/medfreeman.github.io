@@ -17,6 +17,6 @@ A question or request ? Do not hesitate to [contact me!](/contact)
 
 !Spacer[4]
 
-!Icon[resume](Download my resume){ to="/documents/cv_mlahlou_web.pdf" }
+!Icon[resume](Download my resume){ to="/documents/cv_mlahlou_web.pdf" absolute }
 !Icon[linkedin](Check my linkedIn profile){ to="https://www.linkedin.com/in/medfreeman/?locale=en_US" }
 !Icon[github](Check my github profile){ to="https://github.com/medfreeman/" }

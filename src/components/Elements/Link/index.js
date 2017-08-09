@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link as RouterLink } from "react-router";
-import joinURL from "url-join";
 import isAbsoluteUrl from "is-absolute-url";
 import { themr } from "react-css-themr";
 
@@ -12,7 +11,12 @@ class Link extends React.Component {
   static propTypes = {
     children: PropTypes.node,
     theme: PropTypes.object,
-    to: PropTypes.string.isRequired
+    to: PropTypes.string.isRequired,
+    absolute: PropTypes.bool
+  };
+
+  static defaultProps = {
+    absolute: false
   };
 
   constructor(props) {
@@ -20,13 +24,11 @@ class Link extends React.Component {
   }
 
   render() {
-    const { to, theme, children } = this.props;
-    const url =
-      !isAbsoluteUrl(to) && to.match(/\.pdf$/) ? joinURL(PHENOMIC_URL, to) : to;
+    const { to, absolute, theme, children } = this.props;
 
-    return isAbsoluteUrl(url)
+    return absolute || isAbsoluteUrl(to)
       ? <a
-          href={url}
+          href={to}
           className={theme.link}
           target="_blank"
           rel="noreferrer noopener"
@@ -34,7 +36,7 @@ class Link extends React.Component {
           {children}
         </a>
       : <RouterLink
-          to={url}
+          to={to}
           className={theme.link}
           activeClassName={theme["link-active"]}
         >
