@@ -11,6 +11,8 @@ const Html = props => {
         {helmet.title.toComponent()}
         {helmet.meta.toComponent()}
         {helmet.link.toComponent()}
+        {/* tmp styles */}
+        {props.styles}
         {helmet.style.toComponent()}
         {helmet.script.toComponent()}
         {helmet.noscript.toComponent()}
@@ -31,7 +33,8 @@ const Html = props => {
 Html.propTypes = {
   body: PropTypes.string,
   state: PropTypes.object,
-  script: PropTypes.string
+  script: PropTypes.string,
+  styles: PropTypes.string
 };
 
 export default Html;

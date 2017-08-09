@@ -19,10 +19,6 @@ const Layout = ({ children }) =>
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
     </Head>
-    {process.env.NODE_ENV === "production" &&
-      <Head>
-        <link rel="stylesheet" type="text/css" href="/styles.css" />
-      </Head>}
     <FaviconMeta />
     <div className={styles.container}>
       <Header />

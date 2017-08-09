@@ -1,7 +1,10 @@
 import React from "react";
 import ReactDOMServer from "react-dom/server";
+import moment from "moment";
 
 import DefaultHtml from "../components/HTML";
+
+const date = moment().format("YYYYMMDD");
 
 const renderHTML: PhenomicPluginRenderHTMLType = (
   config,
@@ -26,7 +29,10 @@ const renderHTML: PhenomicPluginRenderHTMLType = (
           }}
         />
       }
-      script={<script src={`/${config.bundleName}.js`} async />}
+      script={<script src={`/${config.bundleName}.${date}.js`} async />}
+      styles={
+        <link rel="stylesheet" type="text/css" href={`/styles.${date}.css`} />
+      }
     />
   );
   return `<!DOCTYPE html>${ReactDOMServer.renderToStaticMarkup(html)}`;
