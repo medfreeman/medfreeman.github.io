@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import {
   reduxForm,
+  reset,
   propTypes as reduxFormPropTypes,
   Field,
   SubmissionError
@@ -20,6 +21,11 @@ import validate from "./validate";
 import styles from "./index.css";
 import textTheme from "./textarea.css";
 import buttonTheme from "./button.css";
+
+const handleSubmitSuccess = (result, dispatch) =>
+  setTimeout(() => {
+    dispatch(reset("contact"));
+  }, 4000);
 
 class ContactForm extends React.Component {
   static propTypes = {
@@ -209,6 +215,7 @@ export default connect(
     form: "contact",
     validate,
     enableReinitialize: true,
-    keepDirtyOnReinitialize: true
+    keepDirtyOnReinitialize: true,
+    onSubmitSuccess: handleSubmitSuccess
   })(ContactForm)
 );
