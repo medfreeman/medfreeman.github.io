@@ -22,6 +22,28 @@ import textTheme from "./textarea.css";
 import buttonTheme from "./button.css";
 
 class ContactForm extends React.Component {
+  static propTypes = {
+    ...reduxFormPropTypes,
+    email: PropTypes.string.isRequired,
+    recaptchaSiteKey: PropTypes.string,
+    language: PropTypes.oneOf([
+      "en",
+      "es",
+      "nl",
+      "ja",
+      "fr",
+      "it",
+      "de",
+      "pl",
+      "sk",
+      "ru",
+      "uk",
+      "pt"
+    ]),
+    subject: PropTypes.string,
+    successMessage: PropTypes.string
+  };
+
   constructor(props) {
     super(props);
 
@@ -173,28 +195,6 @@ class ContactForm extends React.Component {
     );
   }
 }
-
-ContactForm.propTypes = {
-  ...reduxFormPropTypes,
-  email: PropTypes.string.isRequired,
-  recaptchaSiteKey: PropTypes.string,
-  language: PropTypes.oneOf([
-    "en",
-    "es",
-    "nl",
-    "ja",
-    "fr",
-    "it",
-    "de",
-    "pl",
-    "sk",
-    "ru",
-    "uk",
-    "pt"
-  ]),
-  subject: PropTypes.string,
-  successMessage: PropTypes.string
-};
 
 export default connect(
   (state, ownProps) => ({
