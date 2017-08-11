@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@phenomic/api-client@^1.0.0-alpha.4":
-  version "1.0.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/@phenomic/api-client/-/api-client-1.0.0-alpha.4.tgz#bff892654c208df1fa49aa3e83a2eb0082bf8f35"
+"@phenomic/api-client@^1.0.0-alpha.5":
+  version "1.0.0-alpha.5"
+  resolved "https://registry.yarnpkg.com/@phenomic/api-client/-/api-client-1.0.0-alpha.5.tgz#59cd043b2de9b5688e51538e5782bf162c93f6cf"
   dependencies:
     debug "^2.6.0"
     invariant "^2.2.2"
@@ -15,23 +15,23 @@
   dependencies:
     babel-preset-react-app "^1.0.0"
 
-"@phenomic/cli@^1.0.0-alpha.4":
-  version "1.0.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/@phenomic/cli/-/cli-1.0.0-alpha.4.tgz#e3a05b7c4c2604e388ec218f634d2dfa422d23c2"
+"@phenomic/cli@^1.0.0-alpha.5":
+  version "1.0.0-alpha.5"
+  resolved "https://registry.yarnpkg.com/@phenomic/cli/-/cli-1.0.0-alpha.5.tgz#df8fc2d5a5520e81d7cf29f769430617847d2a2a"
   dependencies:
     "@phenomic/babel-preset" "^1.0.0-alpha.4"
-    "@phenomic/core" "^1.0.0-alpha.4"
+    "@phenomic/core" "^1.0.0-alpha.5"
     babel-register "^6.24.0"
     chalk "^1.1.3"
     debug "^2.6.0"
     semver "^5.3.0"
     yargs "^7.0.2"
 
-"@phenomic/core@^1.0.0-alpha.4":
-  version "1.0.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/@phenomic/core/-/core-1.0.0-alpha.4.tgz#ffd8974bdc632034f6c103d2297127665185b53c"
+"@phenomic/core@^1.0.0-alpha.5":
+  version "1.0.0-alpha.5"
+  resolved "https://registry.yarnpkg.com/@phenomic/core/-/core-1.0.0-alpha.5.tgz#3843103dfdd49e8c4606b3d05acd56ae5f5f6732"
   dependencies:
-    "@phenomic/api-client" "^1.0.0-alpha.4"
+    "@phenomic/api-client" "^1.0.0-alpha.5"
     chalk "^1.1.3"
     cosmiconfig "^2.1.1"
     debug "^2.6.0"
@@ -52,16 +52,16 @@
     socket.io "^1.7.2"
     socket.io-client "^1.7.2"
 
-"@phenomic/plugin-api-related-content@^1.0.0-alpha.4":
-  version "1.0.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/@phenomic/plugin-api-related-content/-/plugin-api-related-content-1.0.0-alpha.4.tgz#76bce8c4074d77ad47c361924149b052162a8b32"
+"@phenomic/plugin-api-related-content@^1.0.0-alpha.5":
+  version "1.0.0-alpha.5"
+  resolved "https://registry.yarnpkg.com/@phenomic/plugin-api-related-content/-/plugin-api-related-content-1.0.0-alpha.5.tgz#8ab50e50ee0159de7698ad134aaa761538cedda4"
   dependencies:
     debug "^2.6.0"
     lodash.flatten "^4.4.0"
 
-"@phenomic/plugin-bundler-webpack@^1.0.0-alpha.4":
-  version "1.0.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/@phenomic/plugin-bundler-webpack/-/plugin-bundler-webpack-1.0.0-alpha.4.tgz#c10695785dbf30665b1cc5b1f2045e08e5af6078"
+"@phenomic/plugin-bundler-webpack@^1.0.0-alpha.5":
+  version "1.0.0-alpha.5"
+  resolved "https://registry.yarnpkg.com/@phenomic/plugin-bundler-webpack/-/plugin-bundler-webpack-1.0.0-alpha.5.tgz#9d5bc89742a6cef414db62100e89b3561a0af074"
   dependencies:
     "@phenomic/babel-preset" "^1.0.0-alpha.4"
     babel-loader "^7.0.0"
@@ -78,25 +78,26 @@
     webpack-dev-middleware "^1.10.0"
     webpack-hot-middleware "^2.18.0"
 
-"@phenomic/plugin-collector-files@^1.0.0-alpha.4":
-  version "1.0.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/@phenomic/plugin-collector-files/-/plugin-collector-files-1.0.0-alpha.4.tgz#bf371a50ff8cdefe3e2f5e574cb89e4f45cd6b84"
+"@phenomic/plugin-collector-files@^1.0.0-alpha.5":
+  version "1.0.0-alpha.5"
+  resolved "https://registry.yarnpkg.com/@phenomic/plugin-collector-files/-/plugin-collector-files-1.0.0-alpha.5.tgz#5c41dc27c319890eda37d9d993533863bc40344e"
   dependencies:
     debug "^2.6.0"
 
-"@phenomic/plugin-public-assets@^1.0.0-alpha.4":
-  version "1.0.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/@phenomic/plugin-public-assets/-/plugin-public-assets-1.0.0-alpha.4.tgz#89b5ac5ec8e05c8a1e9f136d95ed654515a2f522"
+"@phenomic/plugin-public-assets@^1.0.0-alpha.5":
+  version "1.0.0-alpha.5"
+  resolved "https://registry.yarnpkg.com/@phenomic/plugin-public-assets/-/plugin-public-assets-1.0.0-alpha.5.tgz#0d22be8e67f3e921aa432dafc9ad6c47d8c48051"
   dependencies:
     express "^4.14.0"
     fs-extra "^3.0.1"
 
-"@phenomic/plugin-renderer-react@^1.0.0-alpha.4":
-  version "1.0.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/@phenomic/plugin-renderer-react/-/plugin-renderer-react-1.0.0-alpha.4.tgz#2471a69ebf4cbf67aeb1da810202c6d2f2bed6c9"
+"@phenomic/plugin-renderer-react@^1.0.0-alpha.5":
+  version "1.0.0-alpha.5"
+  resolved "https://registry.yarnpkg.com/@phenomic/plugin-renderer-react/-/plugin-renderer-react-1.0.0-alpha.5.tgz#1c4cd796e0016768eed3812fdae5cfbd611e88e6"
   dependencies:
-    "@phenomic/api-client" "^1.0.0-alpha.4"
+    "@phenomic/api-client" "^1.0.0-alpha.5"
     chalk "^1.1.3"
+    classnames "^2.2.5"
     debug "^2.6.0"
     isomorphic-fetch "^2.2.1"
     prop-types "^15.5.8"
@@ -105,15 +106,15 @@
     socket.io-client "^1.7.2"
     url-join "^2.0.2"
 
-"@phenomic/plugin-transform-json@^1.0.0-alpha.4":
-  version "1.0.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/@phenomic/plugin-transform-json/-/plugin-transform-json-1.0.0-alpha.4.tgz#c8f42452971618bb8e9395e05bc884e880a96521"
+"@phenomic/plugin-transform-json@^1.0.0-alpha.5":
+  version "1.0.0-alpha.5"
+  resolved "https://registry.yarnpkg.com/@phenomic/plugin-transform-json/-/plugin-transform-json-1.0.0-alpha.5.tgz#237f3a05c0c3c86b812b9487da8cd1abeba1895b"
   dependencies:
     debug "^2.6.0"
 
-"@phenomic/plugin-transform-markdown@^1.0.0-alpha.4":
-  version "1.0.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/@phenomic/plugin-transform-markdown/-/plugin-transform-markdown-1.0.0-alpha.4.tgz#34ce78975bd8228ea78a09e3b90bad32fce3089d"
+"@phenomic/plugin-transform-markdown@^1.0.0-alpha.5":
+  version "1.0.0-alpha.5"
+  resolved "https://registry.yarnpkg.com/@phenomic/plugin-transform-markdown/-/plugin-transform-markdown-1.0.0-alpha.5.tgz#476db45decc5752607ff1474f9f2494b616aeda5"
   dependencies:
     debug "^2.6.0"
     deepmerge "^1.3.2"
@@ -128,17 +129,17 @@
     remark-slug "^4.2.2"
     remark-toc "^4.0.0"
 
-"@phenomic/preset-react-app@^1.0.0-alpha.4":
-  version "1.0.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/@phenomic/preset-react-app/-/preset-react-app-1.0.0-alpha.4.tgz#28389f0346ec75e88ba43a2916380a58eedc940a"
+"@phenomic/preset-react-app@^1.0.0-alpha.5":
+  version "1.0.0-alpha.5"
+  resolved "https://registry.yarnpkg.com/@phenomic/preset-react-app/-/preset-react-app-1.0.0-alpha.5.tgz#48ff3e2cb1538578bed22c465185e43906b882ec"
   dependencies:
-    "@phenomic/plugin-api-related-content" "^1.0.0-alpha.4"
-    "@phenomic/plugin-bundler-webpack" "^1.0.0-alpha.4"
-    "@phenomic/plugin-collector-files" "^1.0.0-alpha.4"
-    "@phenomic/plugin-public-assets" "^1.0.0-alpha.4"
-    "@phenomic/plugin-renderer-react" "^1.0.0-alpha.4"
-    "@phenomic/plugin-transform-json" "^1.0.0-alpha.4"
-    "@phenomic/plugin-transform-markdown" "^1.0.0-alpha.4"
+    "@phenomic/plugin-api-related-content" "^1.0.0-alpha.5"
+    "@phenomic/plugin-bundler-webpack" "^1.0.0-alpha.5"
+    "@phenomic/plugin-collector-files" "^1.0.0-alpha.5"
+    "@phenomic/plugin-public-assets" "^1.0.0-alpha.5"
+    "@phenomic/plugin-renderer-react" "^1.0.0-alpha.5"
+    "@phenomic/plugin-transform-json" "^1.0.0-alpha.5"
+    "@phenomic/plugin-transform-markdown" "^1.0.0-alpha.5"
 
 JSONStream@^1.0.4, JSONStream@~1.3.1:
   version "1.3.1"
