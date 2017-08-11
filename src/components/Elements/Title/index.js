@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { themr } from "react-css-themr";
 
-@themr("Title")
+@themr("Title", null, { composeTheme: "softly" })
 class Title extends React.Component {
   static propTypes = {
     children: PropTypes.node,
