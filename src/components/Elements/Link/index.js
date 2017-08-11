@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Link as RouterLink } from "react-router";
 import isAbsoluteUrl from "is-absolute-url";
 import { themr } from "react-css-themr";
+import cx from "classnames";
 
 import defaultTheme from "./theme.css";
 
@@ -19,12 +20,21 @@ class Link extends React.Component {
     absolute: false
   };
 
+  static contextTypes = {
+    router: PropTypes.object.isRequired
+  };
+
   constructor(props) {
     super(props);
   }
 
   render() {
     const { to, absolute, theme, children } = this.props;
+
+    const isActive =
+      to !== "/"
+        ? this.context.router.getCurrentLocation().pathname.indexOf(to) !== -1
+        : false;
 
     return absolute || isAbsoluteUrl(to)
       ? <a
@@ -37,7 +47,7 @@ class Link extends React.Component {
         </a>
       : <RouterLink
           to={to}
-          className={theme.link}
+          className={cx(theme.link, isActive ? theme["link-active"] : null)}
           activeClassName={theme["link-active"]}
         >
           {children}
