@@ -41,11 +41,10 @@ class BodyRenderer extends React.Component {
   }
 
   getComponents() {
-    return Object.assign(
-      {},
-      BodyRenderer.DEFAULT_COMPONENTS,
-      this.props.components || {}
-    );
+    return {
+      ...BodyRenderer.DEFAULT_COMPONENTS,
+      ...(this.props.components || {})
+    };
   }
 
   render() {
