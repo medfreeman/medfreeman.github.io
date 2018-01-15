@@ -4521,10 +4521,6 @@ is-typedarray@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/is-typedarray/-/is-typedarray-1.0.0.tgz#e479c80858df0c1b11ddda6940f96011fcda4a9a"
 
-is-url@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/is-url/-/is-url-1.2.2.tgz#498905a593bf47cc2d9e7f738372bbf7696c7f26"
-
 is-utf8@^0.2.0:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/is-utf8/-/is-utf8-0.2.1.tgz#4b0da1442104d1b336340e80797e865cf39f7d72"
@@ -9610,7 +9606,7 @@ wcwidth@^1.0.0:
 
 webfonts-generator@^0.4.0, webfonts-generator@sunflowerdeath/webfonts-generator#3f52b4e:
   version "0.4.0"
-  resolved "https://codeload.github.com/sunflowerdeath/webfonts-generator/tar.gz/3f52b4e"
+  resolved "https://codeload.github.com/sunflowerdeath/webfonts-generator/tar.gz/3f52b4e36c9541bea7564bdb9aa7a82efbac815a"
   dependencies:
     handlebars "^4.0.5"
     mkdirp "^0.5.0"
@@ -9623,13 +9619,12 @@ webfonts-generator@^0.4.0, webfonts-generator@sunflowerdeath/webfonts-generator#
     underscore "^1.7.0"
     url-join "^1.1.0"
 
-webfonts-loader@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/webfonts-loader/-/webfonts-loader-2.0.2.tgz#0b04cbe7ee633c05fc7d76d156aa65e17f157871"
+webfonts-loader@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/webfonts-loader/-/webfonts-loader-4.0.1.tgz#28c8de0e79b8001e15d1cef407988623da9d9ec9"
   dependencies:
     glob "^7.1.1"
     hash-files "^1.1.1"
-    is-url "^1.2.2"
     loader-utils "^1.0.2"
     webfonts-generator "^0.4.0"
 

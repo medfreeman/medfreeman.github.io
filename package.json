@@ -128,7 +128,7 @@
     "url-join": "^2.0.2",
     "url-loader": "^0.5.9",
     "webfonts-generator": "sunflowerdeath/webfonts-generator#3f52b4e",
-    "webfonts-loader": "^2.0.2",
+    "webfonts-loader": "^4.0.1",
     "webpack": "^2.6.1"
   },
   "scripts": {

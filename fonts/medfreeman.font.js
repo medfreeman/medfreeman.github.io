@@ -1,22 +1,25 @@
-const path = require("path")
+const path = require("path");
 
 const material = function(category, icon) {
-  return path.resolve(__dirname, `../node_modules/material-design-icons/${category}/svg/production/ic_${icon}_24px.svg`)
-}
+  return path.resolve(
+    __dirname,
+    `../node_modules/material-design-icons/${category}/svg/production/ic_${icon}_24px.svg`
+  );
+};
 
 const mdi = function(icon) {
-  return path.resolve(__dirname, `../node_modules/mdi/icons/svg/${icon}.svg`)
-}
+  return path.resolve(__dirname, `../node_modules/mdi/icons/svg/${icon}.svg`);
+};
 
 const local = function(icon) {
-  return path.resolve(__dirname, `../src/icons/${icon}.svg`)
-}
+  return path.resolve(__dirname, `../src/icons/${icon}.svg`);
+};
 
 module.exports = {
-  "files": [
+  files: [
     mdi("at"),
     mdi("react"),
-    mdi("github"),
+    mdi("github-circle"),
     mdi("heart"),
     mdi("loading"),
     mdi("linkedin"),
@@ -28,16 +31,17 @@ module.exports = {
     local("resume"),
     local("logo_black_white")
   ],
-  "fontName": "Medcons",
-  "cssTemplate": path.resolve(__dirname, "medfreeman.css.hbs"),
-  "classPrefix": "mf-",
-  "baseSelector": ".mf-icons",
-  "rename": function(filename) {
+  fontName: "Medcons",
+  cssTemplate: path.resolve(__dirname, "medfreeman.css.hbs"),
+  classPrefix: "mf-",
+  baseSelector: ".mf-icons",
+  rename: function(filename) {
     if (filename.includes("material-design-icons")) {
-      return path.basename(filename, "_24px.svg").replace("ic_", "")
+      filename = path.basename(filename, "_24px.svg").replace("ic_", "");
+    } else {
+      filename = path.basename(filename, ".svg");
     }
-    return path.basename(filename, ".svg")
+    return filename.replace("-", "_");
   },
-  "fixedWidth": true,
-  "types": ["eot", "woff", "ttf"]
-}
+  types: ["eot", "woff", "ttf"]
+};

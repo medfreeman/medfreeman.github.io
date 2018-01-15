@@ -19,4 +19,4 @@ A question or request ? Do not hesitate to [contact me!](/contact)
 
 !Icon[resume](Download my resume){ to="/documents/cv_mlahlou_web.pdf" absolute }
 !Icon[linkedin](Check my linkedIn profile){ to="https://www.linkedin.com/in/medfreeman/?locale=en_US" }
-!Icon[github](Check my github profile){ to="https://github.com/medfreeman/" }
+!Icon[github_circle](Check my github profile){ to="https://github.com/medfreeman/" }
