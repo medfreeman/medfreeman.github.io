@@ -27,6 +27,7 @@ deploy:
   target_branch: master
   email: mehdi.lahlou@free.fr
   github_token: $GITHUB_TOKEN
+  fqdn: medfreeman.io
   on:
     branch: src
   skip_cleanup: true
