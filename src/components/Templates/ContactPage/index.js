@@ -10,14 +10,13 @@ import ContactForm from "Elements/ContactForm";
 import BodyRenderer from "Elements/BodyRenderer";
 
 const ContactPageComponent = ({ hasError, isLoading, page }) => {
-  return hasError
-    ? <ErrorPage error={page.error} />
-    : !isLoading &&
+  return hasError ? (
+    <ErrorPage error={page.error} />
+  ) : (
+    !isLoading && (
       <Page title={`${page.node.title} | ${pkg.name}`}>
         <article>
-          <BodyRenderer>
-            {page.node.body}
-          </BodyRenderer>
+          <BodyRenderer>{page.node.body}</BodyRenderer>
           <ContactForm
             email="mlahlou@protonmail.ch"
             recaptchaSiteKey={RECAPTCHA_SITE_KEY}
@@ -27,7 +26,9 @@ const ContactPageComponent = ({ hasError, isLoading, page }) => {
             destroyOnUnmount={false}
           />
         </article>
-      </Page>;
+      </Page>
+    )
+  );
 };
 
 ContactPageComponent.propTypes = {
@@ -36,8 +37,8 @@ ContactPageComponent.propTypes = {
   page: PropTypes.object
 };
 
-const ContactPage = createContainer(ContactPageComponent, props => ({
-  page: query({ collection: "pages", id: "contact", ...props })
+const ContactPage = createContainer(ContactPageComponent, () => ({
+  page: query({ path: "pages", id: "contact" })
 }));
 
 export default ContactPage;

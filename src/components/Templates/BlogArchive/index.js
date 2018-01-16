@@ -11,9 +11,10 @@ import Link from "Elements/Link";
 import PageTheme from "./theme.css";
 
 const BlogArchiveComponent = ({ hasError, posts, isLoading, page }) => {
-  return hasError
-    ? <ErrorPage error={page.error} />
-    : !isLoading &&
+  return hasError ? (
+    <ErrorPage error={page.error} />
+  ) : (
+    !isLoading && (
       <Page
         title={`Blog | ${pkg.name}`}
         description={"Blog Archive"}
@@ -23,21 +24,24 @@ const BlogArchiveComponent = ({ hasError, posts, isLoading, page }) => {
           {posts &&
             posts.node &&
             posts.node.list &&
-            posts.node.list.map(post =>
+            posts.node.list.map(post => (
               <article key={post.id}>
                 <BlogPostHeader post={post} />
               </article>
-            )}
+            ))}
           <p>
             {posts &&
               posts.node &&
-              posts.node.hasNextPage &&
-              <Link to={`/blog/after/${posts.node.next}`}>
-                {"Older posts"}
-              </Link>}
+              posts.node.hasNextPage && (
+                <Link to={`/blog/after/${posts.node.next}`}>
+                  {"Older posts"}
+                </Link>
+              )}
           </p>
         </div>
-      </Page>;
+      </Page>
+    )
+  );
 };
 
 BlogArchiveComponent.propTypes = {
@@ -48,7 +52,7 @@ BlogArchiveComponent.propTypes = {
 };
 
 const BlogArchive = createContainer(BlogArchiveComponent, props => ({
-  posts: query({ collection: "posts", limit: 5, after: props.params.after })
+  posts: query({ path: "posts", limit: 5, after: props.params.after })
 }));
 
 export default BlogArchive;

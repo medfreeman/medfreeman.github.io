@@ -10,16 +10,15 @@ import BodyRenderer from "Elements/BodyRenderer";
 import PageTheme from "./theme.css";
 
 const HomePageComponent = ({ hasError, isLoading, page }) => {
-  return hasError
-    ? <ErrorPage error={page.error} />
-    : <Page title={pkg.name} theme={PageTheme}>
-        <article>
-          {!isLoading &&
-            <BodyRenderer>
-              {page.node.body}
-            </BodyRenderer>}
-        </article>
-      </Page>;
+  return hasError ? (
+    <ErrorPage error={page.error} />
+  ) : (
+    <Page title={pkg.name} theme={PageTheme}>
+      <article>
+        {!isLoading && <BodyRenderer>{page.node.body}</BodyRenderer>}
+      </article>
+    </Page>
+  );
 };
 
 HomePageComponent.propTypes = {
@@ -28,8 +27,8 @@ HomePageComponent.propTypes = {
   page: PropTypes.object
 };
 
-const HomePage = createContainer(HomePageComponent, props => ({
-  page: query({ collection: "pages", id: "home", ...props })
+const HomePage = createContainer(HomePageComponent, () => ({
+  page: query({ path: "pages", id: "home" })
 }));
 
 export default HomePage;

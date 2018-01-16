@@ -12,11 +12,10 @@ import ErrorPage from "Templates/ErrorPage";
 import ReduxProvider from "providers/ReduxProvider";
 import ThemeProvider from "providers/ThemeProvider";
 
-import Html from "./src/HTML";
 import "./src/index.global.css";
 import "./fonts/medfreeman.font";
 
-const routes = () =>
+const routes = () => (
   <ReduxProvider>
     <ThemeProvider>
       <Router history={browserHistory}>
@@ -29,9 +28,10 @@ const routes = () =>
         <Route path="*" component={ErrorPage} />
       </Router>
     </ThemeProvider>
-  </ReduxProvider>;
+  </ReduxProvider>
+);
 
-export default createApp(routes, Html);
+export default createApp(routes);
 
 if (module.hot) {
   module.hot.accept(() => renderApp(routes));

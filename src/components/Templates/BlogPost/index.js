@@ -11,24 +11,26 @@ import BodyRenderer from "Elements/BodyRenderer";
 import PageTheme from "./theme.css";
 
 const BlogPostComponent = ({ hasError, isLoading, page }) => {
-  return hasError
-    ? <ErrorPage error={page.error} />
-    : !isLoading &&
+  return hasError ? (
+    <ErrorPage error={page.error} />
+  ) : (
+    !isLoading && (
       <Page
         title={`${page.node.title} | ${pkg.name}`}
         description={"Blog Archive"}
         theme={PageTheme}
       >
         <div>
-          {!isLoading &&
+          {!isLoading && (
             <article>
               <BlogPostHeader post={page.node} />
-              <BodyRenderer>
-                {page.node.body}
-              </BodyRenderer>
-            </article>}
+              <BodyRenderer>{page.node.body}</BodyRenderer>
+            </article>
+          )}
         </div>
-      </Page>;
+      </Page>
+    )
+  );
 };
 
 BlogPostComponent.propTypes = {
@@ -38,7 +40,7 @@ BlogPostComponent.propTypes = {
 };
 
 const BlogPost = createContainer(BlogPostComponent, props => ({
-  page: query({ collection: "posts", id: props.params.splat })
+  page: query({ path: "posts", id: props.params.splat })
 }));
 
 export default BlogPost;

@@ -11,17 +11,18 @@ import BodyRenderer from "Elements/BodyRenderer";
 import PageTheme from "./theme.css";
 
 const PortfolioComponent = ({ hasError, isLoading, page }) => {
-  return hasError
-    ? <ErrorPage error={page.error} />
-    : !isLoading &&
+  return hasError ? (
+    <ErrorPage error={page.error} />
+  ) : (
+    !isLoading && (
       <Page title={`${page.node.title} | ${pkg.name}`} theme={PageTheme}>
         <article>
-          <BodyRenderer>
-            {page.node.body}
-          </BodyRenderer>
+          <BodyRenderer>{page.node.body}</BodyRenderer>
           <Gallery elements={page.node.gallery ? page.node.gallery : []} />
         </article>
-      </Page>;
+      </Page>
+    )
+  );
 };
 
 PortfolioComponent.propTypes = {
@@ -42,8 +43,8 @@ PortfolioComponent.propTypes = {
   })
 };
 
-const Portfolio = createContainer(PortfolioComponent, props => ({
-  page: query({ collection: "pages", id: "portfolio", ...props })
+const Portfolio = createContainer(PortfolioComponent, () => ({
+  page: query({ path: "pages", id: "portfolio" })
 }));
 
 export default Portfolio;

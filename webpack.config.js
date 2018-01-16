@@ -4,11 +4,8 @@ import path from "path";
 import webpack from "webpack";
 import ExtractTextPlugin from "extract-text-webpack-plugin";
 import FaviconsWebpackPlugin from "favicons-webpack-plugin";
-import moment from "moment";
 
 import pkg from "./package.json";
-
-const date = moment().format("YYYYMMDD");
 
 const nodeModules = path.join(process.cwd(), "node_modules");
 module.exports = (config: PhenomicConfig) => {
@@ -24,8 +21,18 @@ module.exports = (config: PhenomicConfig) => {
     },
     output: {
       publicPath: "/", // @todo make this dynamic
-      path: path.join(process.cwd(), "dist"),
-      filename: `[name].${date}.js`
+      path: path.isAbsolute(config.outdir)
+        ? config.outdir
+        : path.join(process.cwd(), config.outdir),
+      ...(process.env.PHENOMIC_ENV !== "static"
+        ? {
+            filename: "phenomic/[name].js",
+            chunkFilename: "phenomic/[name].chunk.js"
+          }
+        : {
+            filename: "phenomic/[name].[chunkhash:8].js",
+            chunkFilename: "phenomic/[name].[chunkhash:8].chunk.js"
+          })
     },
     module: {
       rules: [
@@ -193,7 +200,7 @@ module.exports = (config: PhenomicConfig) => {
     },
     plugins: [
       new ExtractTextPlugin({
-        filename: `styles.${date}.css`,
+        filename: "phenomic/[name].[contenthash:8].css",
         ignoreOrder: true,
         disable: process.env.PHENOMIC_ENV !== "static"
       }),
