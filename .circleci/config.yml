@@ -1,0 +1,86 @@
+version: 2
+jobs:
+  build:
+    branches:
+      ignore:
+        - master
+    working_directory: /usr/src/app
+    docker:
+      - image: banian/node
+    steps:
+      # Add github ssh deploy key
+      - add_ssh_keys:
+          fingerprints:
+            - "3a:eb:d4:d2:60:ac:45:b6:92:d9:40:e2:10:a9:f1:c8"
+
+      # Checkout repository
+      - checkout
+
+      # Restore cache
+      - restore_cache:
+          key: yarn-{{ checksum "yarn.lock" }}
+
+      # Greenkeeper-lockfile
+      - run:
+          name: Install Greenkeeper-lockfile
+          command: yarn global add greenkeeper-lockfile@1
+
+      # Install dependencies
+      - run:
+          name: Install Dependencies
+          command: NODE_ENV=dev yarn
+
+      # Keep cache
+      - save_cache:
+          key: yarn-{{ checksum "yarn.lock" }}
+          paths:
+            - "node_modules"
+
+      # Update yarn.lock
+      - run:
+          name: Update lockfile
+          command: greenkeeper-lockfile-update
+
+      # Test
+      - run:
+          name: Tests
+          command: yarn test
+
+      # Build
+      - run:
+          name: Phenomic build
+          command: yarn build
+
+      # Upload yarn.lock
+      - run:
+          name: Upload lockfile
+          command: greenkeeper-lockfile-upload
+      
+      # Deploy to github pages
+      - deploy:
+          name: Deploy src branch to Github Pages
+          filters:
+            branches:
+              only: src
+          command: |
+            git config --global user.email robots@circleci.com
+            git config --global user.name CircleCI
+
+            git clone $CIRCLE_REPOSITORY_URL out
+
+            cd out
+            git checkout master || git checkout --orphan master
+            git rm -rf .
+            cd ..
+
+            cp -a dist/. out/.
+
+            mkdir -p out/.circleci && cp -a .circleci/. out/.circleci/.
+            cd out
+
+            echo "medfreeman.io" > CNAME
+
+            git add -A
+            git commit -m "Automated deployment to GitHub Pages: ${CIRCLE_SHA1}" --allow-empty
+
+            git push origin master
