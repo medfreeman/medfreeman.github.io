@@ -6,7 +6,7 @@ import { themr } from "react-css-themr";
 class Title extends React.Component {
   static propTypes = {
     children: PropTypes.node,
-    level: PropTypes.oneOf([1, 2, 3, 4, 5, 6]).isRequired,
+    level: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
     theme: PropTypes.object
   };
 
@@ -27,19 +27,11 @@ class Title extends React.Component {
       ) {
         return null;
       } else {
-        return (
-          <span className={theme[`${Tag}__span`]}>
-            {child}
-          </span>
-        );
+        return <span className={theme[`${Tag}__span`]}>{child}</span>;
       }
     });
 
-    return (
-      <Tag className={theme[Tag]}>
-        {children}
-      </Tag>
-    );
+    return <Tag className={theme[Tag]}>{children}</Tag>;
   }
 }
 
