@@ -125,7 +125,11 @@
   },
   "lint-staged": {
     "*.{js,jsx}": [
+      "git-exec-and-restage eslint --fix --",
       "git-exec-and-restage prettier --write --parser=babylon --"
+    ],
+    "*.css": [
+      "git-exec-and-restage stylelint --fix --"
     ]
   },
   "babel": {
