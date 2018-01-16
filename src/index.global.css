@@ -2,13 +2,6 @@
   @import-normalize;
 }
 
-/*
- * box model like it should be
- *
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- */
-html { box-sizing: border-box; }
-
 *,
 *::before,
 *::after {
@@ -30,6 +23,7 @@ body {
 html {
   font-size: 62.5%;
   min-height: 100%;
+  box-sizing: border-box;
   background: color(var(--colorPrimary) l(99%));
 }
 
@@ -38,7 +32,7 @@ body {
   font-size: 1rem;
   line-height: 1.5rem;
 
-  font-family: system-ui;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, Roboto, 'Helvetica Neue', sans-serif;
 }
 
 .github-corner:hover .octo-arm {
