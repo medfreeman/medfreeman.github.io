@@ -185,5 +185,10 @@
         }
       ]
     }
+  },
+  "greenkeeper": {
+    "ignore": [
+      "react-router"
+    ]
   }
 }
