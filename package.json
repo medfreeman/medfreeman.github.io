@@ -72,7 +72,7 @@
     "react-headroom": "^2.2.2",
     "react-helmet": "^5.2.0",
     "react-redux": "^5.0.6",
-    "react-router": "^4.2.0",
+    "react-router": "^3.2.0",
     "react-toolbox": "^2.0.0-beta.12",
     "redux": "^3.7.2",
     "redux-form": "^7.2.0",
@@ -185,5 +185,10 @@
         }
       ]
     }
+  },
+  "greenkeeper": {
+    "ignore": [
+      "react-router"
+    ]
   }
 }
