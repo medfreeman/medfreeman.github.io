@@ -1,12 +1,12 @@
 version: 2
 jobs:
   build:
+    docker:
+      - image: banian/node
+    working_directory: /usr/src/app
     branches:
       ignore:
         - master
-    working_directory: /usr/src/app
-    docker:
-      - image: banian/node
     steps:
       # Add github ssh deploy key
       - add_ssh_keys:
@@ -16,19 +16,23 @@ jobs:
       # Checkout repository
       - checkout
 
+      # Disable yarn progress bar for perf
+      - run:
+          command: yarn config set no-progress
+
       # Restore cache
       - restore_cache:
           key: yarn-{{ checksum "yarn.lock" }}
 
       # Greenkeeper-lockfile
       - run:
-          name: Install Greenkeeper-lockfile
+          name: Installing Greenkeeper-lockfile
           command: yarn global add greenkeeper-lockfile@1
 
       # Install dependencies
       - run:
-          name: Install Dependencies
-          command: NODE_ENV=dev yarn
+          name: Installing Dependencies
+          command: yarn
 
       # Keep cache
       - save_cache:
@@ -38,7 +42,7 @@ jobs:
 
       # Update yarn.lock
       - run:
-          name: Update lockfile
+          name: Updating lockfile
           command: greenkeeper-lockfile-update
 
       # Test
@@ -48,17 +52,17 @@ jobs:
 
       # Build
       - run:
-          name: Phenomic build
+          name: Building phenomic site
           command: yarn build
 
       # Upload yarn.lock
       - run:
-          name: Upload lockfile
+          name: Uploading lockfile
           command: greenkeeper-lockfile-upload
       
       # Deploy to github pages
       - deploy:
-          name: Deploy src branch to Github Pages
+          name: Deploying src branch to Github Pages
           filters:
             branches:
               only: src
@@ -69,7 +73,7 @@ jobs:
             git clone $CIRCLE_REPOSITORY_URL out
 
             cd out
-            git checkout master || git checkout --orphan master
+            git checkout --orphan master
             git rm -rf .
             cd ..
 
