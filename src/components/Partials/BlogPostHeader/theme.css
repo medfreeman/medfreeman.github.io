@@ -12,11 +12,11 @@
 }
 
 .link {
-  text-decoration: none!important;
+  text-decoration: none !important;
 }
 
 .p {
   composes: f5 from 'tachyons-type-scale';
   composes: f4-l from 'tachyons-type-scale';
-  color: var(--colorText)!important;
+  color: var(--colorText) !important;
 }

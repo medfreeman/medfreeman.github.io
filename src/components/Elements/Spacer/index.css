@@ -5,7 +5,7 @@
 
 .h-1 {
   composes: db from "tachyons-display";
-  height: .25rem;
+  height: 0.25rem;
 }
 
 .h-2 {
@@ -33,7 +33,7 @@
   height: 8rem;
 }
 
-.h-7{
+.h-7 {
   composes: db from "tachyons-display";
   height: 16rem;
 }

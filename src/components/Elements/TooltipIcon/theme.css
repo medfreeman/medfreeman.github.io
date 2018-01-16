@@ -9,7 +9,6 @@
 }
 
 .button {
-
   & > span[data-react-toolbox='font-icon'] {
     line-height: var(--button-height);
     vertical-align: middle;

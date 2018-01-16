@@ -1,3 +1,4 @@
+/*eslint no-unused-vars: ["error", { "varsIgnorePattern": "csshook" }]*/
 import path from "path";
 
 import color from "chalk";
