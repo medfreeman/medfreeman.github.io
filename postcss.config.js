@@ -28,7 +28,8 @@ module.exports = ({ env }) => ({
             galleryElementOverlayTextColor: "#FFF"
           }
         }
-      }
+      },
+      warnForDuplicates: false
     },
     "postcss-reporter": {},
     "postcss-browser-reporter": env !== "production" ? {} : false,
