@@ -2,8 +2,8 @@ language: node_js
 node_js:
 - '8'
 branches:
-  only:
-  - src
+  except:
+  - master
 env:
   matrix:
   - CXX=g++-4.8
