@@ -1,4 +1,4 @@
 .ul {
-  composes: mt0 from 'tachyons-spacing';
-  composes: mb4 from 'tachyons-spacing';
+  composes: mt0 from 'tachyons';
+  composes: mb4 from 'tachyons';
 }

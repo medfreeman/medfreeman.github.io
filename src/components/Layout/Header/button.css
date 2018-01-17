@@ -1,8 +1,8 @@
 .button {
-  composes: db from 'tachyons-display';
-  composes: dib-l from 'tachyons-display';
-  composes: center from 'tachyons-utilities';
-  composes: f2 from 'tachyons-type-scale';
-  composes: f3-l from 'tachyons-type-scale';
+  composes: db from 'tachyons';
+  composes: dib-l from 'tachyons';
+  composes: center from 'tachyons';
+  composes: f2 from 'tachyons';
+  composes: f3-l from 'tachyons';
   color: var(--menuLinkColor);
 }

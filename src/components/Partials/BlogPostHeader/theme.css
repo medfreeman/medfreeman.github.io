@@ -1,14 +1,14 @@
 .header {
-  composes: mb5 from 'tachyons-spacing';
+  composes: mb5 from 'tachyons';
 }
 
 .h2 {
-  composes: f2 from 'tachyons-type-scale';
-  composes: f1-l from 'tachyons-type-scale';
-  composes: measure-narrow from 'tachyons-typography';
-  composes: lh-title from 'tachyons-line-height';
-  composes: mt0 from 'tachyons-spacing';
-  composes: mb3 from 'tachyons-spacing';
+  composes: f2 from 'tachyons';
+  composes: f1-l from 'tachyons';
+  composes: measure-narrow from 'tachyons';
+  composes: lh-title from 'tachyons';
+  composes: mt0 from 'tachyons';
+  composes: mb3 from 'tachyons';
 }
 
 .link {
@@ -16,7 +16,7 @@
 }
 
 .p {
-  composes: f5 from 'tachyons-type-scale';
-  composes: f4-l from 'tachyons-type-scale';
+  composes: f5 from 'tachyons';
+  composes: f4-l from 'tachyons';
   color: var(--colorText) !important;
 }

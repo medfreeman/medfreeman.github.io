@@ -1,11 +1,11 @@
 .footer {
-  composes: mh4 from 'tachyons-spacing';
-  composes: mb4 from 'tachyons-spacing';
-  composes: tc from 'tachyons-text-align';
+  composes: mh4 from 'tachyons';
+  composes: mb4 from 'tachyons';
+  composes: tc from 'tachyons';
 }
 
 .externalReference {
-  composes: f3 from 'tachyons-type-scale';
+  composes: f3 from 'tachyons';
   line-height: 2rem;
   color: inherit;
   text-decoration: none;
@@ -17,11 +17,11 @@
 }
 
 .reactSvg {
-  composes: dib from 'tachyons-display';
-  composes: tc from 'tachyons-text-align';
+  composes: dib from 'tachyons';
+  composes: tc from 'tachyons';
   vertical-align: middle;
 }
 
 .externalReferenceName {
-  composes: fw1 from 'tachyons-font-weight';
+  composes: fw1 from 'tachyons';
 }

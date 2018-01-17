@@ -1,32 +1,32 @@
 .h1 {
-  composes: f-subheadline from 'tachyons-type-scale';
-  composes: f-headline-l from 'tachyons-type-scale';
-  composes: measure-narrow from 'tachyons-typography';
-  composes: lh-title from 'tachyons-line-height';
-  composes: mt0 from 'tachyons-spacing';
-  composes: mb4 from 'tachyons-spacing';
+  composes: f-subheadline from 'tachyons';
+  composes: f-headline-l from 'tachyons';
+  composes: measure-narrow from 'tachyons';
+  composes: lh-title from 'tachyons';
+  composes: mt0 from 'tachyons';
+  composes: mb4 from 'tachyons';
 }
 
 .h1__span {
-  composes: bg-black-90 from 'tachyons-skins';
-  composes: lh-copy from 'tachyons-line-height';
-  composes: white from 'tachyons-skins';
-  composes: pa1 from 'tachyons-spacing';
-  composes: tracked-tight from 'tachyons-letter-spacing';
+  composes: bg-black-90 from 'tachyons';
+  composes: lh-copy from 'tachyons';
+  composes: white from 'tachyons';
+  composes: pa1 from 'tachyons';
+  composes: tracked-tight from 'tachyons';
 }
 
 .h2 {
-  composes: f2 from 'tachyons-type-scale';
-  composes: f1-l from 'tachyons-type-scale';
-  composes: measure-narrow from 'tachyons-typography';
-  composes: lh-title from 'tachyons-line-height';
-  composes: mt0 from 'tachyons-spacing';
-  composes: mb4 from 'tachyons-spacing';
+  composes: f2 from 'tachyons';
+  composes: f1-l from 'tachyons';
+  composes: measure-narrow from 'tachyons';
+  composes: lh-title from 'tachyons';
+  composes: mt0 from 'tachyons';
+  composes: mb4 from 'tachyons';
 }
 
 .h2__span {
-  composes: lh-title from 'tachyons-line-height';
-  composes: white from 'tachyons-skins';
-  composes: pa1 from 'tachyons-spacing';
-  composes: tracked-tight from 'tachyons-letter-spacing';
+  composes: lh-title from 'tachyons';
+  composes: white from 'tachyons';
+  composes: pa1 from 'tachyons';
+  composes: tracked-tight from 'tachyons';
 }

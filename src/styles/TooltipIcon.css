@@ -3,7 +3,7 @@
 }
 
 .icon {
-  composes: black from 'tachyons-skins';
+  composes: black from 'tachyons';
 }
 
 .icon > i {

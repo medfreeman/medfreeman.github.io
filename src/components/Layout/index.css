@@ -1,6 +1,6 @@
 .container {
-  composes: flex from 'tachyons-flexbox';
-  composes: flex-column from 'tachyons-flexbox';
-  composes: flex-wrap from 'tachyons-flexbox';
+  composes: flex from 'tachyons';
+  composes: flex-column from 'tachyons';
+  composes: flex-wrap from 'tachyons';
   min-height: 99vh;
 }

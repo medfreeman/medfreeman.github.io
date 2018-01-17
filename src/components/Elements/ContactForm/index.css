@@ -3,12 +3,12 @@
 @import 'react-toolbox/src/components/input/config';
 
 .action__container {
-  composes: cf from 'tachyons-clears';
-  composes: mt5 from 'tachyons-spacing';
-  composes: flex from 'tachyons-flexbox';
-  composes: flex-row from 'tachyons-flexbox';
-  composes: items-center from 'tachyons-flexbox';
-  composes: justify-between from 'tachyons-flexbox';
+  composes: cf from 'tachyons';
+  composes: mt5 from 'tachyons';
+  composes: flex from 'tachyons';
+  composes: flex-row from 'tachyons';
+  composes: items-center from 'tachyons';
+  composes: justify-between from 'tachyons';
 }
 
 .captcha__spacer {

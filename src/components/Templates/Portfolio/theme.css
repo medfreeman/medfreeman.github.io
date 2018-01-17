@@ -1,5 +1,5 @@
 .container {
-  composes: pt4 from 'tachyons-spacing';
+  composes: pt4 from 'tachyons';
   padding-left: 60px;
   padding-right: 60px;
 }

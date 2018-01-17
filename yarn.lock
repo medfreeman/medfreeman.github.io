@@ -2500,7 +2500,7 @@ debug@^3.0.0, debug@^3.0.1, debug@^3.1.0:
   dependencies:
     ms "2.0.0"
 
-debuglog@^1.0.1:
+debuglog@*, debuglog@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/debuglog/-/debuglog-1.0.1.tgz#aa24ffb9ac3df9a2351837cfb2d279360cd78492"
 
@@ -4626,7 +4626,7 @@ import-lazy@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/import-lazy/-/import-lazy-2.1.0.tgz#05698e3d45c88e8d7e9d92cb0584e77f096f3e43"
 
-imurmurhash@^0.1.4:
+imurmurhash@*, imurmurhash@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/imurmurhash/-/imurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
 
@@ -5525,6 +5525,10 @@ lodash._basecopy@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/lodash._basecopy/-/lodash._basecopy-3.0.1.tgz#8da0e6a876cf344c0ad8a54882111dd3c5c7ca36"
 
+lodash._baseindexof@*:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/lodash._baseindexof/-/lodash._baseindexof-3.1.0.tgz#fe52b53a1c6761e42618d654e4a25789ed61822c"
+
 lodash._basetostring@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/lodash._basetostring/-/lodash._basetostring-3.0.1.tgz#d1861d877f824a52f669832dcaf3ee15566a07d5"
@@ -5540,11 +5544,25 @@ lodash._basevalues@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/lodash._basevalues/-/lodash._basevalues-3.0.0.tgz#5b775762802bde3d3297503e26300820fdf661b7"
 
+lodash._bindcallback@*:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/lodash._bindcallback/-/lodash._bindcallback-3.0.1.tgz#e531c27644cf8b57a99e17ed95b35c748789392e"
+
+lodash._cacheindexof@*:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/lodash._cacheindexof/-/lodash._cacheindexof-3.0.2.tgz#3dc69ac82498d2ee5e3ce56091bafd2adc7bde92"
+
+lodash._createcache@*:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/lodash._createcache/-/lodash._createcache-3.1.2.tgz#56d6a064017625e79ebca6b8018e17440bdcf093"
+  dependencies:
+    lodash._getnative "^3.0.0"
+
 lodash._createset@~4.0.0:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/lodash._createset/-/lodash._createset-4.0.3.tgz#0f4659fbb09d75194fa9e2b88a6644d363c9fe26"
 
-lodash._getnative@^3.0.0:
+lodash._getnative@*, lodash._getnative@^3.0.0:
   version "3.9.1"
   resolved "https://registry.yarnpkg.com/lodash._getnative/-/lodash._getnative-3.9.1.tgz#570bc7dede46d61cdcde687d65d3eecbaa3aaff5"
 
@@ -5626,7 +5644,7 @@ lodash.omit@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.omit/-/lodash.omit-4.5.0.tgz#6eb19ae5a1ee1dd9df0b969e66ce0b7fa30b5e60"
 
-lodash.restparam@^3.0.0:
+lodash.restparam@*, lodash.restparam@^3.0.0:
   version "3.6.1"
   resolved "https://registry.yarnpkg.com/lodash.restparam/-/lodash.restparam-3.6.1.tgz#936a4e309ef330a7645ed4145986c85ae5b20805"
 
@@ -8369,7 +8387,7 @@ readable-stream@~2.0.4, readable-stream@~2.0.5:
     string_decoder "~0.10.x"
     util-deprecate "~1.0.1"
 
-readdir-scoped-modules@^1.0.0:
+readdir-scoped-modules@*, readdir-scoped-modules@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/readdir-scoped-modules/-/readdir-scoped-modules-1.0.2.tgz#9fafa37d286be5d92cbaebdee030dc9b5f406747"
   dependencies:
@@ -9826,65 +9844,13 @@ table@^4.0.1:
     slice-ansi "1.0.0"
     string-width "^2.1.1"
 
-tachyons-clears@^3.0.4:
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/tachyons-clears/-/tachyons-clears-3.0.4.tgz#8464bfa0394fbad2e6ab97fadf8bc7ecbe2eb695"
-
-tachyons-display@^5.0.4:
-  version "5.0.4"
-  resolved "https://registry.yarnpkg.com/tachyons-display/-/tachyons-display-5.0.4.tgz#9ec6918b0695753b7c296c0a1275c8b214b25b9a"
-
-tachyons-flexbox@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/tachyons-flexbox/-/tachyons-flexbox-2.1.0.tgz#cc12e9bd79653996cc8bd1b5fa2f6d6200bc2e77"
-
-tachyons-font-weight@^5.0.4:
-  version "5.0.4"
-  resolved "https://registry.yarnpkg.com/tachyons-font-weight/-/tachyons-font-weight-5.0.4.tgz#c95b4feb7f4c18558859bbc9af13197981d18d60"
-
-tachyons-letter-spacing@^3.0.4:
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/tachyons-letter-spacing/-/tachyons-letter-spacing-3.0.4.tgz#6cd3af529b24e55e577626e6b1e84a4b844ebcfd"
-
-tachyons-line-height@^3.0.6:
-  version "3.0.6"
-  resolved "https://registry.yarnpkg.com/tachyons-line-height/-/tachyons-line-height-3.0.6.tgz#e5b4e116f9aadec530438a62d3fd043c7785b300"
-
-tachyons-max-widths@^4.0.5:
-  version "4.0.5"
-  resolved "https://registry.yarnpkg.com/tachyons-max-widths/-/tachyons-max-widths-4.0.5.tgz#07243992827c21771f1579510b8a7a7784eccd01"
-
 tachyons-modular-media-queries@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/tachyons-modular-media-queries/-/tachyons-modular-media-queries-1.0.0.tgz#769441e0de000d3b3b3c41d905a2b462ac2d655a"
 
-tachyons-opacity@^1.1.10:
-  version "1.1.10"
-  resolved "https://registry.yarnpkg.com/tachyons-opacity/-/tachyons-opacity-1.1.10.tgz#18de2eb7d23c47b94aceee55b6313907b4cf10ed"
-
-tachyons-skins@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/tachyons-skins/-/tachyons-skins-4.1.0.tgz#cd331f695f6ae2c1d06ae21851a7a51a8c695d26"
-
-tachyons-spacing@^6.0.4:
-  version "6.0.4"
-  resolved "https://registry.yarnpkg.com/tachyons-spacing/-/tachyons-spacing-6.0.4.tgz#54cbd6d902b2a36ab864110754ec9924e09935aa"
-
-tachyons-text-align@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/tachyons-text-align/-/tachyons-text-align-3.1.0.tgz#e3592637afb68498ba846a619e374423e83f0727"
-
-tachyons-type-scale@^6.1.0:
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/tachyons-type-scale/-/tachyons-type-scale-6.1.0.tgz#4566519793457afbb5d5d47568d456c172f0bd7c"
-
-tachyons-typography@^3.0.5:
-  version "3.0.5"
-  resolved "https://registry.yarnpkg.com/tachyons-typography/-/tachyons-typography-3.0.5.tgz#220a0285b3f04cf8502c552a1bc4109cf68de558"
-
-tachyons-utilities@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/tachyons-utilities/-/tachyons-utilities-2.0.1.tgz#1b1dbac14caa59eca43804d3a61feca0fb5c443c"
+tachyons@^4.9.1:
+  version "4.9.1"
+  resolved "https://registry.yarnpkg.com/tachyons/-/tachyons-4.9.1.tgz#f88d7059d6e53c833bf9351a26f18314c8fdc76a"
 
 tapable@^0.1.8, tapable@~0.1.8:
   version "0.1.10"
@@ -10442,7 +10408,7 @@ uuid@~3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.1.0.tgz#3dd3d3e790abc24d7b0d3a034ffababe28ebbc04"
 
-validate-npm-package-license@^3.0.1:
+validate-npm-package-license@*, validate-npm-package-license@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/validate-npm-package-license/-/validate-npm-package-license-3.0.1.tgz#2804babe712ad3379459acfbe24746ab2c303fbc"
   dependencies:

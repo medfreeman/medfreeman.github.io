@@ -1,4 +1,4 @@
 .container {
   flex: 1;
-  composes: pt4 from 'tachyons-spacing';
+  composes: pt4 from 'tachyons';
 }

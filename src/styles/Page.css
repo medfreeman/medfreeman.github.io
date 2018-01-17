@@ -1,7 +1,7 @@
 .container {
-  composes: mw9 from 'tachyons-max-widths';
-  composes: center from 'tachyons-utilities';
-  composes: pa4 from 'tachyons-spacing';
-  composes: pt5-ns from 'tachyons-spacing';
-  composes: ph7-l from 'tachyons-spacing';
+  composes: mw9 from 'tachyons';
+  composes: center from 'tachyons';
+  composes: pa4 from 'tachyons';
+  composes: pt5-ns from 'tachyons';
+  composes: ph7-l from 'tachyons';
 }
