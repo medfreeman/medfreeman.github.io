@@ -95,7 +95,9 @@ workflows:
       - build-job:
           filters:
             branches:
-              ignore: master
+              ignore:
+                - master
+                - src
   build-deploy:
     jobs:
       - build-job
