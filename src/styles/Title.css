@@ -5,14 +5,15 @@
   composes: lh-title from 'tachyons';
   composes: mt0 from 'tachyons';
   composes: mb4 from 'tachyons';
+  color: var(--colorText);
 }
 
 .h1__span {
   composes: bg-black-90 from 'tachyons';
   composes: lh-copy from 'tachyons';
-  composes: white from 'tachyons';
   composes: pa1 from 'tachyons';
   composes: tracked-tight from 'tachyons';
+  color: var(--colorPrimary);
 }
 
 .h2 {
@@ -26,7 +27,7 @@
 
 .h2__span {
   composes: lh-title from 'tachyons';
-  composes: white from 'tachyons';
   composes: pa1 from 'tachyons';
   composes: tracked-tight from 'tachyons';
+  color: var(--colorText);
 }
