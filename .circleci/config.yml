@@ -51,7 +51,7 @@ jobs:
           command: yarn test
 
       # Build
-      - run:
+      - build:
           name: Building phenomic site
           command: yarn build
 
@@ -63,9 +63,6 @@ jobs:
       # Deploy to github pages
       - deploy:
           name: Deploying src branch to Github Pages
-          filters:
-            branches:
-              only: src
           command: |
             git config --global user.email robots@circleci.com
             git config --global user.name CircleCI
@@ -88,3 +85,15 @@ jobs:
             git commit -m "Automated deployment to GitHub Pages: ${CIRCLE_SHA1}" --allow-empty
 
             git push --force origin master
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: src
