@@ -94,6 +94,7 @@
     "typeface-roboto": "^0.0.50",
     "url-join": "^2.0.5",
     "url-loader": "^0.6.2",
+    "webfontloader": "^1.6.28",
     "webfonts-generator": "sunflowerdeath/webfonts-generator#3f52b4e",
     "webfonts-loader": "^4.0.1",
     "webpack": "^3.10.0"
