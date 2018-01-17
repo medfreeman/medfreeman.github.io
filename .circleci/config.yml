@@ -51,7 +51,7 @@ jobs:
           command: yarn test
 
       # Build
-      - build:
+      - run:
           name: Building phenomic site
           command: yarn build
 
@@ -59,7 +59,12 @@ jobs:
       - run:
           name: Uploading lockfile
           command: greenkeeper-lockfile-upload
-      
+
+  deploy:
+    docker:
+      - image: banian/node
+    working_directory: /usr/src/app
+    steps:
       # Deploy to github pages
       - deploy:
           name: Deploying src branch to Github Pages
