@@ -2,7 +2,7 @@
 title: "Home"
 ---
 
-## Hello, i am !Icon[/med_round.png](Mehdi)
+## Hello, i am !Icon[/images/med_round.png](Mehdi)
 
 # consulting developer and sysAdmin
 
