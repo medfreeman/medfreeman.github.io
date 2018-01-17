@@ -16,13 +16,13 @@ jobs:
       # Checkout repository
       - checkout
 
-      # Disable yarn progress bar for perf
-      - run:
-          command: yarn config set no-progress
-
       # Restore cache
       - restore_cache:
           key: yarn-{{ checksum "yarn.lock" }}
+
+      # Disable yarn progress bar for perf
+      - run:
+          command: yarn config set no-progress
 
       # Greenkeeper-lockfile
       - run:
@@ -87,4 +87,4 @@ jobs:
             git add -A
             git commit -m "Automated deployment to GitHub Pages: ${CIRCLE_SHA1}" --allow-empty
 
-            git push origin master
+            git push --force origin master
