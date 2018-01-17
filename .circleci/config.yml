@@ -5,11 +5,6 @@ jobs:
       - image: banian/node
     working_directory: /usr/src/app
     steps:
-      # Add github ssh deploy key
-      - add_ssh_keys:
-          fingerprints:
-            - "3a:eb:d4:d2:60:ac:45:b6:92:d9:40:e2:10:a9:f1:c8"
-
       # Checkout repository
       - checkout
 
@@ -62,6 +57,11 @@ jobs:
       - image: banian/node
     working_directory: /usr/src/app
     steps:
+      # Add github ssh deploy key
+      - add_ssh_keys:
+          fingerprints:
+            - "3a:eb:d4:d2:60:ac:45:b6:92:d9:40:e2:10:a9:f1:c8"
+
       # Deploy to github pages
       - deploy:
           name: Deploying src branch to Github Pages
@@ -98,6 +98,7 @@ workflows:
               ignore:
                 - master
                 - src
+
   build-deploy:
     jobs:
       - build-job
