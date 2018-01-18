@@ -55,13 +55,17 @@ jobs:
       - persist_to_workspace:
           root: /usr/src/app
           paths:
-            - .
+            - dist/*
 
   deploy-job:
     docker:
       - image: banian/node
     working_directory: /usr/src/app
     steps:
+      - attach_workspace:
+          # Must be absolute path or relative path from working_directory
+          at: /usr/src/app
+
       # Add github ssh deploy key
       - add_ssh_keys:
           fingerprints:
