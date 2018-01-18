@@ -62,6 +62,10 @@ jobs:
     docker:
       - image: banian/node
     working_directory: /usr/src/app
+    environment:
+      - API_ZONE_ID: "85614281604b6dce19d24b427516baa4"
+      - API_EMAIL: "mlahlou@protonmail.ch"
+      - DOMAIN: "medfreeman.io"
     steps:
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
@@ -73,7 +77,7 @@ jobs:
             - "3a:eb:d4:d2:60:ac:45:b6:92:d9:40:e2:10:a9:f1:c8"
 
       - run:
-          name: Fix host authenticity for github.com
+          name: Fixing host authenticity for github.com
           command: |
             ssh-keyscan github.com >> ~/.ssh/known_hosts
 
@@ -96,12 +100,21 @@ jobs:
             mkdir -p out/.circleci && cp -a .circleci/. out/.circleci/.
             cd out
 
-            echo "medfreeman.io" > CNAME
+            echo "${DOMAIN}" > CNAME
 
             git add -A
             git commit -m "Automated deployment to GitHub Pages: ${CIRCLE_SHA1}" --allow-empty
 
             git push --force origin master
+
+      - run:
+          name: Purging cloudflare cache
+          command: |
+            curl -X DELETE $V4_URL'/zones/$API_ZONE_ID/purge_cache' \
+            -H 'X-Auth-Email: '$API_EMAIL \
+            -H 'X-Auth-Key: '$API_KEY \
+            -H 'Content-Type: application/json' \
+            --data '{"purge_everything": true}'
 
 workflows:
   version: 2
