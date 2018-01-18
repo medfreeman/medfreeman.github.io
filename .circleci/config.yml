@@ -62,6 +62,11 @@ jobs:
           fingerprints:
             - "3a:eb:d4:d2:60:ac:45:b6:92:d9:40:e2:10:a9:f1:c8"
 
+      - run:
+        name: Fix host authenticity for github.com
+        command: |
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+
       # Deploy to github pages
       - deploy:
           name: Deploying src branch to Github Pages
