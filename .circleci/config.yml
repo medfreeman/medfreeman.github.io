@@ -52,6 +52,11 @@ jobs:
           name: Uploading lockfile
           command: greenkeeper-lockfile-upload
 
+      - persist_to_workspace:
+          root: /usr/src/app
+          paths:
+            - .
+
   deploy-job:
     docker:
       - image: banian/node
