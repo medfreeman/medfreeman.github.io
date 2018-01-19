@@ -4,7 +4,7 @@ title: "Home"
 
 ## Hello, i am !Icon[/images/med_round.png](Mehdi)
 
-# consulting developer and sysAdmin
+# full stack web developer!
 
 I provide solutions for all your business needs:
 - developing & hosting your web / e-commerce sites & applications
