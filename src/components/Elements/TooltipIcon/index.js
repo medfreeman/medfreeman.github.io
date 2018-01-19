@@ -19,14 +19,15 @@ const isImage = string => /\.(gif|jpg|jpe?g|tiff|png)$/i.test(string);
 @themr("TooltipIcon", defaultTheme)
 class TooltipIcon extends React.Component {
   static defaultProps = {
-    tooltipPosition: "top"
+    tooltipPosition: "top",
+    absolute: false
   };
 
   static propTypes = {
     icon: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
-    floating: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+    floating: PropTypes.bool,
     to: PropTypes.string,
-    absolute: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+    absolute: PropTypes.bool,
     tooltip: PropTypes.any.isRequired,
     tooltipPosition: PropTypes.oneOf([
       "vertical",
@@ -44,35 +45,33 @@ class TooltipIcon extends React.Component {
   }
 
   render() {
-    const { theme, icon, floating, to, absolute, ...otherProps } = this.props;
-
-    if (floating === "true") {
-      otherProps.floating = true;
-    }
-
-    const isAbsoluteLink = absolute === "true" ? true : false;
+    const { theme, icon, to, absolute, ...otherProps } = this.props;
 
     const childrenHasTooltip = !to;
     const ImageTag = childrenHasTooltip ? TooltipImage : Image;
     const IconTag = childrenHasTooltip ? TooltipFontIcon : Icon;
     const iconProps = childrenHasTooltip ? otherProps : {};
 
-    const iconElement = isImage(icon)
-      ? <ImageTag
-          theme={theme}
-          src={icon}
-          alt={this.props.tooltip}
-          {...iconProps}
-        />
-      : <IconTag theme={theme} icon={icon} {...iconProps} />;
+    const iconElement = isImage(icon) ? (
+      <ImageTag
+        theme={theme}
+        src={icon}
+        alt={this.props.tooltip}
+        {...iconProps}
+      />
+    ) : (
+      <IconTag theme={theme} icon={icon} {...iconProps} />
+    );
 
-    return to
-      ? <Link to={to} absolute={isAbsoluteLink} theme={theme}>
-          <TooltipButton theme={theme} {...otherProps}>
-            {iconElement}
-          </TooltipButton>
-        </Link>
-      : iconElement;
+    return to ? (
+      <Link to={to} absolute={absolute} theme={theme}>
+        <TooltipButton theme={theme} {...otherProps}>
+          {iconElement}
+        </TooltipButton>
+      </Link>
+    ) : (
+      iconElement
+    );
   }
 }
 
