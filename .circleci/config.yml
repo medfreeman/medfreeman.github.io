@@ -128,11 +128,11 @@ workflows:
                 - src
 
   build-deploy:
+    filters:
+      branches:
+        only: src
     jobs:
       - build-job
-          filters:
-            branches:
-              only: src
       - deploy-job:
           requires:
             - build-job
