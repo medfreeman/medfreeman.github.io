@@ -33,6 +33,9 @@ body {
   line-height: 1.5rem;
 
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, Roboto, 'Helvetica Neue', sans-serif;
+
+  /* Remove android chrome pull-down to refresh, chrome 63 */
+  overscroll-behavior-y: contain;
 }
 
 .github-corner:hover .octo-arm {
