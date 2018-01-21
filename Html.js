@@ -1,7 +1,6 @@
-/*eslint no-unused-vars: ["error", { "varsIgnorePattern": "csshook" }]*/
 import React from "react";
 import Head from "react-helmet";
-import csshook from "css-modules-require-hook/preset";
+import "css-modules-require-hook/preset";
 
 import ReduxProvider from "./src/providers/ReduxProvider";
 import ThemeProvider from "./src/providers/ThemeProvider";
