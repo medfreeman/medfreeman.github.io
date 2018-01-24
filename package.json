@@ -91,7 +91,7 @@
     "svgo-loader": "^2.1.0",
     "tachyons": "^4.9.1",
     "tachyons-modular-media-queries": "^1.0.0",
-    "typeface-roboto": "^0.0.50",
+    "typeface-roboto": "^0.0.54",
     "url-join": "^3.0.0",
     "url-loader": "^0.6.2",
     "webfontloader": "^1.6.28",
