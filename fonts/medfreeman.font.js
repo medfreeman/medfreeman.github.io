@@ -8,7 +8,7 @@ const material = function(category, icon) {
 };
 
 const mdi = function(icon) {
-  return path.resolve(__dirname, `../node_modules/mdi/icons/svg/${icon}.svg`);
+  return path.resolve(__dirname, `../node_modules/mdi-svg/svg/${icon}.svg`);
 };
 
 const local = function(icon) {
