@@ -2,7 +2,7 @@ version: 2
 jobs:
   build-job:
     docker:
-      - image: banian/node
+      - image: node:8
     working_directory: /usr/src/app
     steps:
       # add npm packages binaries to $PATH
