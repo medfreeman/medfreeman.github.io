@@ -5,9 +5,6 @@ jobs:
       - image: node:8
     working_directory: /usr/src/app
     steps:
-      # add npm packages binaries to $PATH
-      - run: echo 'export PATH=/usr/src/app/node_modules/.bin:$PATH' >> $BASH_ENV
-
       # Add github ssh deploy key
       - add_ssh_keys:
           fingerprints:
