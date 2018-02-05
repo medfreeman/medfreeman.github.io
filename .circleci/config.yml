@@ -4,6 +4,8 @@ jobs:
     docker:
       - image: banian/node
     working_directory: /usr/src/app
+    environment:
+      - PATH: "$(pwd)/node_modules/.bin:$PATH"
     steps:
       # Add github ssh deploy key
       - add_ssh_keys:
