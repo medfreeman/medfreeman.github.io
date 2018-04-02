@@ -39,7 +39,7 @@
     "favicons-webpack-plugin": "^0.0.8",
     "file-loader": "^1.1.6",
     "git-exec-and-restage": "^1.0.1",
-    "gray-matter": "^3.1.1",
+    "gray-matter": "^4.0.1",
     "hast-util-sanitize": "^1.1.2",
     "husky": "^0.14.3",
     "imagesloaded": "^4.1.4",
