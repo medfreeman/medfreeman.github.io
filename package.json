@@ -29,7 +29,7 @@
     "css-modules-require-hook": "^4.2.3",
     "debug": "^3.1.0",
     "deepmerge": "^2.0.1",
-    "email-validator": "^1.1.1",
+    "email-validator": "^2.0.4",
     "eslint": "^5.0.1",
     "eslint-config-i-am-meticulous": "^11.0.0",
     "eslint-loader": "^2.0.0",
