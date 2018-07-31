@@ -3990,9 +3990,9 @@ gray-matter@^2.1.1:
     js-yaml "^3.8.1"
     toml "^2.3.2"
 
-gray-matter@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/gray-matter/-/gray-matter-4.0.0.tgz#f0dcfa108e1b2892d7bc2fb87eee4db754bbb485"
+gray-matter@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/gray-matter/-/gray-matter-4.0.1.tgz#375263c194f0d9755578c277e41b1c1dfdf22c7d"
   dependencies:
     js-yaml "^3.11.0"
     kind-of "^6.0.2"
