@@ -8,7 +8,7 @@ const favicon = file => "/assets/" + file + faviconVersionString;
 
 const Favicon = () => {
   return (
-    <div hidden>
+    <div hidden="true">
       <Head>
         <link
           rel="icon"
@@ -24,7 +24,7 @@ const Favicon = () => {
         />
         <link rel="shortcut icon" href={favicon("favicon.ico")} />
       </Head>
-      {process.env.NODE_ENV === "production" &&
+      {process.env.NODE_ENV === "production" && (
         <Head>
           <link rel="manifest" href={favicon("manifest.json")} />
           <link
@@ -100,7 +100,8 @@ const Favicon = () => {
             name="msapplication-config"
             content={favicon("browserconfig.xml")}
           />
-        </Head>}
+        </Head>
+      )}
     </div>
   );
 };

@@ -46,13 +46,14 @@ class WebfontLoader extends Component {
   };
 
   loadFonts = () => {
-    isBrowser &&
+    if (isBrowser) {
       WebFont.load({
         ...this.props.config,
         loading: this.handleLoading,
         active: this.handleActive,
         inactive: this.handleInactive
       });
+    }
   };
 
   render() {
