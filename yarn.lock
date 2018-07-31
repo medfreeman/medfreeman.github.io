@@ -5021,8 +5021,8 @@ js-yaml@3.x.x, js-yaml@^3.3.1, js-yaml@^3.4.3, js-yaml@^3.8.1, js-yaml@^3.9.0, j
     esprima "^4.0.0"
 
 js-yaml@^3.11.0:
-  version "3.11.0"
-  resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.11.0.tgz#597c1a8bd57152f26d622ce4117851a51f5ebaef"
+  version "3.12.0"
+  resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.12.0.tgz#eaed656ec8344f10f527c6bfa1b6e2244de167d1"
   dependencies:
     argparse "^1.0.7"
     esprima "^4.0.0"
@@ -7832,9 +7832,9 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-async-script@^0.9.1:
-  version "0.9.1"
-  resolved "https://registry.yarnpkg.com/react-async-script/-/react-async-script-0.9.1.tgz#d4a496c726fab0c6ef05998ab16e50c742820b60"
+react-async-script@^0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/react-async-script/-/react-async-script-0.11.0.tgz#6336b38e072fafbd3bab859ecb04f0ec35a9847e"
   dependencies:
     prop-types ">=15.5.0"
 
