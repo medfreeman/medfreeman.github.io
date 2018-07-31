@@ -118,7 +118,7 @@ class ContactForm extends React.Component {
       <form
         action={this.postUrl}
         method="POST"
-        noValidate
+        noValidate="true"
         onSubmit={this.props.handleSubmit(this.handleSubmit)}
       >
         <Field
@@ -135,7 +135,7 @@ class ContactForm extends React.Component {
           type="text"
           name="name"
           label="Name"
-          required
+          required="true"
           icon="person"
           component={this.renderInputField}
         />
@@ -143,7 +143,7 @@ class ContactForm extends React.Component {
           type="email"
           name="email"
           label="Email address"
-          required
+          required="true"
           icon="at"
           component={this.renderInputField}
         />
@@ -151,25 +151,26 @@ class ContactForm extends React.Component {
           type="text"
           name="message"
           label="Message"
-          required
-          multiline
+          required="true"
+          multiline="true"
           theme={textTheme}
           icon="email"
           component={this.renderInputField}
         />
-        {this.props.recaptchaSiteKey &&
+        {this.props.recaptchaSiteKey && (
           <div className={styles.action__container}>
             <span className={styles.captcha__spacer} />
             <Field
               name="captcharesponse"
-              required
+              required="true"
               component={Captcha}
               className={styles.captcha}
               errorClass={styles.captcha__error}
               siteKey={this.props.recaptchaSiteKey}
               locale={this.props.locale}
             />
-          </div>}
+          </div>
+        )}
         <div className={styles.action__container}>
           <span
             className={cx(
@@ -182,7 +183,7 @@ class ContactForm extends React.Component {
           </span>
           <Button
             type="submit"
-            raised
+            raised="true"
             theme={buttonTheme}
             disabled={this.props.submitSucceeded}
             icon={
