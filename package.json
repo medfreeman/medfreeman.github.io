@@ -32,7 +32,7 @@
     "email-validator": "^1.1.1",
     "eslint": "^5.0.1",
     "eslint-config-i-am-meticulous": "^7.0.1",
-    "eslint-loader": "^1.9.0",
+    "eslint-loader": "^2.0.0",
     "eslint-plugin-flowtype": "^2.41.0",
     "eslint-plugin-react": "^7.5.1",
     "extract-text-webpack-plugin": "^3.0.2",
