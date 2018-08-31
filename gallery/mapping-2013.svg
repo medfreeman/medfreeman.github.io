@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg id="svg3167" width="100%" height="100%" viewBox="0 0 222 256" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+  <title>mapping-2013-2</title>
+  <g id="layer1" transform="matrix(1, 0, 0, 1, 7, 0)">
+    <g id="g28">
+      <path id="path30" d="M214.36,128a21.25,21.25,0,0,1-21.25,21.25h-45.3l42.45,73.52A21.25,21.25,0,1,1,153.45,244L111,170.49,68.55,244a21.25,21.25,0,1,1-36.8-21.25L74.2,149.24H28.89a21.25,21.25,0,1,1,0-42.5H74.2L31.75,33.22A21.25,21.25,0,0,1,68.55,12L111,85.49,153.45,12a21.25,21.25,0,1,1,36.8,21.25l-42.45,73.52h45.3A21.25,21.25,0,0,1,214.36,128" transform="translate(-7.64 -1.35)"/>
+      <animate attributeName="fill" begin="1s" dur="40s" values="black; #fd0200; #00f708; #0009f6; #00f708; #fd0200; black" repeatCount="indefinite"/>
+    </g>
+  </g>
+</svg>

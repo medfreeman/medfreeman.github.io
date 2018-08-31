@@ -1,0 +1,143 @@
+version: 2
+jobs:
+  build-job:
+    docker:
+      - image: node:8
+    working_directory: /usr/src/app
+    steps:
+      # Add github ssh deploy key
+      - add_ssh_keys:
+          fingerprints:
+            - "3a:eb:d4:d2:60:ac:45:b6:92:d9:40:e2:10:a9:f1:c8"
+
+      # Checkout repository
+      - checkout
+
+      # Restore cache
+      - restore_cache:
+          key: yarn-{{ checksum "yarn.lock" }}
+
+      # Disable yarn progress bar for perf
+      - run:
+          command: yarn config set no-progress
+
+      # Greenkeeper-lockfile
+      - run:
+          name: Installing Greenkeeper-lockfile
+          command: yarn global add greenkeeper-lockfile@1
+
+      # Install dependencies
+      - run:
+          name: Installing Dependencies
+          command: yarn
+
+      # Keep cache
+      - save_cache:
+          key: yarn-{{ checksum "yarn.lock" }}
+          paths:
+            - "node_modules"
+
+      # Update yarn.lock
+      - run:
+          name: Updating lockfile
+          command: greenkeeper-lockfile-update
+
+      # Test
+      - run:
+          name: Tests
+          command: yarn test
+
+      # Build
+      - run:
+          name: Building phenomic site
+          command: yarn build
+
+      # Upload yarn.lock
+      - run:
+          name: Uploading lockfile
+          command: greenkeeper-lockfile-upload
+
+      - persist_to_workspace:
+          root: /usr/src/app
+          paths:
+            - dist/*
+            - .circleci/*
+
+  deploy-job:
+    docker:
+      - image: banian/node
+    working_directory: /usr/src/app
+    environment:
+      - API_ZONE_ID: "85614281604b6dce19d24b427516baa4"
+      - API_EMAIL: "mlahlou@protonmail.ch"
+      - DOMAIN: "medfreeman.io"
+    steps:
+      - attach_workspace:
+          # Must be absolute path or relative path from working_directory
+          at: /usr/src/app
+
+      # Add github ssh deploy key
+      - add_ssh_keys:
+          fingerprints:
+            - "3a:eb:d4:d2:60:ac:45:b6:92:d9:40:e2:10:a9:f1:c8"
+
+      - run:
+          name: Fixing host authenticity for github.com
+          command: |
+            ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+      # Deploy to github pages
+      - deploy:
+          name: Deploying src branch to Github Pages
+          command: |
+            git config --global user.email robots@circleci.com
+            git config --global user.name CircleCI
+
+            git clone $CIRCLE_REPOSITORY_URL out
+
+            cd out
+            git checkout --orphan master
+            git rm -rf .
+            cd ..
+
+            cp -a dist/. out/.
+
+            mkdir -p out/.circleci && cp -a .circleci/. out/.circleci/.
+            cd out
+
+            echo "${DOMAIN}" > CNAME
+
+            git add -A
+            git commit -m "Automated deployment to GitHub Pages: ${CIRCLE_SHA1}" --allow-empty
+
+            git push --force origin master
+
+      - run:
+          name: Purging cloudflare cache
+          command: |
+            curl -X DELETE "https://api.cloudflare.com/client/v4/zones/${API_ZONE_ID}/purge_cache" \
+            -H "X-Auth-Email: ${API_EMAIL}" \
+            -H "X-Auth-Key: ${API_KEY}" \
+            -H "Content-Type: application/json" \
+            --data '{"purge_everything": true}'
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build-job:
+          filters:
+            branches:
+              ignore:
+                - master
+                - src
+
+  build-deploy:
+    jobs:
+      - build-job:
+          filters:
+            branches:
+              only: src
+      - deploy-job:
+          requires:
+            - build-job
