@@ -97,7 +97,7 @@
     "webfontloader": "^1.6.28",
     "webfonts-generator": "sunflowerdeath/webfonts-generator#3f52b4e",
     "webfonts-loader": "^4.0.1",
-    "webpack": "^3.10.0"
+    "webpack": "^4.23.0"
   },
   "scripts": {
     "#<git hooks>": "handled by husky",
