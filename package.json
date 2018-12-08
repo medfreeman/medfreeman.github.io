@@ -13,7 +13,7 @@
     "@phenomic/core": "^1.0.0-alpha.19",
     "@phenomic/plugin-api-related-content": "^1.0.0-alpha.19",
     "@phenomic/plugin-bundler-webpack": "^1.0.0-alpha.19",
-    "@phenomic/plugin-collector-files": "^1.0.0-alpha.19",
+    "@phenomic/plugin-collector-files": "^1.0.0-beta.6",
     "@phenomic/plugin-public-assets": "^1.0.0-alpha.19",
     "@phenomic/plugin-renderer-react": "^1.0.0-alpha.19",
     "@phenomic/plugin-transform-json": "^1.0.0-alpha.19",
