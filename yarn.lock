@@ -144,9 +144,17 @@
     socket.io "^1.7.2"
     socket.io-client "^1.7.2"
 
-"@phenomic/plugin-api-related-content@^1.0.0-alpha.19", "@phenomic/plugin-api-related-content@^1.0.0-alpha.20":
+"@phenomic/plugin-api-related-content@^1.0.0-alpha.20":
   version "1.0.0-alpha.20"
   resolved "https://registry.yarnpkg.com/@phenomic/plugin-api-related-content/-/plugin-api-related-content-1.0.0-alpha.20.tgz#d355bb08c4c28deb5311cb5c8e266ac10e4200c5"
+  dependencies:
+    debug "^2.6.0"
+    lodash.flatten "^4.4.0"
+
+"@phenomic/plugin-api-related-content@^1.0.0-beta.6":
+  version "1.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/@phenomic/plugin-api-related-content/-/plugin-api-related-content-1.0.0-beta.6.tgz#4895a0ea9b000f790e3a8e61127761a4216aa12c"
+  integrity sha512-2ggOucxxAZ2aEZYaJjiP2tcM4b4oT4QQzwxR06EkmOGt+b7HwsKD6tVbD4Ptt04eD++6IubmnZfNWt3uHzn1NA==
   dependencies:
     debug "^2.6.0"
     lodash.flatten "^4.4.0"
