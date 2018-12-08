@@ -199,9 +199,16 @@
     striptags "^2.0.0"
     url-join "^2.0.2"
 
-"@phenomic/plugin-transform-json@^1.0.0-alpha.19", "@phenomic/plugin-transform-json@^1.0.0-alpha.20":
+"@phenomic/plugin-transform-json@^1.0.0-alpha.20":
   version "1.0.0-alpha.20"
   resolved "https://registry.yarnpkg.com/@phenomic/plugin-transform-json/-/plugin-transform-json-1.0.0-alpha.20.tgz#651072da1181771a8f1e09d5eba01a3dbf5df41a"
+  dependencies:
+    debug "^2.6.0"
+
+"@phenomic/plugin-transform-json@^1.0.0-beta.6":
+  version "1.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/@phenomic/plugin-transform-json/-/plugin-transform-json-1.0.0-beta.6.tgz#9abca3c8c6f1fc6c3754a40c41708757a2695f54"
+  integrity sha512-Slboyeo7RD9G8nCQjIcPF+J3kiL/nLvb6K5OQymBhje6Iybe/KjHPSXo2WjbPcmgHn3rvAEwYMHR6y7HFXZqyQ==
   dependencies:
     debug "^2.6.0"
 
