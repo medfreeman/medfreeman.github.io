@@ -176,9 +176,17 @@
   dependencies:
     debug "^2.6.0"
 
-"@phenomic/plugin-public-assets@^1.0.0-alpha.19", "@phenomic/plugin-public-assets@^1.0.0-alpha.20":
+"@phenomic/plugin-public-assets@^1.0.0-alpha.20":
   version "1.0.0-alpha.20"
   resolved "https://registry.yarnpkg.com/@phenomic/plugin-public-assets/-/plugin-public-assets-1.0.0-alpha.20.tgz#08ff93708d010cb1f0c1d854ff865e5f87cb2539"
+  dependencies:
+    express "^4.14.0"
+    fs-extra "^3.0.1"
+
+"@phenomic/plugin-public-assets@^1.0.0-beta.6":
+  version "1.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/@phenomic/plugin-public-assets/-/plugin-public-assets-1.0.0-beta.6.tgz#32c12461f9af82d0a6f44d01aee30c98376cfe2e"
+  integrity sha512-Cgn3NyG1RbQaYqnhpV65j+d/HkvCHMxGMA/0TiftyjTr8KJgOzjDXhKPPOLp9cZCqHlrf2e9g1+DhgfdPurJxQ==
   dependencies:
     express "^4.14.0"
     fs-extra "^3.0.1"
