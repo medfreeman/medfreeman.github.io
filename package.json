@@ -17,7 +17,7 @@
     "@phenomic/plugin-public-assets": "^1.0.0-alpha.19",
     "@phenomic/plugin-renderer-react": "^1.0.0-alpha.19",
     "@phenomic/plugin-transform-json": "^1.0.0-alpha.19",
-    "@phenomic/preset-react-app": "^1.0.0-alpha.19",
+    "@phenomic/preset-react-app": "^1.0.0-beta.8",
     "babel-eslint": "^9.0.0",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-plugin-transform-function-bind": "^6.22.0",
