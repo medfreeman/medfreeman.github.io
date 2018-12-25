@@ -25,7 +25,7 @@
     "babel-register": "^6.26.0",
     "classnames": "^2.2.5",
     "core-js": "^2.5.3",
-    "css-loader": "^0.28.8",
+    "css-loader": "^2.1.0",
     "css-modules-require-hook": "^4.2.3",
     "debug": "^3.1.0",
     "deepmerge": "^2.0.1",
