@@ -170,11 +170,21 @@
     webpack-dev-middleware "^1.10.0"
     webpack-hot-middleware "^2.18.0"
 
-"@phenomic/plugin-collector-files@^1.0.0-alpha.19", "@phenomic/plugin-collector-files@^1.0.0-alpha.20":
+"@phenomic/plugin-collector-files@^1.0.0-alpha.20":
   version "1.0.0-alpha.20"
   resolved "https://registry.yarnpkg.com/@phenomic/plugin-collector-files/-/plugin-collector-files-1.0.0-alpha.20.tgz#4186ec6508fe99a0bf0bf7a3f1b2691a8c7b0943"
   dependencies:
     debug "^2.6.0"
+
+"@phenomic/plugin-collector-files@^1.0.0-beta.9":
+  version "1.0.0-beta.9"
+  resolved "https://registry.yarnpkg.com/@phenomic/plugin-collector-files/-/plugin-collector-files-1.0.0-beta.9.tgz#cd89275c639ecc2c7d4d0b72a1703fb2bc038884"
+  integrity sha512-E+sMrSJG7sE7TGpJgy/CAHTvGLjX0HhnQESBQho72KTfNNYKaPQkBbQHwlTMLaX34od0hn1OtaykL4CzBvRIpQ==
+  dependencies:
+    debug "^2.6.0"
+    globby "^6.1.0"
+    sane "^1.7.0"
+    socket.io "^1.7.2"
 
 "@phenomic/plugin-public-assets@^1.0.0-alpha.19", "@phenomic/plugin-public-assets@^1.0.0-alpha.20":
   version "1.0.0-alpha.20"
