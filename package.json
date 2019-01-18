@@ -8,7 +8,7 @@
   "repository": "https://github.com/medfreeman/medfreeman.github.io.git",
   "recaptcha_site_key": "6LdVEyoUAAAAAMjyrZ_bjwEa6IhIxdrzTDEeibPI",
   "devDependencies": {
-    "@phenomic/babel-preset": "^1.0.0-alpha.19",
+    "@phenomic/babel-preset": "^1.0.0-beta.9",
     "@phenomic/cli": "^1.0.0-alpha.19",
     "@phenomic/core": "^1.0.0-alpha.19",
     "@phenomic/plugin-api-related-content": "^1.0.0-alpha.19",
