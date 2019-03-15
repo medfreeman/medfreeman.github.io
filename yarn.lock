@@ -101,6 +101,15 @@
   dependencies:
     debug "^2.6.0"
 
+"@phenomic/api-client@^1.0.0-beta.10":
+  version "1.0.0-beta.10"
+  resolved "https://registry.yarnpkg.com/@phenomic/api-client/-/api-client-1.0.0-beta.10.tgz#be2a68410caf29f2a1be7364ede1fae45412f83b"
+  integrity sha512-3VmhIPeExIhBd8Yt04MJTOdtGP87UsbEsacUoUAOx8CUrF9EB7fDoPXFCrGscmfNbqcRHdD+FYn5XK5JcXHBWg==
+  dependencies:
+    cross-fetch "^2.2.3"
+    debug "^2.6.0"
+    simple-json-fetch "^1.0.1"
+
 "@phenomic/babel-preset@^1.0.0-alpha.19", "@phenomic/babel-preset@^1.0.0-alpha.20":
   version "1.0.0-alpha.20"
   resolved "https://registry.yarnpkg.com/@phenomic/babel-preset/-/babel-preset-1.0.0-alpha.20.tgz#8972f9d63005ca6251d9b5fac676dce8009ce990"
@@ -183,7 +192,7 @@
     express "^4.14.0"
     fs-extra "^3.0.1"
 
-"@phenomic/plugin-renderer-react@^1.0.0-alpha.19", "@phenomic/plugin-renderer-react@^1.0.0-alpha.20":
+"@phenomic/plugin-renderer-react@^1.0.0-alpha.20":
   version "1.0.0-alpha.20"
   resolved "https://registry.yarnpkg.com/@phenomic/plugin-renderer-react/-/plugin-renderer-react-1.0.0-alpha.20.tgz#bb2f2133a6ffbb22c872cabb9473793cb94bd109"
   dependencies:
@@ -195,6 +204,21 @@
     prop-types "^15.5.8"
     react-hot-loader "^3.0.0-beta.7"
     simple-json-fetch "^1.0.1"
+    socket.io-client "^1.7.2"
+    striptags "^2.0.0"
+    url-join "^2.0.2"
+
+"@phenomic/plugin-renderer-react@^1.0.0-beta.10":
+  version "1.0.0-beta.10"
+  resolved "https://registry.yarnpkg.com/@phenomic/plugin-renderer-react/-/plugin-renderer-react-1.0.0-beta.10.tgz#e6f76a9b0d7d2be015da5ac6f334b08fe470c96d"
+  integrity sha512-8OX92C0ON5o2RIPzu86JCHObBdBaSBBxmstuDKLrHzgIPh6lDTZL2K8a7DKAEV/zaJp18Uq2rDcJ7ush2yH0fg==
+  dependencies:
+    "@phenomic/api-client" "^1.0.0-beta.10"
+    chalk "^1.1.3"
+    classnames "^2.2.5"
+    debug "^2.6.0"
+    hoist-non-react-statics "^2.5.0"
+    prop-types "^15.5.8"
     socket.io-client "^1.7.2"
     striptags "^2.0.0"
     url-join "^2.0.2"
@@ -2345,6 +2369,14 @@ create-react-class@^15.5.1:
     fbjs "^0.8.9"
     loose-envify "^1.3.1"
     object-assign "^4.1.1"
+
+cross-fetch@^2.2.3:
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-2.2.3.tgz#e8a0b3c54598136e037f8650f8e823ccdfac198e"
+  integrity sha512-PrWWNH3yL2NYIb/7WF/5vFG3DCQiXDOVf8k3ijatbrtnwNuhMWLC7YF7uqf53tbTFDzHIUD8oITw4Bxt8ST3Nw==
+  dependencies:
+    node-fetch "2.1.2"
+    whatwg-fetch "2.0.4"
 
 cross-spawn-promise@^0.10.1:
   version "0.10.1"
@@ -4616,6 +4648,11 @@ hoist-non-react-statics@^2.2.1, hoist-non-react-statics@^2.3.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.3.1.tgz#343db84c6018c650778898240135a1420ee22ce0"
 
+hoist-non-react-statics@^2.5.0:
+  version "2.5.5"
+  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"
+  integrity sha512-rqcy4pJo55FTTLWt+bU8ukscqHeE/e9KWvsOW2b/a3afxQZhwkQdT1rPPCJ0rYXdj4vNcasY8zHTH+jF/qStxw==
+
 hoist-non-react-statics@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.0.1.tgz#fba3e7df0210eb9447757ca1a7cb607162f0a364"
@@ -6517,6 +6554,11 @@ node-fetch-npm@^2.0.2:
     encoding "^0.1.11"
     json-parse-better-errors "^1.0.0"
     safe-buffer "^5.1.1"
+
+node-fetch@2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.1.2.tgz#ab884e8e7e57e38a944753cec706f788d1768bb5"
+  integrity sha1-q4hOjn5X44qUR1POxwb3iNF2i7U=
 
 node-fetch@^1.0.1:
   version "1.7.3"
@@ -11090,6 +11132,11 @@ websocket-driver@>=0.5.1:
 websocket-extensions@>=0.1.1:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/websocket-extensions/-/websocket-extensions-0.1.3.tgz#5d2ff22977003ec687a4b87073dfbbac146ccf29"
+
+whatwg-fetch@2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-2.0.4.tgz#dde6a5df315f9d39991aa17621853d720b85566f"
+  integrity sha512-dcQ1GWpOD/eEQ97k66aiEVpNnapVj90/+R+SXTPYGHpYBBypfKJEQjLrvMZ7YXbKm21gXd4NcuxUTjiv1YtLng==
 
 whatwg-fetch@>=0.10.0:
   version "2.0.3"
