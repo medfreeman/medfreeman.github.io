@@ -40,7 +40,7 @@
     "file-loader": "^1.1.6",
     "git-exec-and-restage": "^1.0.1",
     "gray-matter": "^4.0.1",
-    "hast-util-sanitize": "^1.1.2",
+    "hast-util-sanitize": "^2.0.0",
     "husky": "^0.14.3",
     "imagesloaded": "^4.1.4",
     "is-absolute-url": "^2.1.0",
