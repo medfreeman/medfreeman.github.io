@@ -93,7 +93,7 @@
     "tachyons-modular-media-queries": "^1.0.0",
     "typeface-roboto": "^0.0.54",
     "url-join": "^4.0.0",
-    "url-loader": "^1.1.1",
+    "url-loader": "^2.1.0",
     "webfontloader": "^1.6.28",
     "webfonts-generator": "sunflowerdeath/webfonts-generator#3f52b4e",
     "webfonts-loader": "^4.0.1",
