@@ -33,7 +33,7 @@
     "eslint": "^5.0.1",
     "eslint-config-i-am-meticulous": "^11.0.0",
     "eslint-loader": "^2.0.0",
-    "eslint-plugin-flowtype": "^2.41.0",
+    "eslint-plugin-flowtype": "^4.2.0",
     "eslint-plugin-react": "^7.5.1",
     "extract-text-webpack-plugin": "^3.0.2",
     "favicons-webpack-plugin": "^0.0.9",
