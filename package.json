@@ -67,7 +67,7 @@
     "react": "^16.10.2",
     "react-async-script": "^1.0.0",
     "react-css-themr": "^2.1.2",
-    "react-dom": "^16.2.0",
+    "react-dom": "^16.10.2",
     "react-grecaptcha": "^1.2.3",
     "react-headroom": "^2.2.2",
     "react-helmet": "^5.2.0",
