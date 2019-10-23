@@ -28,7 +28,7 @@
     "css-loader": "^0.28.8",
     "css-modules-require-hook": "^4.2.3",
     "debug": "^3.1.0",
-    "deepmerge": "^2.0.1",
+    "deepmerge": "^4.2.1",
     "email-validator": "^2.0.4",
     "eslint": "^5.0.1",
     "eslint-config-i-am-meticulous": "^11.0.0",
