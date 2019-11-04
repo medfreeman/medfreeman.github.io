@@ -84,7 +84,7 @@
     "remark-slug": "^5.0.0",
     "remark-toc": "^5.0.0",
     "stylelint": "^9.4.0",
-    "stylelint-config-css-modules": "^1.1.0",
+    "stylelint-config-css-modules": "^2.0.0",
     "stylelint-config-standard": "^18.0.0",
     "svg-inline-react": "^3.0.0",
     "svgo": "^1.0.3",
