@@ -30,7 +30,7 @@
     "debug": "^3.1.0",
     "deepmerge": "^2.0.1",
     "email-validator": "^2.0.4",
-    "eslint": "^5.0.1",
+    "eslint": "^6.8.0",
     "eslint-config-i-am-meticulous": "^11.0.0",
     "eslint-loader": "^2.0.0",
     "eslint-plugin-flowtype": "^2.41.0",
