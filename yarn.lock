@@ -4496,11 +4496,18 @@ hast-util-raw@^2.0.0:
     web-namespaces "^1.0.0"
     zwitch "^1.0.0"
 
-hast-util-sanitize@^1.0.0, hast-util-sanitize@^1.1.0, hast-util-sanitize@^1.1.2:
+hast-util-sanitize@^1.0.0, hast-util-sanitize@^1.1.0:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/hast-util-sanitize/-/hast-util-sanitize-1.1.2.tgz#d10bd6757a21e59c13abc8ae3530dd3b6d7d679e"
   dependencies:
     xtend "^4.0.1"
+
+hast-util-sanitize@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/hast-util-sanitize/-/hast-util-sanitize-2.0.2.tgz#8a4299bccba6cc8836284466d446060d2ecb2f5c"
+  integrity sha512-ppfgtI6pVb0/dopboV/N2SZju/CKEJzLs6jm58NxoYU1c1ib+/sh14JV5bjLDOEYvyeb5hYIttFKanYm0rtnHQ==
+  dependencies:
+    xtend "^4.0.0"
 
 hast-util-to-html@^3.0.0:
   version "3.1.0"
