@@ -57,7 +57,7 @@
     "postcss-cssnext": "^3.0.2",
     "postcss-import": "^11.0.0",
     "postcss-loader": "^2.0.10",
-    "postcss-normalize": "^6.0.0",
+    "postcss-normalize": "^9.0.0",
     "postcss-plugin-context": "^2.0.0",
     "postcss-reporter": "^5.0.0",
     "prettier": "^1.10.2",
