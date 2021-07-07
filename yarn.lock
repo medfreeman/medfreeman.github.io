@@ -10308,9 +10308,9 @@ tachyons-modular-media-queries@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/tachyons-modular-media-queries/-/tachyons-modular-media-queries-1.0.0.tgz#769441e0de000d3b3b3c41d905a2b462ac2d655a"
 
-tachyons@^4.9.1:
-  version "4.9.1"
-  resolved "https://registry.yarnpkg.com/tachyons/-/tachyons-4.9.1.tgz#f88d7059d6e53c833bf9351a26f18314c8fdc76a"
+tachyons@^7.0.1-3:
+  version "7.0.1-3"
+  resolved "https://registry.yarnpkg.com/tachyons/-/tachyons-7.0.1-3.tgz#7365299cf7e76f827a0c95f9f70f6eb5c03e5d48"
 
 tapable@^0.2.7:
   version "0.2.8"
